@@ -1,4 +1,4 @@
-# Blog Title :link: https://sephiroth233.github.io/blog.github.io 
+# lang的小站 :link: https://sephiroth233.github.io/blog.github.io 
 ### :page_facing_up: [0](https://sephiroth233.github.io/blog.github.io/tag.html) 
 ### :speech_balloon: 0 
 ### :hibiscus: 0 
