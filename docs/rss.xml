@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>lang</title><link>https://sephiroth233.github.io/blog.github.io</link><description>随便写写~</description><copyright>lang</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://raw.githubusercontent.com/sephiroth233/blog.github.io/main/media/avatar.jpg</url><title>avatar</title><link>https://sephiroth233.github.io/blog.github.io</link></image><lastBuildDate>Fri, 19 Jul 2024 02:08:51 +0000</lastBuildDate><managingEditor>lang</managingEditor><ttl>60</ttl><webMaster>lang</webMaster><item><title>clash-meta懒人配置</title><link>https://sephiroth233.github.io/blog.github.io/post/clash-meta-lan-ren-pei-zhi.html</link><description>&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>lang</title><link>https://sephiroth233.github.io/blog.github.io</link><description>随便写写~</description><copyright>lang</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://raw.githubusercontent.com/sephiroth233/blog.github.io/main/media/avatar.jpg</url><title>avatar</title><link>https://sephiroth233.github.io/blog.github.io</link></image><lastBuildDate>Fri, 19 Jul 2024 02:11:21 +0000</lastBuildDate><managingEditor>lang</managingEditor><ttl>60</ttl><webMaster>lang</webMaster><item><title>clash-meta懒人配置</title><link>https://sephiroth233.github.io/blog.github.io/post/clash-meta-lan-ren-pei-zhi.html</link><description>&#13;
 将配置中的 **节点订阅** 替换为你自己的节点订阅链接即可&#13;
 ```yaml&#13;
 mode: rule&#13;
@@ -103,4 +103,4 @@ rules:&#13;
   - GEOIP,CN,DIRECT&#13;
   - MATCH,Global&#13;
 ```&#13;
-。</description><guid isPermaLink="true">https://sephiroth233.github.io/blog.github.io/post/clash-meta-lan-ren-pei-zhi.html</guid><pubDate>Fri, 19 Jul 2024 01:59:55 +0000</pubDate></item><item><title>测试</title><link>https://sephiroth233.github.io/blog.github.io/post/ce-shi.html</link><description>66666。</description><guid isPermaLink="true">https://sephiroth233.github.io/blog.github.io/post/ce-shi.html</guid><pubDate>Thu, 18 Jul 2024 10:49:10 +0000</pubDate></item></channel></rss>
+。</description><guid isPermaLink="true">https://sephiroth233.github.io/blog.github.io/post/clash-meta-lan-ren-pei-zhi.html</guid><pubDate>Fri, 19 Jul 2024 01:59:55 +0000</pubDate></item></channel></rss>
