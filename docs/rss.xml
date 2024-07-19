@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>lang</title><link>https://sephiroth233.github.io/blog.github.io</link><description>随便写写~</description><copyright>lang</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://raw.githubusercontent.com/sephiroth233/blog.github.io/main/media/avatar.jpg</url><title>avatar</title><link>https://sephiroth233.github.io/blog.github.io</link></image><lastBuildDate>Fri, 19 Jul 2024 02:28:19 +0000</lastBuildDate><managingEditor>lang</managingEditor><ttl>60</ttl><webMaster>lang</webMaster><item><title>Navicat无限试用脚本</title><link>https://sephiroth233.github.io/blog.github.io/post/Navicat-wu-xian-shi-yong-jiao-ben.html</link><description>```shell&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>lang</title><link>https://sephiroth233.github.io/blog.github.io</link><description>随便写写~</description><copyright>lang</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://raw.githubusercontent.com/sephiroth233/blog.github.io/main/media/avatar.jpg</url><title>avatar</title><link>https://sephiroth233.github.io/blog.github.io</link></image><lastBuildDate>Fri, 19 Jul 2024 02:35:21 +0000</lastBuildDate><managingEditor>lang</managingEditor><ttl>60</ttl><webMaster>lang</webMaster><item><title>Navicat无限试用脚本</title><link>https://sephiroth233.github.io/blog.github.io/post/Navicat-wu-xian-shi-yong-jiao-ben.html</link><description>```shell&#13;
 @echo off&#13;
 echo Delete HKEY_CURRENT_USER\Software\PremiumSoft\NavicatPremium\Update&#13;
 reg delete HKEY_CURRENT_USER\Software\PremiumSoft\NavicatPremium\Update /f&#13;
@@ -23,7 +23,12 @@ for /f 'tokens=*' %%a in ('reg query 'HKEY_CURRENT_USER\Software\Classes\CLSID''
 &#13;
 新建一个txt文件，名字随意，以reset.txt为例：&#13;
 &#13;
-复制上面的脚本代码，将代码粘贴到reset.txt文件中。</description><guid isPermaLink="true">https://sephiroth233.github.io/blog.github.io/post/Navicat-wu-xian-shi-yong-jiao-ben.html</guid><pubDate>Fri, 19 Jul 2024 02:27:50 +0000</pubDate></item><item><title>一键dd纯净系统(leitbogioro)</title><link>https://sephiroth233.github.io/blog.github.io/post/yi-jian-dd-chun-jing-xi-tong-%28leitbogioro%29.html</link><description>&#13;
+复制上面的脚本代码，将代码粘贴到reset.txt文件中。</description><guid isPermaLink="true">https://sephiroth233.github.io/blog.github.io/post/Navicat-wu-xian-shi-yong-jiao-ben.html</guid><pubDate>Fri, 19 Jul 2024 02:27:50 +0000</pubDate></item><item><title>一键DD纯净系统脚本(萌咖)</title><link>https://sephiroth233.github.io/blog.github.io/post/yi-jian-DD-chun-jing-xi-tong-jiao-ben-%28-meng-ka-%29.html</link><description>&#13;
+[转载：原文地址](https://www.moeelf.com/archives/293.html)&#13;
+&#13;
+注意事项：&#13;
+&#13;
+* Vicer脚本目前不支持重装为CentOS 7系统，支持CentOS 6.9以下版本。</description><guid isPermaLink="true">https://sephiroth233.github.io/blog.github.io/post/yi-jian-DD-chun-jing-xi-tong-jiao-ben-%28-meng-ka-%29.html</guid><pubDate>Fri, 19 Jul 2024 02:18:45 +0000</pubDate></item><item><title>一键dd纯净系统(leitbogioro)</title><link>https://sephiroth233.github.io/blog.github.io/post/yi-jian-dd-chun-jing-xi-tong-%28leitbogioro%29.html</link><description>&#13;
 [github地址](https://github.com/leitbogioro/Tools 'https://github.com/leitbogioro/Tools')&#13;
 &#13;
 #### Centos7：&#13;
@@ -74,7 +79,11 @@ echo root:password|sudo chpasswd root&#13;
 ```&#13;
 &#13;
 ![image.png](https://s2.loli.net/2024/06/03/aBHbFomGSMsxT8Z.png)&#13;
-。</description><guid isPermaLink="true">https://sephiroth233.github.io/blog.github.io/post/yi-jian-dd-chun-jing-xi-tong-%28leitbogioro%29.html</guid><pubDate>Fri, 19 Jul 2024 02:18:10 +0000</pubDate></item><item><title>xui、hy2安装脚本</title><link>https://sephiroth233.github.io/blog.github.io/post/xui%E3%80%81hy2-an-zhuang-jiao-ben.html</link><description>### xui安装&#13;
+。</description><guid isPermaLink="true">https://sephiroth233.github.io/blog.github.io/post/yi-jian-dd-chun-jing-xi-tong-%28leitbogioro%29.html</guid><pubDate>Fri, 19 Jul 2024 02:18:10 +0000</pubDate></item><item><title>微软输入法设置小鹤双拼</title><link>https://sephiroth233.github.io/blog.github.io/post/wei-ruan-shu-ru-fa-she-zhi-xiao-he-shuang-pin.html</link><description>打开PowerShell，输入：&#13;
+```shell&#13;
+reg add HKCU\Software\Microsoft\InputMethod\Settings\CHS /v UserDefinedDoublePinyinScheme0 /t REG_SZ /d '小鹤双拼*2*^*iuvdjhcwfg^xmlnpbksqszxkrltvyovt' /f&#13;
+```&#13;
+然后回车。</description><guid isPermaLink="true">https://sephiroth233.github.io/blog.github.io/post/wei-ruan-shu-ru-fa-she-zhi-xiao-he-shuang-pin.html</guid><pubDate>Fri, 19 Jul 2024 02:17:24 +0000</pubDate></item><item><title>xui、hy2安装脚本</title><link>https://sephiroth233.github.io/blog.github.io/post/xui%E3%80%81hy2-an-zhuang-jiao-ben.html</link><description>### xui安装&#13;
 &#13;
 [项目地址](https://github.com/MHSanaei/3x-ui 'https://github.com/MHSanaei/3x-ui')&#13;
 &#13;
