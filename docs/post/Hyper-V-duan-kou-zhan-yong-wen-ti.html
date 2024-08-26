@@ -91,10 +91,10 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <h4>查看目前「TCP 动态端口」的范围</h4>
 <p>PowerShell或者CMD窗口输入以下命令：</p>
 <div class="highlight highlight-source-shell"><pre class="notranslate">netsh int ipv4 show dynamicport tcp </pre></div>
-<p><a href="https://img.sephiroth.club/file/cc885021fcf3aaf2b022a.png" rel="nofollow"><img src="https://camo.githubusercontent.com/a26dbdae231a0423a44d7aa2ef902263dbccc48708fbe3b8e9cd8af9881349f2/68747470733a2f2f696d672e7365706869726f74682e636c75622f66696c652f6363383835303231666366336161663262303232612e706e67" alt="" data-canonical-src="https://img.sephiroth.club/file/cc885021fcf3aaf2b022a.png" style="max-width: 100%;"></a></p>
+<p><a href="https://img.sephiroth.club/file/cc885021fcf3aaf2b022a.png" rel="nofollow"><img src="https://camo.githubusercontent.com/8f7c2dd8a5eee7d20a9e374ee3b373457338b7e089fa7e28840e0ac0963cbd3a/68747470733a2f2f696d672e7365706869726f74682e636c75622f66696c652f6363383835303231666366336161663262303232612e706e67" alt="" data-canonical-src="https://img.sephiroth.club/file/cc885021fcf3aaf2b022a.png" style="max-width: 100%;"></a></p>
 <h4>查看当前所有的保留端口范围</h4>
 <div class="highlight highlight-source-shell"><pre class="notranslate">netsh interface ipv4 show excludedportrange protocol=tcp</pre></div>
-<p><a href="https://img.sephiroth.club/file/d7f68fae5cf94dbf7c724.png" rel="nofollow"><img src="https://camo.githubusercontent.com/0f1e546abb8bff645d46ef9178de67567d54672bb070c7c656ebd4d17a21b6d0/68747470733a2f2f696d672e7365706869726f74682e636c75622f66696c652f6437663638666165356366393464626637633732342e706e67" alt="" data-canonical-src="https://img.sephiroth.club/file/d7f68fae5cf94dbf7c724.png" style="max-width: 100%;"></a></p>
+<p><a href="https://img.sephiroth.club/file/d7f68fae5cf94dbf7c724.png" rel="nofollow"><img src="https://camo.githubusercontent.com/7a60b645708d3eb13a5f84ea50c88a5f9dcb5da5c24e6b70d9795abb6c087334/68747470733a2f2f696d672e7365706869726f74682e636c75622f66696c652f6437663638666165356366393464626637633732342e706e67" alt="" data-canonical-src="https://img.sephiroth.club/file/d7f68fae5cf94dbf7c724.png" style="max-width: 100%;"></a></p>
 <p>如果这些被征用的端口范围随机挑选到 8088、8000、3000 等 Web 开发常用端口，那开发就会受到影响。</p>
 <h4>解决方案</h4>
 <p>以管理员权限运行下面的命令，将「TCP 动态端口范围」重新设定为 49152-65535。如果你觉得这个范围太大，还可以改小一点。</p>
