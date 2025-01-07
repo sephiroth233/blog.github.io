@@ -75,6 +75,10 @@
    ```bash
    sudo chmod +x /usr/local/bin/docker-compose
    ```
+3. **创建软链：**
+   ```bash
+    sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+   ```
 
 3. **验证安装**
    - 检查 Docker Compose 是否安装成功：
@@ -109,7 +113,7 @@
    ```
    - 注意：`/mnt/c/data` 是 WSL 中访问 Windows `C:\data` 的路径。
 
-4. **启动服务**
+5. **启动服务**
    - 使用 Docker Compose 启动服务：
    ```bash
    docker-compose up
