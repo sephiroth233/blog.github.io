@@ -164,10 +164,7 @@ sudo apt install -y docker-ce</pre></div>
 <ul>
 <li>访问 GitHub 上的 <a href="https://github.com/docker/compose/releases">Docker Compose Releases</a> 页面，找到最新版本。然后在终端中下载：</li>
 </ul>
-<div class="highlight highlight-source-shell"><pre class="notranslate">sudo curl -L <span class="pl-s"><span class="pl-pds">"</span>https://github.com/docker/compose/releases/download/&lt;version&gt;/docker-compose-<span class="pl-s"><span class="pl-pds">$(</span>uname -s<span class="pl-pds">)</span></span>-<span class="pl-s"><span class="pl-pds">$(</span>uname -m<span class="pl-pds">)</span></span><span class="pl-pds">"</span></span> -o /usr/local/bin/docker-compose</pre></div>
-<ul>
-<li>替换 <code class="notranslate">&lt;version&gt;</code> 为你选择的版本号，如 <code class="notranslate">1.29.2</code>。</li>
-</ul>
+<div class="highlight highlight-source-shell"><pre class="notranslate">$ sudo curl -L <span class="pl-s"><span class="pl-pds">"</span>https://github.com/docker/compose/releases/download/v2.4.1/docker-compose-<span class="pl-s"><span class="pl-pds">$(</span>uname -s<span class="pl-pds">)</span></span>-<span class="pl-s"><span class="pl-pds">$(</span>uname -m<span class="pl-pds">)</span></span><span class="pl-pds">"</span></span> -o /usr/local/bin/docker-compose</pre></div>
 </li>
 <li>
 <p><strong>赋予执行权限</strong></p>

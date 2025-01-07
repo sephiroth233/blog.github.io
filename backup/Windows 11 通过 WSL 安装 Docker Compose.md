@@ -66,9 +66,8 @@
 1. **下载 Docker Compose**
    - 访问 GitHub 上的 [Docker Compose Releases](https://github.com/docker/compose/releases) 页面，找到最新版本。然后在终端中下载：
    ```bash
-   sudo curl -L "https://github.com/docker/compose/releases/download/<version>/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+   $ sudo curl -L "https://github.com/docker/compose/releases/download/v2.4.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
    ```
-   - 替换 `<version>` 为你选择的版本号，如 `1.29.2`。
 
 2. **赋予执行权限**
    - 赋予 Docker Compose 二进制文件可执行权限：
