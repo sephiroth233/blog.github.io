@@ -2,7 +2,7 @@
 
 ![Image](https://github.com/user-attachments/assets/0069ba70-33a7-49ab-a85f-8a894277b4bd)
 
-## 笔者部署的一键脚本（对作者的脚本做了一下shadowtls节点配置的修改）
+## 一键脚本
 ```
 bash <(curl -fsSL sing-box-mu.vercel.app)
 ```
