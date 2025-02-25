@@ -3,13 +3,23 @@
 ![Image](https://github.com/user-attachments/assets/0069ba70-33a7-49ab-a85f-8a894277b4bd)
 
 ## 一键脚本(无warp)
+1.直接执行脚本：
 ```
 bash <(curl -fsSL sing-box-mu.vercel.app)
 ```
+2.保存脚本到本地并执行：
+```
+curl -fsSL sing-box-mu.vercel.app -o sing-box.sh && bash sing-box.sh
+```
 
 ## 一键脚本(有warp)
+1.直接执行脚本：
 ```
 bash <(curl -fsSL sing-box-mu.vercel.app/warp)
+```
+2.保存脚本到本地并执行：
+```
+curl -fsSL sing-box-mu.vercel.app/warp -o sing-box-warp.sh && bash sing-box-warp.sh
 ```
 
 ## 项目简介
@@ -95,4 +105,4 @@ systemctl daemon-reload
 ```
 
 ## 原作者项目地址：https://github.com/SagerNet/sing-box
-## 笔者fork仓库地址：https://github.com/sephiroth233/sing-box
+## fork仓库地址：https://github.com/sephiroth233/sing-box
