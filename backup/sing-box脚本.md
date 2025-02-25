@@ -2,10 +2,16 @@
 
 ![Image](https://github.com/user-attachments/assets/0069ba70-33a7-49ab-a85f-8a894277b4bd)
 
-## 一键脚本
+## 一键脚本(无warp)
 ```
 bash <(curl -fsSL sing-box-mu.vercel.app)
 ```
+
+## 一键脚本(有warp)
+```
+bash <(curl -fsSL sing-box-mu.vercel.app/warp)
+```
+
 ## 项目简介
 - 输出客户端配置 url 方便快速设置
 
