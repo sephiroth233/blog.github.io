@@ -104,5 +104,5 @@ rm -f /var/log/singbox.log
 systemctl daemon-reload
 ```
 
-## 原作者项目地址：https://github.com/SagerNet/sing-box
+## 原作者项目地址：https://github.com/passeway/sing-box
 ## fork仓库地址：https://github.com/sephiroth233/sing-box
