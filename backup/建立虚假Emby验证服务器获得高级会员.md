@@ -1,5 +1,4 @@
 
-
 声明：本文仅供学习研究,切勿用于非法用途
 
 Emby通过服务器mb3admin.com验证客户端是否具有高级会员授权，一旦验证通过后，会在客户端内保留一段时间的缓存信息。
@@ -55,5 +54,16 @@ server {
 }
 ```
 5. 在安装Emby服务端的服务器或Docker中添加CA证书（搜索ca-certificates.crt和ca-bundle.crt文件进行添加）
+
+### 验证是否成功
+打开浏览器，访问下列网址：
+
+https://mb3admin.com/admin/service/registration/validateDevice
+https://mb3admin.com/admin/service/registration/validateDevice/666
+
+若返回{"cacheExpirationDays": 365,"message": "Device Valid","resultCode": "GOOD"}
+
+即安装成功。
+
 
 原文地址：[建立虚假Emby验证服务器获得高级会员](https://x64.life/post/emby-fake-auth/)

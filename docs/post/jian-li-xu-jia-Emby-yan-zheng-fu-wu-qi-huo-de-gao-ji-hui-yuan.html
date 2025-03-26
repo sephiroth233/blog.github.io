@@ -11,13 +11,11 @@
         document.documentElement.setAttribute("data-color-mode", theme);
     </script>
 <meta name="description" content="
-
 声明：本文仅供学习研究,切勿用于非法用途
 
 Emby通过服务器mb3admin.com验证客户端是否具有高级会员授权，一旦验证通过后，会在客户端内保留一段时间的缓存信息。">
 <meta property="og:title" content="建立虚假Emby验证服务器获得高级会员">
 <meta property="og:description" content="
-
 声明：本文仅供学习研究,切勿用于非法用途
 
 Emby通过服务器mb3admin.com验证客户端是否具有高级会员授权，一旦验证通过后，会在客户端内保留一段时间的缓存信息。">
@@ -152,6 +150,12 @@ DNS.2=*.mb3admin.com</p>
 <ol start="5">
 <li>在安装Emby服务端的服务器或Docker中添加CA证书（搜索ca-certificates.crt和ca-bundle.crt文件进行添加）</li>
 </ol>
+<h3>验证是否成功</h3>
+<p>打开浏览器，访问下列网址：</p>
+<p><a href="https://mb3admin.com/admin/service/registration/validateDevice" rel="nofollow">https://mb3admin.com/admin/service/registration/validateDevice</a><br>
+<a href="https://mb3admin.com/admin/service/registration/validateDevice/666" rel="nofollow">https://mb3admin.com/admin/service/registration/validateDevice/666</a></p>
+<p>若返回{"cacheExpirationDays": 365,"message": "Device Valid","resultCode": "GOOD"}</p>
+<p>即安装成功。</p>
 <p>原文地址：<a href="https://x64.life/post/emby-fake-auth/" rel="nofollow">建立虚假Emby验证服务器获得高级会员</a></p></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
