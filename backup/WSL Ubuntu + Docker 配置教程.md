@@ -23,14 +23,14 @@ wsl --install
 sudo bash -c "echo '$USER ALL=(ALL) NOPASSWD: ALL' >/etc/sudoers.d/$USER"
 ```
 
-2. 在 Windows 开机启动文件夹中添加一个以.vbs 结尾的文件，内容如下：
-
+2. 在 Windows 开机启动文件夹中添加一个以.vbs 结尾的文件（例：`wsl-startup.vbs`），内容如下：
 ```vbs
 set ws=wscript.CreateObject("wscript.shell")
 ws.run "wsl -d Ubuntu", 0
 ```
 
-要快速进入开机启动文件夹，可以按 Windows+R，然后输入 `shell:startup` 。你可能还会用到 `taskschd.msc` 。
+要快速进入开机启动文件夹，可以按 Windows+R，然后输入 `shell:startup` 。
+你可能还会用到 `taskschd.msc` 。
 
 ---
 

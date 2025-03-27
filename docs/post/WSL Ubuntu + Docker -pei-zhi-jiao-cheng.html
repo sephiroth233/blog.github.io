@@ -125,11 +125,12 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </ol>
 <div class="highlight highlight-source-shell"><pre class="notranslate">sudo bash -c <span class="pl-s"><span class="pl-pds">"</span>echo '<span class="pl-smi">$USER</span> ALL=(ALL) NOPASSWD: ALL' &gt;/etc/sudoers.d/<span class="pl-smi">$USER</span><span class="pl-pds">"</span></span></pre></div>
 <ol start="2">
-<li>在 Windows 开机启动文件夹中添加一个以.vbs 结尾的文件，内容如下：</li>
+<li>在 Windows 开机启动文件夹中添加一个以.vbs 结尾的文件（例：<code class="notranslate">wsl-startup.vbs</code>），内容如下：</li>
 </ol>
 <div class="highlight highlight-source-vbnet"><pre class="notranslate"><span class="pl-k">set</span> <span class="pl-smi">ws=wscript.CreateObject(</span><span class="pl-s">"wscript.shell"</span><span class="pl-smi">)</span>
 <span class="pl-smi">ws.run</span> <span class="pl-s">"wsl -d Ubuntu"</span><span class="pl-smi">,</span> <span class="pl-s">0</span></pre></div>
-<p>要快速进入开机启动文件夹，可以按 Windows+R，然后输入 <code class="notranslate">shell:startup</code> 。你可能还会用到 <code class="notranslate">taskschd.msc</code> 。</p>
+<p>要快速进入开机启动文件夹，可以按 Windows+R，然后输入 <code class="notranslate">shell:startup</code> 。<br>
+你可能还会用到 <code class="notranslate">taskschd.msc</code> 。</p>
 <hr>
 <h4><strong>3. 安装 Docker Compose 并配置</strong></h4>
 <div class="highlight highlight-source-shell"><pre class="notranslate"><span class="pl-c"><span class="pl-c">#</span> 更新系统</span>
