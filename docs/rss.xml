@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>lang</title><link>https://sephiroth233.github.io/blog.github.io</link><description>随便写写~</description><copyright>lang</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://raw.githubusercontent.com/sephiroth233/blog.github.io/refs/heads/main/static/avatar.jpg</url><title>avatar</title><link>https://sephiroth233.github.io/blog.github.io</link></image><lastBuildDate>Fri, 28 Mar 2025 08:24:36 +0000</lastBuildDate><managingEditor>lang</managingEditor><ttl>60</ttl><webMaster>lang</webMaster><item><title>WSL Ubuntu + Docker 配置教程</title><link>https://sephiroth233.github.io/blog.github.io/post/WSL%20Ubuntu%20%2B%20Docker%20-pei-zhi-jiao-cheng.html</link><description>### WSL Ubuntu + Docker 配置教程
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>lang</title><link>https://sephiroth233.github.io/blog.github.io</link><description>随便写写~</description><copyright>lang</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://raw.githubusercontent.com/sephiroth233/blog.github.io/refs/heads/main/static/avatar.jpg</url><title>avatar</title><link>https://sephiroth233.github.io/blog.github.io</link></image><lastBuildDate>Fri, 28 Mar 2025 08:39:57 +0000</lastBuildDate><managingEditor>lang</managingEditor><ttl>60</ttl><webMaster>lang</webMaster><item><title>WSL Ubuntu + Docker 配置教程</title><link>https://sephiroth233.github.io/blog.github.io/post/WSL%20Ubuntu%20%2B%20Docker%20-pei-zhi-jiao-cheng.html</link><description>### WSL Ubuntu + Docker 配置教程
 
 ---
 
@@ -17,15 +17,15 @@ wsl --install
 
 Emby通过服务器mb3admin.com验证客户端是否具有高级会员授权，一旦验证通过后，会在客户端内保留一段时间的缓存信息。</description><guid isPermaLink="true">https://sephiroth233.github.io/blog.github.io/post/jian-li-xu-jia-Emby-yan-zheng-fu-wu-qi-huo-de-gao-ji-hui-yuan.html</guid><pubDate>Wed, 26 Mar 2025 02:57:35 +0000</pubDate></item><item><title>Windows脚本</title><link>https://sephiroth233.github.io/blog.github.io/post/Windows-jiao-ben.html</link><description>mihomo内核辅助脚本：
 ```
-curl -O https://bat-reo.vercel.app/blash
+curl -O https://raw.githubusercontent.com/sephiroth233/bat-reo/main/blash.cmd
 ```
 JDK环境变量配置脚本：
 ```
-curl -O https://bat-reo.vercel.app/jdk
+curl -O https://raw.githubusercontent.com/sephiroth233/bat-reo/main/jdk.cmd
 ```
 navicat使用脚本：
 ```
-curl -O https://bat-reo.vercel.app/navicat-reset
+curl -O https://raw.githubusercontent.com/sephiroth233/bat-reo/main/navicat-reset.cmd
 ```。</description><guid isPermaLink="true">https://sephiroth233.github.io/blog.github.io/post/Windows-jiao-ben.html</guid><pubDate>Wed, 19 Feb 2025 06:00:30 +0000</pubDate></item><item><title>sing-box脚本</title><link>https://sephiroth233.github.io/blog.github.io/post/sing-box-jiao-ben.html</link><description>## 终端预览
 
 ![Image](https://github.com/user-attachments/assets/0069ba70-33a7-49ab-a85f-8a894277b4bd)
