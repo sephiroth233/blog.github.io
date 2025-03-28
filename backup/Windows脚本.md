@@ -1,12 +1,12 @@
 mihomo内核辅助脚本：
 ```
-curl -O https://raw.githubusercontent.com/sephiroth233/bat-reo/main/blash.cmd
+curl -O https://bat-reo.vercel.app/blash
 ```
 JDK环境变量配置脚本：
 ```
-curl -O https://raw.githubusercontent.com/sephiroth233/bat-reo/main/jdk.cmd
+curl -O https://bat-reo.vercel.app/jdk
 ```
 navicat使用脚本：
 ```
-curl -O https://raw.githubusercontent.com/sephiroth233/bat-reo/main/reset.cmd
+curl -O https://bat-reo.vercel.app/navicat-reset
 ```
