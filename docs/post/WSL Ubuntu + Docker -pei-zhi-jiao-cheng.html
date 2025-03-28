@@ -119,48 +119,12 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <li>安装后设置用户名/密码。</li>
 </ul>
 <hr>
-<h4><strong>(推荐) WSL中安装docker-compose并配置的脚本（可省略下面的2和3操作)</strong></h4>
+<h4><strong>2. 安装 Docker Compose 并配置</strong></h4>
 <p>进入wsl，然后执行下面指令：</p>
 <div class="highlight highlight-source-shell"><pre class="notranslate">bash <span class="pl-s"><span class="pl-pds">&lt;(</span>curl -sSL https://raw.githubusercontent.com/sephiroth233/bat-reo/main/wsl-docker-setup.sh<span class="pl-pds">)</span></span></pre></div>
+<p>上面脚本会安装docker、docker-compose，配置免密码sudo、配置docker用户组和权限、配置docker自启动</p>
 <hr>
-<h4><strong>2.设置 WSL2 后台启动</strong></h4>
-<ol>
-<li>在你的 WSL2 的 Debian 或 Ubuntu 中执行以下命令，允许用户执行所有命令而不需要密码：</li>
-</ol>
-<div class="highlight highlight-source-shell"><pre class="notranslate">sudo bash -c <span class="pl-s"><span class="pl-pds">"</span>echo '<span class="pl-smi">$USER</span> ALL=(ALL) NOPASSWD: ALL' &gt;/etc/sudoers.d/<span class="pl-smi">$USER</span><span class="pl-pds">"</span></span></pre></div>
-<ol start="2">
-<li>在 Windows 开机启动文件夹中添加一个以.vbs 结尾的文件（例：<code class="notranslate">wsl-startup.vbs</code>），内容如下：</li>
-</ol>
-<div class="highlight highlight-source-vbnet"><pre class="notranslate"><span class="pl-k">set</span> <span class="pl-smi">ws=wscript.CreateObject(</span><span class="pl-s">"wscript.shell"</span><span class="pl-smi">)</span>
-<span class="pl-smi">ws.run</span> <span class="pl-s">"wsl -d Ubuntu"</span><span class="pl-smi">,</span> <span class="pl-s">0</span></pre></div>
-<p>要快速进入开机启动文件夹，可以按 Windows+R，然后输入 <code class="notranslate">shell:startup</code> 。<br>
-你可能还会用到 <code class="notranslate">taskschd.msc</code> 。</p>
-<hr>
-<h4><strong>3. 安装 Docker Compose 并配置</strong></h4>
-<div class="highlight highlight-source-shell"><pre class="notranslate"><span class="pl-c"><span class="pl-c">#</span> 更新系统</span>
-sudo apt update <span class="pl-k">&amp;&amp;</span> sudo apt upgrade -y
-
-<span class="pl-c"><span class="pl-c">#</span> 安装docker</span>
-curl -fsSL https://get.docker.com <span class="pl-k">|</span> sh
-
-<span class="pl-c"><span class="pl-c">#</span> 下载最新稳定版 Docker Compose</span>
-sudo curl -L <span class="pl-s"><span class="pl-pds">"</span>https://github.com/docker/compose/releases/latest/download/docker-compose-<span class="pl-s"><span class="pl-pds">$(</span>uname -s<span class="pl-pds">)</span></span>-<span class="pl-s"><span class="pl-pds">$(</span>uname -m<span class="pl-pds">)</span></span><span class="pl-pds">"</span></span> -o /usr/local/bin/docker-compose
-
-<span class="pl-c"><span class="pl-c">#</span> 赋予可执行权限</span>
-sudo chmod +x /usr/local/bin/docker-compose
-
-<span class="pl-c"><span class="pl-c">#</span> 添加用户到 docker 组 ,刷新组权限</span>
-sudo usermod -aG docker <span class="pl-smi">$USER</span>
-newgrp docker  
-
-<span class="pl-c"><span class="pl-c">#</span> 配置 Docker 自启动（需 root 权限）</span>
-sudo systemctl <span class="pl-c1">enable</span> docker</pre></div>
-<ul>
-<li>验证：<code class="notranslate">docker run hello-world</code></li>
-<li>官方文档：<a href="https://docs.docker.com/compose/install/linux/" rel="nofollow">Docker Compose 安装</a></li>
-</ul>
-<hr>
-<h4><strong>4.WSL Settings</strong></h4>
+<h4><strong>3.WSL Settings</strong></h4>
 <p>点击wisnows窗口图标，根据需要设置wsl内存、网络、内存回收相关属性。</p>
 <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/ab2774f9-57e3-41ce-951f-e87ecbf6f75a"><img src="https://github.com/user-attachments/assets/ab2774f9-57e3-41ce-951f-e87ecbf6f75a" alt="Image" style="max-width: 100%;"></a></p>
 <p>wsl默认会占据机器一半的资源：</p>
