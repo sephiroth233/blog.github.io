@@ -119,6 +119,10 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <li>安装后设置用户名/密码。</li>
 </ul>
 <hr>
+<h4><strong>(推荐)WSL中安装docker-compose并配置的脚本（可省略下面的2和3操作)</strong></h4>
+<p>进入wsl，然后执行下面指令：</p>
+<div class="highlight highlight-source-shell"><pre class="notranslate">bash <span class="pl-s"><span class="pl-pds">&lt;(</span>curl -sSL https://raw.githubusercontent.com/sephiroth233/bat-reo/main/wsl-docker-setup.sh<span class="pl-pds">)</span></span></pre></div>
+<hr>
 <h4><strong>2.设置 WSL2 后台启动</strong></h4>
 <ol>
 <li>在你的 WSL2 的 Debian 或 Ubuntu 中执行以下命令，允许用户执行所有命令而不需要密码：</li>
@@ -156,7 +160,7 @@ sudo systemctl <span class="pl-c1">enable</span> docker</pre></div>
 <li>官方文档：<a href="https://docs.docker.com/compose/install/linux/" rel="nofollow">Docker Compose 安装</a></li>
 </ul>
 <hr>
-<h4><strong>WSL Settings</strong></h4>
+<h4><strong>4.WSL Settings</strong></h4>
 <p>点击wisnows窗口图标，根据需要设置wsl内存、网络、内存回收相关属性。</p>
 <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/ab2774f9-57e3-41ce-951f-e87ecbf6f75a"><img src="https://github.com/user-attachments/assets/ab2774f9-57e3-41ce-951f-e87ecbf6f75a" alt="Image" style="max-width: 100%;"></a></p>
 <p>wsl默认会占据机器一半的资源：</p>

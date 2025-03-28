@@ -15,6 +15,13 @@ wsl --install
 
 ---
 
+#### **(推荐)WSL中安装docker-compose并配置的脚本（可省略下面的2和3操作)**
+进入wsl，然后执行下面指令：
+```sh
+bash <(curl -sSL https://raw.githubusercontent.com/sephiroth233/bat-reo/main/wsl-docker-setup.sh)
+```
+---
+
 #### **2.设置 WSL2 后台启动**
 
 1. 在你的 WSL2 的 Debian 或 Ubuntu 中执行以下命令，允许用户执行所有命令而不需要密码：
@@ -62,7 +69,7 @@ sudo systemctl enable docker
 
 ---
 
-#### **WSL Settings**
+#### **4.WSL Settings**
 点击wisnows窗口图标，根据需要设置wsl内存、网络、内存回收相关属性。
 
 ![Image](https://github.com/user-attachments/assets/ab2774f9-57e3-41ce-951f-e87ecbf6f75a)
