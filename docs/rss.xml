@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>lang</title><link>https://sephiroth233.github.io/blog.github.io</link><description>随便写写~</description><copyright>lang</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://raw.githubusercontent.com/sephiroth233/blog.github.io/refs/heads/main/static/avatar.jpg</url><title>avatar</title><link>https://sephiroth233.github.io/blog.github.io</link></image><lastBuildDate>Fri, 28 Mar 2025 08:39:57 +0000</lastBuildDate><managingEditor>lang</managingEditor><ttl>60</ttl><webMaster>lang</webMaster><item><title>WSL Ubuntu + Docker 配置教程</title><link>https://sephiroth233.github.io/blog.github.io/post/WSL%20Ubuntu%20%2B%20Docker%20-pei-zhi-jiao-cheng.html</link><description>### WSL Ubuntu + Docker 配置教程
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>lang</title><link>https://sephiroth233.github.io/blog.github.io</link><description>随便写写~</description><copyright>lang</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://raw.githubusercontent.com/sephiroth233/blog.github.io/refs/heads/main/static/avatar.jpg</url><title>avatar</title><link>https://sephiroth233.github.io/blog.github.io</link></image><lastBuildDate>Sat, 29 Mar 2025 16:26:06 +0000</lastBuildDate><managingEditor>lang</managingEditor><ttl>60</ttl><webMaster>lang</webMaster><item><title>WSL Ubuntu + Docker 配置教程</title><link>https://sephiroth233.github.io/blog.github.io/post/WSL%20Ubuntu%20%2B%20Docker%20-pei-zhi-jiao-cheng.html</link><description>### WSL Ubuntu + Docker 配置教程
 
 ---
 
@@ -133,9 +133,7 @@ systemctl daemon-reload
 ```
 
 ## 原作者项目地址：https://github.com/passeway/sing-box
-## fork仓库地址：https://github.com/sephiroth233/sing-box。</description><guid isPermaLink="true">https://sephiroth233.github.io/blog.github.io/post/sing-box-jiao-ben.html</guid><pubDate>Wed, 12 Feb 2025 03:57:15 +0000</pubDate></item><item><title>docker命令安装mysql</title><link>https://sephiroth233.github.io/blog.github.io/post/docker-ming-ling-an-zhuang-mysql.html</link><description>### 1. 准备目录结构&#13;
-&#13;
-首先，在你的主机上创建一个目录结构，以便挂载MySQL的数据、配置和日志文件。</description><guid isPermaLink="true">https://sephiroth233.github.io/blog.github.io/post/docker-ming-ling-an-zhuang-mysql.html</guid><pubDate>Mon, 09 Dec 2024 08:52:33 +0000</pubDate></item><item><title>Windows一键配置Java环境变量</title><link>https://sephiroth233.github.io/blog.github.io/post/Windows-yi-jian-pei-zhi-Java-huan-jing-bian-liang.html</link><description>脚本内容：&#13;
+## fork仓库地址：https://github.com/sephiroth233/sing-box。</description><guid isPermaLink="true">https://sephiroth233.github.io/blog.github.io/post/sing-box-jiao-ben.html</guid><pubDate>Wed, 12 Feb 2025 03:57:15 +0000</pubDate></item><item><title>Windows一键配置Java环境变量</title><link>https://sephiroth233.github.io/blog.github.io/post/Windows-yi-jian-pei-zhi-Java-huan-jing-bian-liang.html</link><description>脚本内容：&#13;
 &#13;
 ```shell&#13;
 @echo off&#13;
@@ -258,8 +256,7 @@ sudo curl https://raw.githubusercontent.com/zhanghanyun/backtrace/main/install.s
 ```shell
 sudo bash &lt;(curl -Ls IP.Check.Place)
 ```
-。</description><guid isPermaLink="true">https://sephiroth233.github.io/blog.github.io/post/vps-jiao-ben.html</guid><pubDate>Fri, 19 Jul 2024 02:14:10 +0000</pubDate></item><item><title>Hyper-V端口占用问题</title><link>https://sephiroth233.github.io/blog.github.io/post/Hyper-V-duan-kou-zhan-yong-wen-ti.html</link><description>&#13;
-今天发现Tomcat启动提示端口占用，但是又找不到占用的进程。</description><guid isPermaLink="true">https://sephiroth233.github.io/blog.github.io/post/Hyper-V-duan-kou-zhan-yong-wen-ti.html</guid><pubDate>Fri, 19 Jul 2024 02:13:26 +0000</pubDate></item><item><title>clash-meta懒人配置</title><link>https://sephiroth233.github.io/blog.github.io/post/clash-meta-lan-ren-pei-zhi.html</link><description>&#13;
+。</description><guid isPermaLink="true">https://sephiroth233.github.io/blog.github.io/post/vps-jiao-ben.html</guid><pubDate>Fri, 19 Jul 2024 02:14:10 +0000</pubDate></item><item><title>clash-meta懒人配置</title><link>https://sephiroth233.github.io/blog.github.io/post/clash-meta-lan-ren-pei-zhi.html</link><description>&#13;
 将配置中的 **节点订阅** 替换为你自己的节点订阅链接即可&#13;
 ```yaml&#13;
 mode: rule&#13;
