@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>lang</title><link>https://sephiroth233.github.io/blog.github.io</link><description>随便写写~</description><copyright>lang</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://raw.githubusercontent.com/sephiroth233/blog.github.io/refs/heads/main/static/avatar.jpg</url><title>avatar</title><link>https://sephiroth233.github.io/blog.github.io</link></image><lastBuildDate>Mon, 28 Apr 2025 09:43:42 +0000</lastBuildDate><managingEditor>lang</managingEditor><ttl>60</ttl><webMaster>lang</webMaster><item><title>WSL Ubuntu + Docker 配置教程</title><link>https://sephiroth233.github.io/blog.github.io/post/WSL%20Ubuntu%20%2B%20Docker%20-pei-zhi-jiao-cheng.html</link><description>### WSL Ubuntu + Docker 配置教程
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>lang</title><link>https://sephiroth233.github.io/blog.github.io</link><description>随便写写~</description><copyright>lang</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://raw.githubusercontent.com/sephiroth233/blog.github.io/refs/heads/main/static/avatar.jpg</url><title>avatar</title><link>https://sephiroth233.github.io/blog.github.io</link></image><lastBuildDate>Mon, 28 Apr 2025 09:49:38 +0000</lastBuildDate><managingEditor>lang</managingEditor><ttl>60</ttl><webMaster>lang</webMaster><item><title>WSL Ubuntu + Docker 配置教程</title><link>https://sephiroth233.github.io/blog.github.io/post/WSL%20Ubuntu%20%2B%20Docker%20-pei-zhi-jiao-cheng.html</link><description>### WSL Ubuntu + Docker 配置教程
 
 ---
 
@@ -23,9 +23,41 @@ JDK环境变量配置脚本：
 ```
 curl -O https://raw.githubusercontent.com/sephiroth233/bat-reo/main/jdk.cmd
 ```
-navicat使用脚本：
+navicat试用脚本：
 ```
 curl -O https://raw.githubusercontent.com/sephiroth233/bat-reo/main/navicat-reset.cmd
+```
+Windows解除本地回环限制：
+在Powershell中输入：
+```
+ Get-ChildItem -Path Registry::'HKCU\Software\Classes\Local Settings\Software\Microsoft\Windows\CurrentVersion\AppContainer\Mappings\' -name | ForEach-Object {CheckNetIsolation.exe LoopbackExempt -a -p='$_'} 
+```
+Winget安装指令：
+```
+$progressPreference = 'silentlyContinue'
+Write-Host 'Installing WinGet PowerShell module from PSGallery...'
+Install-PackageProvider -Name NuGet -Force | Out-Null
+Install-Module -Name Microsoft.WinGet.Client -Force -Repository PSGallery | Out-Null
+Write-Host 'Using Repair-WinGetPackageManager cmdlet to bootstrap WinGet...'
+Repair-WinGetPackageManager
+Write-Host 'Done.'
+```
+软件安装：
+```
+ winget install --id Yuanli.uTools
+ winget install --id 7zip.7zip
+ winget install --id Git.Git
+ winget install --id Google.Chrome
+ winget install --id Termius.Termius
+ winget install Notepad--
+ winget install --id appmakes.Typora
+ winget install --id voidtools.Everything
+ winget install --id JetBrains.Toolbox
+ winget install --id Telegram.TelegramDesktop
+ winget install emby 
+ wingte install --id kangfenmao.CherryStudio
+ winget install --id Notion.Notion
+ winget install --id Microsoft.VisualStudioCode
 ```。</description><guid isPermaLink="true">https://sephiroth233.github.io/blog.github.io/post/Windows-zi-yong-jiao-ben.html</guid><pubDate>Wed, 19 Feb 2025 06:00:30 +0000</pubDate></item><item><title>sing-box脚本</title><link>https://sephiroth233.github.io/blog.github.io/post/sing-box-jiao-ben.html</link><description>## 终端预览
 
 ![Image](https://github.com/user-attachments/assets/0069ba70-33a7-49ab-a85f-8a894277b4bd)
