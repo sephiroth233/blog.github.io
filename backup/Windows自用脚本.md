@@ -28,6 +28,7 @@ Write-Host "Done."
 软件安装：
 ```
  winget install --id Yuanli.uTools
+ winget install --id Tencent.WeChat.Universal
  winget install --id 7zip.7zip
  winget install --id Git.Git
  winget install --id Google.Chrome
