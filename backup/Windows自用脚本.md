@@ -42,4 +42,5 @@ Write-Host "Done."
  wingte install --id kangfenmao.CherryStudio
  winget install --id Notion.Notion
  winget install --id Microsoft.VisualStudioCode
+ winget install --id GeekUninstaller.GeekUninstaller
 ```
