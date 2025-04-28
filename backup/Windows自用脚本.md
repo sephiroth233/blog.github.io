@@ -39,7 +39,7 @@ Write-Host "Done."
  winget install --id JetBrains.Toolbox
  winget install --id Telegram.TelegramDesktop
  winget install emby 
- wingte install --id kangfenmao.CherryStudio
+ winget install --id kangfenmao.CherryStudio
  winget install --id Notion.Notion
  winget install --id Microsoft.VisualStudioCode
  winget install --id GeekUninstaller.GeekUninstaller
