@@ -34,6 +34,7 @@ Write-Host "Done."
  winget install --id Google.Chrome
  winget install --id Termius.Termius
  winget install --id Obsidian.Obsidian
+ winget install --id Kopia.KopiaUI
  winget install Notepad--
  winget install --id appmakes.Typora
  winget install --id voidtools.Everything
