@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>lang</title><link>https://sephiroth233.github.io/blog.github.io</link><description>随便写写~</description><copyright>lang</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://raw.githubusercontent.com/sephiroth233/blog.github.io/refs/heads/main/static/avatar.jpg</url><title>avatar</title><link>https://sephiroth233.github.io/blog.github.io</link></image><lastBuildDate>Sun, 01 Jun 2025 09:07:47 +0000</lastBuildDate><managingEditor>lang</managingEditor><ttl>60</ttl><webMaster>lang</webMaster><item><title>WSL Ubuntu + Docker 配置教程</title><link>https://sephiroth233.github.io/blog.github.io/post/WSL%20Ubuntu%20%2B%20Docker%20-pei-zhi-jiao-cheng.html</link><description>### WSL Ubuntu + Docker 配置教程
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>lang</title><link>https://sephiroth233.github.io/blog.github.io</link><description>随便写写~</description><copyright>lang</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://raw.githubusercontent.com/sephiroth233/blog.github.io/refs/heads/main/static/avatar.jpg</url><title>avatar</title><link>https://sephiroth233.github.io/blog.github.io</link></image><lastBuildDate>Sun, 01 Jun 2025 09:08:25 +0000</lastBuildDate><managingEditor>lang</managingEditor><ttl>60</ttl><webMaster>lang</webMaster><item><title>WSL Ubuntu + Docker 配置教程</title><link>https://sephiroth233.github.io/blog.github.io/post/WSL%20Ubuntu%20%2B%20Docker%20-pei-zhi-jiao-cheng.html</link><description>### WSL Ubuntu + Docker 配置教程
 
 ---
 
@@ -267,17 +267,17 @@ reg add HKCU\Software\Microsoft\InputMethod\Settings\CHS /v UserDefinedDoublePin
 [项目地址](https://github.com/i-abc/Speedtest 'https://github.com/i-abc/Speedtest')
 
 ```shell
-sudo bash &lt;(curl -sL bash.icu/speedtest)&gt;
+sudo bash &lt;(curl -sL bash.icu/speedtest)
 ```
 
 ```shell
-sudo bash &lt;(curl -sL https://raw.githubusercontent.com/i-abc/Speedtest/main/speedtest.sh)&gt;
+sudo bash &lt;(curl -sL https://raw.githubusercontent.com/i-abc/Speedtest/main/speedtest.sh)
 ```
 
 ### 流媒体解锁检测
 
 ```shell
-sudo bash &lt;(curl -L -s check.unlock.media)&gt;
+sudo bash &lt;(curl -L -s check.unlock.media)
 ```
 
 ### 三网回城路由测试
@@ -291,6 +291,6 @@ sudo curl https://raw.githubusercontent.com/zhanghanyun/backtrace/main/install.s
 ### ip质量检测
 
 ```shell
-sudo bash &lt;(curl -Ls IP.Check.Place)&gt;
+sudo bash &lt;(curl -Ls IP.Check.Place)
 ```
 。</description><guid isPermaLink="true">https://sephiroth233.github.io/blog.github.io/post/vps-jiao-ben.html</guid><pubDate>Fri, 19 Jul 2024 02:14:10 +0000</pubDate></item><item><title>clash-meta懒人配置</title><link>https://sephiroth233.github.io/blog.github.io/post/clash-meta-lan-ren-pei-zhi.html</link><description>在clash系列软件中新建一个本地配置，然后将下面的内容复制、粘贴。</description><guid isPermaLink="true">https://sephiroth233.github.io/blog.github.io/post/clash-meta-lan-ren-pei-zhi.html</guid><pubDate>Fri, 19 Jul 2024 01:59:55 +0000</pubDate></item></channel></rss>
