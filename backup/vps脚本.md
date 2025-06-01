@@ -1,13 +1,9 @@
 ### 测速脚本
 
-[项目地址](https://github.com/i-abc/Speedtest "https://github.com/i-abc/Speedtest")
+[项目地址](https://github.com/spiritLHLS/ecs "https://github.com/spiritLHLS/ecs")
 
 ```shell
-sudo bash <(curl -sL bash.icu/speedtest)
-```
-
-```shell
-sudo bash <(curl -sL https://raw.githubusercontent.com/i-abc/Speedtest/main/speedtest.sh)
+bash <(wget -qO- bash.spiritlhl.net/ecs)
 ```
 
 ### 流媒体解锁检测
