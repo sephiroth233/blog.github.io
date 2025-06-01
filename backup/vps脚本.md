@@ -3,7 +3,7 @@
 [项目地址](https://github.com/i-abc/Speedtest "https://github.com/i-abc/Speedtest")
 
 ```shell
-sudo bash <(curl -sL bash.icu/speedtest) >
+sudo bash <(curl -sL bash.icu/speedtest)>
 ```
 
 ```shell
