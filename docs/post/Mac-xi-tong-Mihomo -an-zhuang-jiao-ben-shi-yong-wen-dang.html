@@ -10,115 +10,21 @@
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
     </script>
-<meta name="description" content="
-[github地址](https://github.com/leitbogioro/Tools 'https://github.com/leitbogioro/Tools')
+<meta name="description" content="# Mihomo 安装脚本使用文档
 
-#### Centos7：
+## 简介
 
-```nginx
-wget --no-check-certificate -qO InstallNET.sh 'https://raw.githubusercontent.com/leitbogioro/Tools/master/Linux_reinstall/InstallNET.sh'  \
-&& chmod a+x InstallNET.sh && bash InstallNET.sh -centos 7 -pwd '密码'
-```
+`mihomo-install.sh` 是一个用于在 macOS 系统上自动安装和更新 Mihomo（Meta 内核）的 Shell 脚本。">
+<meta property="og:title" content="Mac系统Mihomo 安装脚本使用文档">
+<meta property="og:description" content="# Mihomo 安装脚本使用文档
 
-#### Debian12：
+## 简介
 
-```nginx
-wget --no-check-certificate -qO InstallNET.sh 'https://raw.githubusercontent.com/leitbogioro/Tools/master/Linux_reinstall/InstallNET.sh' \
-&& chmod a+x InstallNET.sh && bash InstallNET.sh -debian 12 -pwd '密码'
-```
-
-#### Ubuntu 22.04：
-
-ps：ubuntu不支持自定义密码
-
-```nginx
-wget --no-check-certificate -qO InstallNET.sh 'https://raw.githubusercontent.com/leitbogioro/Tools/master/Linux_reinstall/InstallNET.sh' \
-&& chmod a+x InstallNET.sh && bash InstallNET.sh -ubuntu 
-```
-
-#### Windows11：
-
-```nginx
-wget --no-check-certificate -qO InstallNET.sh 'https://raw.githubusercontent.com/leitbogioro/Tools/master/Linux_reinstall/InstallNET.sh' \
-&& chmod a+x InstallNET.sh && bash InstallNET.sh -windows
-
-```
-
-#### 重点：
-
-默认用户名:
-对于 Linux：`root`
-对于 Windows：`Administrator`
-
-默认密码：
-对于 Linux：`LeitboGi0ro`
-对于 Windows：`Teddysun.com`
-
-修改密码：
-
-```nginx
-echo root:password|sudo chpasswd root
-```
-
-![image.png](https://s2.loli.net/2024/06/03/aBHbFomGSMsxT8Z.png)
-。">
-<meta property="og:title" content="一键dd纯净系统(leitbogioro)">
-<meta property="og:description" content="
-[github地址](https://github.com/leitbogioro/Tools 'https://github.com/leitbogioro/Tools')
-
-#### Centos7：
-
-```nginx
-wget --no-check-certificate -qO InstallNET.sh 'https://raw.githubusercontent.com/leitbogioro/Tools/master/Linux_reinstall/InstallNET.sh'  \
-&& chmod a+x InstallNET.sh && bash InstallNET.sh -centos 7 -pwd '密码'
-```
-
-#### Debian12：
-
-```nginx
-wget --no-check-certificate -qO InstallNET.sh 'https://raw.githubusercontent.com/leitbogioro/Tools/master/Linux_reinstall/InstallNET.sh' \
-&& chmod a+x InstallNET.sh && bash InstallNET.sh -debian 12 -pwd '密码'
-```
-
-#### Ubuntu 22.04：
-
-ps：ubuntu不支持自定义密码
-
-```nginx
-wget --no-check-certificate -qO InstallNET.sh 'https://raw.githubusercontent.com/leitbogioro/Tools/master/Linux_reinstall/InstallNET.sh' \
-&& chmod a+x InstallNET.sh && bash InstallNET.sh -ubuntu 
-```
-
-#### Windows11：
-
-```nginx
-wget --no-check-certificate -qO InstallNET.sh 'https://raw.githubusercontent.com/leitbogioro/Tools/master/Linux_reinstall/InstallNET.sh' \
-&& chmod a+x InstallNET.sh && bash InstallNET.sh -windows
-
-```
-
-#### 重点：
-
-默认用户名:
-对于 Linux：`root`
-对于 Windows：`Administrator`
-
-默认密码：
-对于 Linux：`LeitboGi0ro`
-对于 Windows：`Teddysun.com`
-
-修改密码：
-
-```nginx
-echo root:password|sudo chpasswd root
-```
-
-![image.png](https://s2.loli.net/2024/06/03/aBHbFomGSMsxT8Z.png)
-。">
+`mihomo-install.sh` 是一个用于在 macOS 系统上自动安装和更新 Mihomo（Meta 内核）的 Shell 脚本。">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://sephiroth233.github.io/blog.github.io/post/yi-jian-dd-chun-jing-xi-tong-%28leitbogioro%29.html">
+<meta property="og:url" content="https://sephiroth233.github.io/blog.github.io/post/Mac-xi-tong-Mihomo%20-an-zhuang-jiao-ben-shi-yong-wen-dang.html">
 <meta property="og:image" content="https://raw.githubusercontent.com/sephiroth233/blog.github.io/refs/heads/main/static/avatar.jpg">
-<title>一键dd纯净系统(leitbogioro)</title>
+<title>Mac系统Mihomo 安装脚本使用文档</title>
 <link href="//unpkg.com/@wooorm/starry-night@2.1.1/style/both.css" rel="stylesheet" />
 
 
@@ -161,7 +67,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 
 <body>
     <div id="header">
-<h1 class="postTitle">一键dd纯净系统(leitbogioro)</h1>
+<h1 class="postTitle">Mac系统Mihomo 安装脚本使用文档</h1>
 <div class="title-right">
     <a href="https://sephiroth233.github.io/blog.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
         <svg class="octicon" width="16" height="16">
@@ -169,7 +75,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
         </svg>
     </a>
     
-    <a href="https://github.com/sephiroth233/blog.github.io/issues/9" target="_blank" class="btn btn-invisible circle" title="Issue">
+    <a href="https://github.com/sephiroth233/blog.github.io/issues/20" target="_blank" class="btn btn-invisible circle" title="Issue">
         <svg class="octicon" width="16" height="16">
             <path id="pathIssue" fill-rule="evenodd"></path>
         </svg>
@@ -185,31 +91,187 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
 </div>
     <div id="content">
-<div class="markdown-body" id="postBody"><p><a href="https://github.com/leitbogioro/Tools" title="https://github.com/leitbogioro/Tools">github地址</a></p>
-<h4>Centos7：</h4>
-<div class="highlight highlight-source-nginx"><pre class="notranslate">wget --no-check-certificate -qO InstallNET.sh <span class="pl-s">'https://raw.githubusercontent.com/leitbogioro/Tools/master/Linux_reinstall/InstallNET.sh'</span>  \
-&amp;&amp; chmod a+x InstallNET.sh &amp;&amp; bash InstallNET.sh -centos 7 -pwd <span class="pl-s">'密码'</span></pre></div>
-<h4>Debian12：</h4>
-<div class="highlight highlight-source-nginx"><pre class="notranslate">wget --no-check-certificate -qO InstallNET.sh <span class="pl-s">'https://raw.githubusercontent.com/leitbogioro/Tools/master/Linux_reinstall/InstallNET.sh'</span> \
-&amp;&amp; chmod a+x InstallNET.sh &amp;&amp; bash InstallNET.sh -debian <span class="pl-c1">12</span> -pwd <span class="pl-s">'密码'</span></pre></div>
-<h4>Ubuntu 22.04：</h4>
-<p>ps：ubuntu不支持自定义密码</p>
-<div class="highlight highlight-source-nginx"><pre class="notranslate">wget --no-check-certificate -qO InstallNET.sh <span class="pl-s">'https://raw.githubusercontent.com/leitbogioro/Tools/master/Linux_reinstall/InstallNET.sh'</span> \
-&amp;&amp; chmod a+x InstallNET.sh &amp;&amp; bash InstallNET.sh -ubuntu </pre></div>
-<h4>Windows11：</h4>
-<div class="highlight highlight-source-nginx"><pre class="notranslate">wget --no-check-certificate -qO InstallNET.sh <span class="pl-s">'https://raw.githubusercontent.com/leitbogioro/Tools/master/Linux_reinstall/InstallNET.sh'</span> \
-&amp;&amp; chmod a+x InstallNET.sh &amp;&amp; bash InstallNET.sh -windows
-</pre></div>
-<h4>重点：</h4>
-<p>默认用户名:<br>
-对于 Linux：<code class="notranslate">root</code><br>
-对于 Windows：<code class="notranslate">Administrator</code></p>
-<p>默认密码：<br>
-对于 Linux：<code class="notranslate">LeitboGi0ro</code><br>
-对于 Windows：<code class="notranslate">Teddysun.com</code></p>
-<p>修改密码：</p>
-<div class="highlight highlight-source-nginx"><pre class="notranslate">echo <span class="pl-c1">root</span>:password|sudo chpasswd <span class="pl-c1">root</span></pre></div>
-<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/726159d442c07202fda10a7c818e26b4122d8143968081a3c1ef25ff69bdf73d/68747470733a2f2f73322e6c6f6c692e6e65742f323032342f30362f30332f61424862466f6d47534d737854385a2e706e67"><img src="https://camo.githubusercontent.com/726159d442c07202fda10a7c818e26b4122d8143968081a3c1ef25ff69bdf73d/68747470733a2f2f73322e6c6f6c692e6e65742f323032342f30362f30332f61424862466f6d47534d737854385a2e706e67" alt="image.png" data-canonical-src="https://s2.loli.net/2024/06/03/aBHbFomGSMsxT8Z.png" style="max-width: 100%;"></a></p></div>
+<div class="markdown-body" id="postBody"><h1>Mihomo 安装脚本使用文档</h1>
+<h2>简介</h2>
+<p><code class="notranslate">mihomo-install.sh</code> 是一个用于在 macOS 系统上自动安装和更新 Mihomo（Meta 内核）的 Shell 脚本。</p>
+<h2>功能特性</h2>
+<ul>
+<li>✅ 自动检测系统架构（arm64/amd64）</li>
+<li>✅ 从 GitHub 获取最新版本</li>
+<li>✅ 智能版本检测，避免重复下载</li>
+<li>✅ 支持安装、更新、查看版本</li>
+<li>✅ 友好的交互提示和错误处理</li>
+</ul>
+<h2>系统要求</h2>
+<ul>
+<li><strong>操作系统</strong>: macOS</li>
+<li><strong>架构</strong>: arm64 (Apple Silicon) 或 amd64 (Intel)</li>
+<li><strong>权限</strong>: 需要对 <code class="notranslate">/usr/local/bin</code> 目录的写权限</li>
+<li><strong>依赖工具</strong>: curl, gunzip（系统自带）</li>
+</ul>
+<h2>下载和安装脚本</h2>
+<h3>推荐方法：直接下载到 /usr/local/bin（推荐）</h3>
+<p>将脚本下载到 <code class="notranslate">/usr/local/bin</code> 目录，与 mihomo 内核放在同一位置，方便管理：</p>
+<div class="highlight highlight-source-shell"><pre class="notranslate"><span class="pl-c"><span class="pl-c">#</span> 下载脚本到 /usr/local/bin</span>
+sudo curl -o /usr/local/bin/mihomo-install https://raw.githubusercontent.com/sephiroth233/bat-reo/main/mihomo-install.sh
+
+<span class="pl-c"><span class="pl-c">#</span> 添加执行权限</span>
+sudo chmod +x /usr/local/bin/mihomo-install
+
+<span class="pl-c"><span class="pl-c">#</span> 现在可以在任何位置直接使用</span>
+mihomo-install install</pre></div>
+<h3>方法二：下载到当前目录</h3>
+<div class="highlight highlight-source-shell"><pre class="notranslate">curl -O https://raw.githubusercontent.com/sephiroth233/bat-reo/main/mihomo-install.sh
+chmod +x mihomo-install.sh
+./mihomo-install.sh install</pre></div>
+<h3>方法三：克隆仓库</h3>
+<div class="highlight highlight-source-shell"><pre class="notranslate">git clone https://github.com/sephiroth233/bat-reo.git
+<span class="pl-c1">cd</span> bat-reo
+chmod +x mihomo-install.sh
+./mihomo-install.sh install</pre></div>
+<h2>使用方法</h2>
+<h3>1. 安装 Mihomo</h3>
+<p>首次安装或重新安装：</p>
+<p><strong>如果脚本已安装到 /usr/local/bin（推荐）：</strong></p>
+<div class="highlight highlight-source-shell"><pre class="notranslate"><span class="pl-c"><span class="pl-c">#</span> 在任何位置直接运行</span>
+mihomo-install install</pre></div>
+<p><strong>如果脚本在当前目录：</strong></p>
+<div class="highlight highlight-source-shell"><pre class="notranslate">./mihomo-install.sh install</pre></div>
+<p><strong>或者使用绝对路径：</strong></p>
+<div class="highlight highlight-source-shell"><pre class="notranslate">/bin/bash /path/to/mihomo-install.sh install</pre></div>
+<p><strong>执行流程：</strong></p>
+<ul>
+<li>检测是否已安装</li>
+<li>如果已安装，会提示是否重新安装（需要用户确认）</li>
+<li>获取最新版本号</li>
+<li>下载并安装到 <code class="notranslate">/usr/local/bin/mihomo</code></li>
+</ul>
+<p><strong>示例输出：</strong></p>
+<pre class="notranslate"><code class="notranslate">[INFO] 开始安装...
+[INFO] 系统架构: arm64
+[INFO] 正在获取最新版本号...
+[INFO] 版本号: alpha-2211789
+[INFO] 下载地址: https://github.com/MetaCubeX/mihomo/releases/download/Prerelease-Alpha/mihomo-darwin-arm64-alpha-2211789.gz
+[INFO] 正在下载...
+[INFO] 下载完成
+[INFO] 正在解压...
+[INFO] 设置权限...
+[INFO] 安装到 /usr/local/bin/mihomo...
+[INFO] 验证安装...
+[INFO] 安装成功！
+[INFO] 安装完成！
+[INFO] 当前已安装 Mihomo
+Mihomo Meta alpha-2211789
+</code></pre>
+<h3>2. 更新 Mihomo</h3>
+<p>更新到最新版本：</p>
+<div class="highlight highlight-source-shell"><pre class="notranslate"><span class="pl-c"><span class="pl-c">#</span> 如果脚本已安装到 /usr/local/bin</span>
+mihomo-install update
+
+<span class="pl-c"><span class="pl-c">#</span> 或者在脚本所在目录</span>
+./mihomo-install.sh update</pre></div>
+<p><strong>执行流程：</strong></p>
+<ul>
+<li>检查是否已安装（未安装会报错）</li>
+<li>获取当前版本和最新版本</li>
+<li>比较版本号</li>
+<li>如果已是最新版本，提示并退出</li>
+<li>如果有新版本，自动下载并更新</li>
+</ul>
+<p><strong>示例输出（已是最新版）：</strong></p>
+<pre class="notranslate"><code class="notranslate">[INFO] 开始更新...
+[INFO] 检查当前版本...
+[INFO] 当前版本: Mihomo Meta alpha-2211789
+[INFO] 检查最新版本...
+[INFO] 最新版本: alpha-2211789
+[INFO] 已经是最新版本，无需更新
+</code></pre>
+<p><strong>示例输出（有新版本）：</strong></p>
+<pre class="notranslate"><code class="notranslate">[INFO] 开始更新...
+[INFO] 检查当前版本...
+[INFO] 当前版本: Mihomo Meta alpha-2211788
+[INFO] 检查最新版本...
+[INFO] 最新版本: alpha-2211789
+[INFO] 发现新版本，开始更新...
+[INFO] 系统架构: arm64
+[INFO] 正在下载...
+[INFO] 更新完成！
+</code></pre>
+<h3>3. 查看版本</h3>
+<p>查看当前安装的版本：</p>
+<div class="highlight highlight-source-shell"><pre class="notranslate"><span class="pl-c"><span class="pl-c">#</span> 如果脚本已安装到 /usr/local/bin</span>
+mihomo-install version
+
+<span class="pl-c"><span class="pl-c">#</span> 或者在脚本所在目录</span>
+./mihomo-install.sh version</pre></div>
+<p><strong>示例输出：</strong></p>
+<pre class="notranslate"><code class="notranslate">[INFO] 当前已安装 Mihomo
+Mihomo Meta alpha-2211789
+</code></pre>
+<h3>4. 查看帮助</h3>
+<div class="highlight highlight-source-shell"><pre class="notranslate"><span class="pl-c"><span class="pl-c">#</span> 如果脚本已安装到 /usr/local/bin</span>
+mihomo-install <span class="pl-c1">help</span>
+
+<span class="pl-c"><span class="pl-c">#</span> 或者在脚本所在目录</span>
+./mihomo-install.sh <span class="pl-c1">help</span></pre></div>
+<p>或者不带参数：</p>
+<div class="highlight highlight-source-shell"><pre class="notranslate">mihomo-install</pre></div>
+<h2>权限说明</h2>
+<p>脚本需要对 <code class="notranslate">/usr/local/bin</code> 目录的写权限。</p>
+<h3>推荐做法：修改目录权限</h3>
+<div class="highlight highlight-source-shell"><pre class="notranslate"><span class="pl-c"><span class="pl-c">#</span> 将 /usr/local/bin 的所有权改为当前用户</span>
+sudo chown -R <span class="pl-s"><span class="pl-pds">$(</span>whoami<span class="pl-pds">)</span></span> /usr/local/bin
+
+<span class="pl-c"><span class="pl-c">#</span> 之后就可以不用 sudo 直接运行</span>
+mihomo-install install</pre></div>
+<h3>或者使用 sudo</h3>
+<div class="highlight highlight-source-shell"><pre class="notranslate">sudo mihomo-install install</pre></div>
+<h2>安装位置</h2>
+<p>安装后的文件位置：</p>
+<pre class="notranslate"><code class="notranslate">/usr/local/bin/mihomo-install  # 安装脚本（如果使用推荐方法）
+/usr/local/bin/mihomo          # Mihomo 内核
+</code></pre>
+<p>两个文件在同一目录，方便管理。</p>
+<p>确保 <code class="notranslate">/usr/local/bin</code> 在你的 <code class="notranslate">PATH</code> 环境变量中，这样就可以直接使用命令。</p>
+<p>验证 PATH：</p>
+<div class="highlight highlight-source-shell"><pre class="notranslate"><span class="pl-c1">echo</span> <span class="pl-smi">$PATH</span> <span class="pl-k">|</span> grep <span class="pl-s"><span class="pl-pds">"</span>/usr/local/bin<span class="pl-pds">"</span></span></pre></div>
+<p>如果没有，添加到 <code class="notranslate">~/.zshrc</code> 或 <code class="notranslate">~/.bash_profile</code>：</p>
+<div class="highlight highlight-source-shell"><pre class="notranslate"><span class="pl-k">export</span> PATH=<span class="pl-s"><span class="pl-pds">"</span>/usr/local/bin:<span class="pl-smi">$PATH</span><span class="pl-pds">"</span></span>
+<span class="pl-c1">source</span> <span class="pl-k">~</span>/.zshrc  <span class="pl-c"><span class="pl-c">#</span> 或 source ~/.bash_profile</span></pre></div>
+<h2>快速开始示例</h2>
+<p>完整的安装和使用流程：</p>
+<div class="highlight highlight-source-shell"><pre class="notranslate"><span class="pl-c"><span class="pl-c">#</span> 1. 下载并安装脚本到 /usr/local/bin</span>
+sudo curl -o /usr/local/bin/mihomo-install https://raw.githubusercontent.com/sephiroth233/bat-reo/main/mihomo-install.sh
+sudo chmod +x /usr/local/bin/mihomo-install
+
+<span class="pl-c"><span class="pl-c">#</span> 2. 修改目录权限（可选，避免每次使用 sudo）</span>
+sudo chown -R <span class="pl-s"><span class="pl-pds">$(</span>whoami<span class="pl-pds">)</span></span> /usr/local/bin
+
+<span class="pl-c"><span class="pl-c">#</span> 3. 安装 Mihomo</span>
+mihomo-install install
+
+<span class="pl-c"><span class="pl-c">#</span> 4. 验证安装</span>
+mihomo -v
+
+<span class="pl-c"><span class="pl-c">#</span> 5. 后续更新</span>
+mihomo-install update</pre></div>
+<h2>使用 Mihomo</h2>
+<p>安装完成后，可以直接使用 <code class="notranslate">mihomo</code> 命令：</p>
+<div class="highlight highlight-source-shell"><pre class="notranslate"><span class="pl-c"><span class="pl-c">#</span> 查看版本</span>
+mihomo -v
+
+<span class="pl-c"><span class="pl-c">#</span> 查看帮助</span>
+mihomo -h
+
+<span class="pl-c"><span class="pl-c">#</span> 运行 Mihomo（需要配置文件）</span>
+mihomo -d /path/to/config/directory</pre></div>
+<h2>卸载</h2>
+<h3>卸载 Mihomo</h3>
+<div class="highlight highlight-source-shell"><pre class="notranslate">sudo rm /usr/local/bin/mihomo</pre></div>
+<h3>卸载安装脚本</h3>
+<div class="highlight highlight-source-shell"><pre class="notranslate">sudo rm /usr/local/bin/mihomo-install</pre></div>
+<h3>完全卸载</h3>
+<div class="highlight highlight-source-shell"><pre class="notranslate">sudo rm /usr/local/bin/mihomo /usr/local/bin/mihomo-install</pre></div></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
