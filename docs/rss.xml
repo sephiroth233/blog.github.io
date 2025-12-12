@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>lang</title><link>https://sephiroth233.github.io/blog.github.io</link><description>随便写写~</description><copyright>lang</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://raw.githubusercontent.com/sephiroth233/blog.github.io/refs/heads/main/static/avatar.jpg</url><title>avatar</title><link>https://sephiroth233.github.io/blog.github.io</link></image><lastBuildDate>Thu, 11 Dec 2025 04:45:23 +0000</lastBuildDate><managingEditor>lang</managingEditor><ttl>60</ttl><webMaster>lang</webMaster><item><title>Mac系统Mihomo 安装脚本使用文档</title><link>https://sephiroth233.github.io/blog.github.io/post/Mac-xi-tong-Mihomo%20-an-zhuang-jiao-ben-shi-yong-wen-dang.html</link><description># Mihomo 安装脚本使用文档
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>lang</title><link>https://sephiroth233.github.io/blog.github.io</link><description>随便写写~</description><copyright>lang</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://raw.githubusercontent.com/sephiroth233/blog.github.io/refs/heads/main/static/avatar.jpg</url><title>avatar</title><link>https://sephiroth233.github.io/blog.github.io</link></image><lastBuildDate>Fri, 12 Dec 2025 15:09:54 +0000</lastBuildDate><managingEditor>lang</managingEditor><ttl>60</ttl><webMaster>lang</webMaster><item><title>Mac系统Mihomo 安装脚本使用文档</title><link>https://sephiroth233.github.io/blog.github.io/post/Mac-xi-tong-Mihomo%20-an-zhuang-jiao-ben-shi-yong-wen-dang.html</link><description># Mihomo 安装脚本使用文档
 
 ## 简介
 
@@ -67,114 +67,9 @@ Write-Host 'Done.'
  winget install --id Notion.Notion
  winget install --id Microsoft.VisualStudioCode
  winget install --id GeekUninstaller.GeekUninstaller
-```。</description><guid isPermaLink="true">https://sephiroth233.github.io/blog.github.io/post/Windows-zi-yong-jiao-ben.html</guid><pubDate>Wed, 19 Feb 2025 06:00:30 +0000</pubDate></item><item><title>sing-box脚本</title><link>https://sephiroth233.github.io/blog.github.io/post/sing-box-jiao-ben.html</link><description>## 终端预览
+```。</description><guid isPermaLink="true">https://sephiroth233.github.io/blog.github.io/post/Windows-zi-yong-jiao-ben.html</guid><pubDate>Wed, 19 Feb 2025 06:00:30 +0000</pubDate></item><item><title>sing-box 管理工具</title><link>https://sephiroth233.github.io/blog.github.io/post/sing-box%20-guan-li-gong-ju.html</link><description># sing-box 管理工具 - 完整功能介绍
 
-![Image](https://github.com/user-attachments/assets/0069ba70-33a7-49ab-a85f-8a894277b4bd)
-
-## 一键脚本(无warp)
-1.直接执行脚本：
-```
-bash &lt;(curl -fsSL sing-box-mu.vercel.app)
-```
-2.保存脚本到本地并执行：
-```
-curl -fsSL sing-box-mu.vercel.app -o sing-box.sh &amp;&amp; bash sing-box.sh
-```
-
-## 一键脚本(有warp)
-1.直接执行脚本：
-```
-bash &lt;(curl -fsSL sing-box-mu.vercel.app/warp)
-```
-2.保存脚本到本地并执行：
-```
-curl -fsSL sing-box-mu.vercel.app/warp -o sing-box-warp.sh &amp;&amp; bash sing-box-warp.sh
-```
-
-## 项目简介
-- 输出客户端配置 url 方便快速设置
-
-- 自带 wireguard 出站解锁 openai netflix disney 
-
-- 安装 sing-box 配置 hy2 vless ss2022+shadowtls
-
-## 安装 sing-box
-下载sing-box
-```
-bash &lt;(curl -fsSL https://sing-box.app/deb-install.sh)
-```
-修改/etc/sing-box/config.json
-```
-nano /etc/sing-box/config.json
-```
-查看config.json
-```
-cat /etc/sing-box/config.json
-```
-检查config.json
-```
-sing-box check -c /etc/sing-box/config.json
-```
-启动config.json
-```
-sing-box run -c /etc/sing-box/config.json
-```
-启动系统服务
-```
-systemctl enable sing-box
-```
-启动sing-box
-```
-systemctl start sing-box
-```
-停止sing-box
-```
-systemctl stop sing-box
-```
-重启sing-box
-```
-systemctl restart sing-box
-```
-查看sing-box
-```
-systemctl status sing-box
-```
-查看sing-box日志
-```
-cat /var/log/singbox.log
-```
-实时sing-box日志
-```
-tail -f /var/log/singbox.log
-```
-解码openai.srs
-```
-sing-box rule-set decompile geosite-openai.srs
-```
-
-
-## 卸载 sing-box
-禁用sing-box
-```
-systemctl stop sing-box.service
-systemctl disable sing-box.service
-```
-卸载sing-box
-```
-dpkg --purge sing-box
-```
-删除sing-box
-```
-rm -rf /etc/sing-box
-rm -f /var/log/singbox.log
-```
-重载systemd
-```
-systemctl daemon-reload
-```
-
-## 原作者项目地址：https://github.com/passeway/sing-box
-## fork仓库地址：https://github.com/sephiroth233/sing-box。</description><guid isPermaLink="true">https://sephiroth233.github.io/blog.github.io/post/sing-box-jiao-ben.html</guid><pubDate>Wed, 12 Feb 2025 03:57:15 +0000</pubDate></item><item><title>Windows一键配置Java环境变量</title><link>https://sephiroth233.github.io/blog.github.io/post/Windows-yi-jian-pei-zhi-Java-huan-jing-bian-liang.html</link><description>脚本内容：&#13;
+这是一个功能强大的 **sing-box 服务器管理脚本**，提供了完整的安装、配置、节点管理和中转功能。</description><guid isPermaLink="true">https://sephiroth233.github.io/blog.github.io/post/sing-box%20-guan-li-gong-ju.html</guid><pubDate>Wed, 12 Feb 2025 03:57:15 +0000</pubDate></item><item><title>Windows一键配置Java环境变量</title><link>https://sephiroth233.github.io/blog.github.io/post/Windows-yi-jian-pei-zhi-Java-huan-jing-bian-liang.html</link><description>脚本内容：&#13;
 &#13;
 ```shell&#13;
 @echo off&#13;
