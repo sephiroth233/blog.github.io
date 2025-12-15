@@ -2,7 +2,7 @@
 
 这是一个功能强大的 **sing-box 服务器管理脚本**，提供了完整的安装、配置、节点管理和中转功能。
 
-项目地址：https://github.com/sephiroth233/sing-box
+项目地址：https://github.com/sephiroth233/sys-toolkit
 
 ---
 
