@@ -10,13 +10,13 @@
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
     </script>
-<meta name="description" content="# sing-box 管理工具 - 完整功能介绍
+<meta name="description" content="# sing-box & Snell 管理工具 - 完整功能介绍
 
-这是一个功能强大的 **sing-box 服务器管理脚本**，提供了完整的安装、配置、节点管理和中转功能。">
+这是一个功能强大的 **sing-box 和 Snell 服务器管理脚本**，提供了完整的安装、配置、节点管理、中转功能和系统优化。">
 <meta property="og:title" content="sing-box 管理工具">
-<meta property="og:description" content="# sing-box 管理工具 - 完整功能介绍
+<meta property="og:description" content="# sing-box & Snell 管理工具 - 完整功能介绍
 
-这是一个功能强大的 **sing-box 服务器管理脚本**，提供了完整的安装、配置、节点管理和中转功能。">
+这是一个功能强大的 **sing-box 和 Snell 服务器管理脚本**，提供了完整的安装、配置、节点管理、中转功能和系统优化。">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://sephiroth233.github.io/blog.github.io/post/sing-box%20-guan-li-gong-ju.html">
 <meta property="og:image" content="https://raw.githubusercontent.com/sephiroth233/blog.github.io/refs/heads/main/static/avatar.jpg">
@@ -87,21 +87,20 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
 </div>
     <div id="content">
-<div class="markdown-body" id="postBody"><h1>sing-box 管理工具 - 完整功能介绍</h1>
-<p>这是一个功能强大的 <strong>sing-box 服务器管理脚本</strong>，提供了完整的安装、配置、节点管理和中转功能。</p>
+<div class="markdown-body" id="postBody"><h1>sing-box &amp; Snell 管理工具 - 完整功能介绍</h1>
+<p>这是一个功能强大的 <strong>sing-box 和 Snell 服务器管理脚本</strong>，提供了完整的安装、配置、节点管理、中转功能和系统优化。</p>
 <p>项目地址：<a href="https://github.com/sephiroth233/sys-toolkit">https://github.com/sephiroth233/sys-toolkit</a></p>
 <hr>
 <h2>📥 下载和安装方式</h2>
 <h3>方式一：直接执行（推荐）</h3>
-<div class="highlight highlight-source-shell"><pre class="notranslate">bash <span class="pl-s"><span class="pl-pds">&lt;(</span>curl -fsSL sing-box-ebon.vercel.app<span class="pl-pds">)</span></span></pre></div>
+<div class="highlight highlight-source-shell"><pre class="notranslate">bash <span class="pl-s"><span class="pl-pds">&lt;(</span>curl -fsSL https://raw.githubusercontent.com/sephiroth233/sys-toolkit/master/server-proxy.sh<span class="pl-pds">)</span></span></pre></div>
 <h3>方式二：保存后执行</h3>
-<div class="highlight highlight-source-shell"><pre class="notranslate">curl -fsSL sing-box-ebon.vercel.app -o sing-box.sh <span class="pl-k">&amp;&amp;</span> bash sing-box.sh</pre></div>
+<div class="highlight highlight-source-shell"><pre class="notranslate">curl -fsSL https://raw.githubusercontent.com/sephiroth233/sys-toolkit/master/server-proxy.sh -o server-proxy.sh <span class="pl-k">&amp;&amp;</span> bash server-proxy.sh</pre></div>
 <hr>
 <h2>🎯 主要功能模块</h2>
 <h3>1️⃣ <strong>服务安装与卸载</strong></h3>
 <ul>
-<li>
-<p><strong>安装 sing-box</strong>：自动下载并安装 sing-box 服务</p>
+<li><strong>安装 sing-box</strong>：自动下载并安装 sing-box 服务
 <ul>
 <li>自动生成随机端口（避免冲突）</li>
 <li>自动生成密钥对（Reality、UUID等）</li>
@@ -109,15 +108,20 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <li>自动获取服务器 IP 和所在国家</li>
 </ul>
 </li>
-<li>
-<p><strong>卸载 sing-box</strong>：完全删除服务和配置文件</p>
+<li><strong>安装 Snell</strong>：自动下载并安装 Snell 代理服务
+<ul>
+<li>支持多系统架构（amd64/aarch64）</li>
+<li>自动创建 systemd 服务</li>
+<li>创建专用用户和配置目录</li>
+</ul>
 </li>
+<li><strong>卸载服务</strong>：完全删除服务和配置文件（支持 sing-box 和 Snell）</li>
 </ul>
 <h3>2️⃣ <strong>服务管理</strong></h3>
 <ul>
-<li>启动/停止/重启服务</li>
-<li>查看服务运行状态</li>
-<li>实时查看服务日志（journalctl）</li>
+<li><strong>sing-box 服务</strong>：启动/停止/重启、查看状态、实时日志</li>
+<li><strong>Snell 服务</strong>：启动/停止/重启、查看状态、实时日志</li>
+<li>智能状态显示：实时显示服务安装和运行状态</li>
 </ul>
 <h3>3️⃣ <strong>节点配置生成</strong> ⭐</h3>
 <p>支持生成多种协议的入站配置：</p>
@@ -149,28 +153,45 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </table></markdown-accessiblity-table>
 <p><strong>功能特性：</strong></p>
 <ul>
-<li>支持单独或批量生成协议</li>
+<li>支持单独或批量生成协议（可多选）</li>
 <li>自动检测端口可用性</li>
-<li>支持用户自定义端口</li>
-<li>生成完整的分享链接（URI 格式）</li>
+<li>支持用户自定义端口或使用随机端口</li>
+<li>自动生成完整的分享链接（URI 格式）</li>
+<li>配置验证和错误恢复机制</li>
 </ul>
 <h3>4️⃣ <strong>客户端配置查看</strong></h3>
 <ul>
 <li>自动解析 config.json 中的协议配置</li>
 <li>生成标准的 URI 分享链接</li>
-<li>支持选择性查看特定协议</li>
+<li>支持选择性查看特定协议（可多选）</li>
+<li>实时显示服务器 IP 和国家信息</li>
 </ul>
 <h3>5️⃣ <strong>中转配置管理</strong> 🔀</h3>
 <ul>
 <li><strong>添加中转</strong>：配置本地端口 → 远程地址转发</li>
 <li><strong>查看中转</strong>：列出所有活跃的中转配置</li>
-<li><strong>删除中转</strong>：移除指定端口的中转规则</li>
+<li><strong>删除中转</strong>：支持选择性删除或全部删除</li>
+<li>自动重启服务应用配置变更</li>
 </ul>
-<h3>6️⃣ <strong>BBR 加速</strong></h3>
+<h3>6️⃣ <strong>Snell 配置管理</strong> 🔧</h3>
+<ul>
+<li><strong>生成 Snell 配置</strong>：自定义端口或使用随机端口</li>
+<li><strong>查看 Snell 配置</strong>：显示完整的客户端配置信息</li>
+<li><strong>删除 Snell 配置</strong>：停止服务并删除配置文件</li>
+<li>自动生成 Surge 兼容的配置格式</li>
+</ul>
+<h3>7️⃣ <strong>BBR 加速</strong></h3>
 <ul>
 <li>启用 BBR：自动检测内核版本，启用 TCP BBR 拥塞控制</li>
 <li>关闭 BBR：恢复默认配置</li>
 <li>自动检测 BBR 启用状态</li>
+</ul>
+<h3>8️⃣ <strong>配置来源信息查看</strong> 📊</h3>
+<ul>
+<li>显示 sing-box 和 Snell 配置文件的详细信息</li>
+<li>实时统计配置文件大小和协议数量</li>
+<li>解析并显示 Snell 配置参数（端口、PSK等）</li>
+<li>显示服务器 IP 和国家信息</li>
 </ul>
 <hr>
 <h2>🔧 工作流程示例</h2>
@@ -193,32 +214,82 @@ bash <span class="pl-s"><span class="pl-pds">&lt;(</span>curl -fsSL sing-box-ebo
 <span class="pl-c"><span class="pl-c">#</span> │  ├─ 解析 config.json</span>
 <span class="pl-c"><span class="pl-c">#</span> │  └─ 生成客户端分享链接</span>
 <span class="pl-c"><span class="pl-c">#</span></span>
-<span class="pl-c"><span class="pl-c">#</span> └─ 选项 10-12：中转配置管理</span></pre></div>
+<span class="pl-c"><span class="pl-c">#</span> ├─ 选项 10-12：中转配置管理</span>
+<span class="pl-c"><span class="pl-c">#</span> │  ├─ 添加本地端口转发</span>
+<span class="pl-c"><span class="pl-c">#</span> │  ├─ 查看活跃中转配置</span>
+<span class="pl-c"><span class="pl-c">#</span> │  └─ 删除指定中转规则</span>
+<span class="pl-c"><span class="pl-c">#</span></span>
+<span class="pl-c"><span class="pl-c">#</span> ├─ 选项 13：安装 Snell 服务</span>
+<span class="pl-c"><span class="pl-c">#</span> │  ├─ 自动下载安装</span>
+<span class="pl-c"><span class="pl-c">#</span> │  ├─ 创建系统服务</span>
+<span class="pl-c"><span class="pl-c">#</span> │  └─ 启用服务</span>
+<span class="pl-c"><span class="pl-c">#</span></span>
+<span class="pl-c"><span class="pl-c">#</span> ├─ 选项 18：生成 Snell 配置</span>
+<span class="pl-c"><span class="pl-c">#</span> │  ├─ 自定义或随机端口</span>
+<span class="pl-c"><span class="pl-c">#</span> │  ├─ 自动生成 PSK 密钥</span>
+<span class="pl-c"><span class="pl-c">#</span> │  └─ 启动服务</span>
+<span class="pl-c"><span class="pl-c">#</span></span>
+<span class="pl-c"><span class="pl-c">#</span> ├─ 选项 21：BBR 加速</span>
+<span class="pl-c"><span class="pl-c">#</span> │  ├─ 检测内核版本</span>
+<span class="pl-c"><span class="pl-c">#</span> │  ├─ 启用/关闭 BBR</span>
+<span class="pl-c"><span class="pl-c">#</span> │  └─ 验证优化效果</span>
+<span class="pl-c"><span class="pl-c">#</span></span>
+<span class="pl-c"><span class="pl-c">#</span> └─ 选项 22：配置来源信息</span>
+<span class="pl-c"><span class="pl-c">#</span>    ├─ 显示配置文件详情</span>
+<span class="pl-c"><span class="pl-c">#</span>    └─ 统计协议数量</span></pre></div>
 <hr>
 <h2>📊 配置文件说明</h2>
+<h3><strong>sing-box 配置文件</strong></h3>
 <markdown-accessiblity-table><table role="table">
 <thead>
 <tr>
-<th>文件位置</th>
-<th>作用</th>
+<th align="left">文件位置</th>
+<th align="left">作用</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code class="notranslate">/etc/sing-box/config.json</code></td>
-<td>主配置文件（inbounds）</td>
+<td align="left"><code class="notranslate">/etc/sing-box/config.json</code></td>
+<td align="left">主配置文件（包含所有入站协议配置）</td>
 </tr>
 <tr>
-<td><code class="notranslate">/etc/sing-box/install_params.conf</code></td>
-<td>安装参数备份（密钥、UUID等）</td>
+<td align="left"><code class="notranslate">/etc/sing-box/cert.pem</code></td>
+<td align="left">TLS 证书（用于 Hysteria2、AnyTLS 等协议）</td>
 </tr>
 <tr>
-<td><code class="notranslate">/etc/sing-box/cert.pem</code></td>
-<td>TLS 证书</td>
+<td align="left"><code class="notranslate">/etc/sing-box/private.key</code></td>
+<td align="left">TLS 私钥</td>
 </tr>
 <tr>
-<td><code class="notranslate">/etc/sing-box/private.key</code></td>
-<td>TLS 私钥</td>
+<td align="left"><code class="notranslate">/etc/sing-box/direct_configs.conf</code></td>
+<td align="left">中转配置备份文件</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h3><strong>Snell 配置文件</strong></h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">文件位置</th>
+<th align="left">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code class="notranslate">/etc/snell/snell-server.conf</code></td>
+<td align="left">Snell 服务器主配置文件</td>
+</tr>
+<tr>
+<td align="left"><code class="notranslate">/etc/snell/config.txt</code></td>
+<td align="left">客户端配置信息（Surge 兼容格式）</td>
+</tr>
+<tr>
+<td align="left"><code class="notranslate">/usr/local/bin/snell-server</code></td>
+<td align="left">Snell 可执行文件</td>
+</tr>
+<tr>
+<td align="left"><code class="notranslate">/etc/systemd/system/snell.service</code></td>
+<td align="left">Snell systemd 服务文件</td>
 </tr>
 </tbody>
 </table></markdown-accessiblity-table>
@@ -243,6 +314,13 @@ bash <span class="pl-s"><span class="pl-pds">&lt;(</span>curl -fsSL sing-box-ebo
 <li>失败后自动回滚</li>
 <li>JSON 格式验证</li>
 </ul>
+<h3>✅ 多服务集成</h3>
+<ul>
+<li><strong>sing-box 和 Snell 统一管理</strong>：一个脚本管理两种代理服务</li>
+<li><strong>智能状态显示</strong>：实时显示服务安装和运行状态</li>
+<li><strong>架构兼容</strong>：支持 amd64 和 aarch64 系统架构</li>
+<li><strong>系统优化</strong>：集成 BBR 加速和配置信息查看</li>
+</ul>
 <h3>✅ 彩色输出</h3>
 <p>用不同颜色显示不同信息：</p>
 <ul>
@@ -253,6 +331,7 @@ bash <span class="pl-s"><span class="pl-pds">&lt;(</span>curl -fsSL sing-box-ebo
 </ul>
 <hr>
 <h2>📋 菜单选项速查表</h2>
+<h3><strong>sing-box 核心功能</strong></h3>
 <pre class="notranslate"><code class="notranslate">1.  安装 sing-box 服务
 2.  卸载 sing-box 服务
 3.  启动/停止 sing-box 服务
@@ -262,21 +341,53 @@ bash <span class="pl-s"><span class="pl-pds">&lt;(</span>curl -fsSL sing-box-ebo
 7.  生成节点配置 ⭐
 8.  查看节点配置 ⭐
 9.  删除节点配置
-10. 添加中转配置
+</code></pre>
+<h3><strong>中转配置管理</strong></h3>
+<pre class="notranslate"><code class="notranslate">10. 添加中转配置
 11. 查看中转配置
 12. 删除中转配置
-13. 启用/关闭 BBR 加速
-0.  退出程序
+</code></pre>
+<h3><strong>Snell 代理管理</strong></h3>
+<pre class="notranslate"><code class="notranslate">13. 安装 Snell 服务
+14. 卸载 Snell 服务
+15. 启动/停止 Snell 服务
+16. 重启 Snell 服务
+17. 查看 Snell 状态
+18. 生成 Snell 配置
+19. 查看 Snell 配置
+20. 删除 Snell 配置
+</code></pre>
+<h3><strong>BBR 优化管理</strong></h3>
+<pre class="notranslate"><code class="notranslate">21. 启用/关闭 BBR 加速
+</code></pre>
+<h3><strong>配置管理</strong></h3>
+<pre class="notranslate"><code class="notranslate">22. 查看配置来源信息
+</code></pre>
+<h3><strong>通用操作</strong></h3>
+<pre class="notranslate"><code class="notranslate">0.  退出程序
 </code></pre>
 <hr>
 <h2>🚀 使用建议</h2>
-<ol>
+<h3><strong>sing-box 使用流程</strong></h3>
+<ul>
 <li><strong>首次使用</strong>：执行脚本 → 选项 1 安装 → 选项 7 生成配置</li>
 <li><strong>配置多个协议</strong>：选项 7 时选择"全部"或多个协议编号</li>
 <li><strong>获取分享链接</strong>：选项 8 查看已生成的 URI 链接</li>
-<li><strong>性能优化</strong>：选项 13 启用 BBR 加速</li>
-<li><strong>定期备份</strong>：重要配置保存 <code class="notranslate">install_params.conf</code></li>
-</ol>
+<li><strong>管理配置</strong>：选项 9 删除不需要的节点配置</li>
+<li><strong>中转功能</strong>：选项 10-12 管理端口转发</li>
+</ul>
+<h3><strong>Snell 代理使用</strong></h3>
+<ul>
+<li><strong>安装 Snell</strong>：选项 13 安装 Snell 服务</li>
+<li><strong>配置 Snell</strong>：选项 18 生成 Snell 配置</li>
+<li><strong>查看配置</strong>：选项 19 获取 Snell 客户端配置</li>
+<li><strong>服务管理</strong>：选项 15-17 启动/停止/重启 Snell</li>
+</ul>
+<h3><strong>系统优化</strong></h3>
+<ul>
+<li><strong>性能优化</strong>：选项 21 启用 BBR 加速</li>
+<li><strong>配置查看</strong>：选项 22 查看配置来源信息</li>
+</ul>
 <hr>
 <h2><g-emoji class="g-emoji" alias="warning">⚠️</g-emoji> 前置要求</h2>
 <ul>
@@ -286,7 +397,7 @@ bash <span class="pl-s"><span class="pl-pds">&lt;(</span>curl -fsSL sing-box-ebo
 <li>支持的包管理器</li>
 </ul>
 <hr>
-<p>这个脚本是一个<strong>完整的 sing-box 管理解决方案</strong>，特别适合需要快速部署多协议代理服务的用户！ 🎯</p></div>
+<p>这个脚本是一个<strong>完整的 sing-box 和 Snell 管理解决方案</strong>，特别适合需要快速部署多协议代理服务和系统优化的用户！ 🎯</p></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
