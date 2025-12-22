@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>lang</title><link>https://sephiroth233.github.io/blog.github.io</link><description>随便写写~</description><copyright>lang</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://raw.githubusercontent.com/sephiroth233/blog.github.io/refs/heads/main/static/avatar.jpg</url><title>avatar</title><link>https://sephiroth233.github.io/blog.github.io</link></image><lastBuildDate>Wed, 17 Dec 2025 05:19:43 +0000</lastBuildDate><managingEditor>lang</managingEditor><ttl>60</ttl><webMaster>lang</webMaster><item><title>Mac系统-Mihomo 安装脚本</title><link>https://sephiroth233.github.io/blog.github.io/post/Mac-xi-tong--Mihomo%20-an-zhuang-jiao-ben.html</link><description>## 简介
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>lang</title><link>https://sephiroth233.github.io/blog.github.io</link><description>随便写写~</description><copyright>lang</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://raw.githubusercontent.com/sephiroth233/blog.github.io/refs/heads/main/static/avatar.jpg</url><title>avatar</title><link>https://sephiroth233.github.io/blog.github.io</link></image><lastBuildDate>Mon, 22 Dec 2025 14:53:15 +0000</lastBuildDate><managingEditor>lang</managingEditor><ttl>60</ttl><webMaster>lang</webMaster><item><title>Mac系统-Mihomo 安装脚本</title><link>https://sephiroth233.github.io/blog.github.io/post/Mac-xi-tong--Mihomo%20-an-zhuang-jiao-ben.html</link><description>## 简介
 `mihomo-install.sh` 是一个用于在 macOS 系统上自动安装和更新 Mihomo（Meta 内核）的 Shell 脚本。</description><guid isPermaLink="true">https://sephiroth233.github.io/blog.github.io/post/Mac-xi-tong--Mihomo%20-an-zhuang-jiao-ben.html</guid><pubDate>Thu, 11 Dec 2025 04:43:53 +0000</pubDate></item><item><title>WSL Ubuntu + Docker 配置教程</title><link>https://sephiroth233.github.io/blog.github.io/post/WSL%20Ubuntu%20%2B%20Docker%20-pei-zhi-jiao-cheng.html</link><description>### WSL Ubuntu + Docker 配置教程
 
 ---
@@ -157,7 +157,7 @@ echo root:password|sudo chpasswd root&#13;
 ```shell&#13;
 reg add HKCU\Software\Microsoft\InputMethod\Settings\CHS /v UserDefinedDoublePinyinScheme0 /t REG_SZ /d '小鹤双拼*2*^*iuvdjhcwfg^xmlnpbksqszxkrltvyovt' /f&#13;
 ```&#13;
-然后回车。</description><guid isPermaLink="true">https://sephiroth233.github.io/blog.github.io/post/wei-ruan-shu-ru-fa-she-zhi-xiao-he-shuang-pin.html</guid><pubDate>Fri, 19 Jul 2024 02:17:24 +0000</pubDate></item><item><title>windows数字激活</title><link>https://sephiroth233.github.io/blog.github.io/post/windows-shu-zi-ji-huo.html</link><description>[Microsoft Activation Scripts](https://github.com/massgravel/Microsoft-Activation-Scripts 'Microsoft Activation Scripts')（简称MAS），具备HWID/KMS38/在线KMS激活Microsoft，这款批处理版KMS激活脚本最大特色是代码开源，小巧不误报。</description><guid isPermaLink="true">https://sephiroth233.github.io/blog.github.io/post/windows-shu-zi-ji-huo.html</guid><pubDate>Fri, 19 Jul 2024 02:16:30 +0000</pubDate></item><item><title>vps脚本</title><link>https://sephiroth233.github.io/blog.github.io/post/vps-jiao-ben.html</link><description>### 测速脚本
+然后回车。</description><guid isPermaLink="true">https://sephiroth233.github.io/blog.github.io/post/wei-ruan-shu-ru-fa-she-zhi-xiao-he-shuang-pin.html</guid><pubDate>Fri, 19 Jul 2024 02:17:24 +0000</pubDate></item><item><title>windows数字激活</title><link>https://sephiroth233.github.io/blog.github.io/post/windows-shu-zi-ji-huo.html</link><description>[Microsoft Activation Scripts](https://github.com/massgravel/Microsoft-Activation-Scripts 'Microsoft Activation Scripts')（简称MAS），具备HWID/KMS38/在线KMS激活Microsoft，这款批处理版KMS激活脚本最大特色是代码开源，小巧不误报。</description><guid isPermaLink="true">https://sephiroth233.github.io/blog.github.io/post/windows-shu-zi-ji-huo.html</guid><pubDate>Fri, 19 Jul 2024 02:16:30 +0000</pubDate></item><item><title>vps脚本</title><link>https://sephiroth233.github.io/blog.github.io/post/vps-jiao-ben.html</link><description>### 测速脚本（融合怪）
 
 [项目地址](https://github.com/spiritLHLS/ecs 'https://github.com/spiritLHLS/ecs')
 
@@ -177,11 +177,5 @@ sudo bash &lt;(curl -L -s check.unlock.media)
 
 ```shell
 sudo curl https://raw.githubusercontent.com/zhanghanyun/backtrace/main/install.sh -sSf | sh
-```
-
-### ip质量检测
-
-```shell
-sudo bash &lt;(curl -Ls IP.Check.Place)
 ```
 。</description><guid isPermaLink="true">https://sephiroth233.github.io/blog.github.io/post/vps-jiao-ben.html</guid><pubDate>Fri, 19 Jul 2024 02:14:10 +0000</pubDate></item><item><title>clash-meta懒人配置</title><link>https://sephiroth233.github.io/blog.github.io/post/clash-meta-lan-ren-pei-zhi.html</link><description>在clash系列软件中新建一个本地配置，然后将下面的内容复制、粘贴。</description><guid isPermaLink="true">https://sephiroth233.github.io/blog.github.io/post/clash-meta-lan-ren-pei-zhi.html</guid><pubDate>Fri, 19 Jul 2024 01:59:55 +0000</pubDate></item></channel></rss>

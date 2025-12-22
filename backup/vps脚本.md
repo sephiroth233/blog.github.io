@@ -1,4 +1,4 @@
-### 测速脚本
+### 测速脚本（融合怪）
 
 [项目地址](https://github.com/spiritLHLS/ecs "https://github.com/spiritLHLS/ecs")
 
@@ -18,10 +18,4 @@ sudo bash <(curl -L -s check.unlock.media)
 
 ```shell
 sudo curl https://raw.githubusercontent.com/zhanghanyun/backtrace/main/install.sh -sSf | sh
-```
-
-### ip质量检测
-
-```shell
-sudo bash <(curl -Ls IP.Check.Place)
 ```
