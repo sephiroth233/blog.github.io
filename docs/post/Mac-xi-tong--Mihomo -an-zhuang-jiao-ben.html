@@ -10,11 +10,9 @@
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
     </script>
-<meta name="description" content="## 简介
-`mihomo-install.sh` 是一个用于在 macOS 系统上自动安装和更新 Mihomo（Meta 内核）的 Shell 脚本。">
+<meta name="description" content="用于在 macOS 系统上自动安装和管理 Mihomo（Meta 内核）的 Shell 脚本。">
 <meta property="og:title" content="Mac系统-Mihomo 安装脚本">
-<meta property="og:description" content="## 简介
-`mihomo-install.sh` 是一个用于在 macOS 系统上自动安装和更新 Mihomo（Meta 内核）的 Shell 脚本。">
+<meta property="og:description" content="用于在 macOS 系统上自动安装和管理 Mihomo（Meta 内核）的 Shell 脚本。">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://sephiroth233.github.io/blog.github.io/post/Mac-xi-tong--Mihomo%20-an-zhuang-jiao-ben.html">
 <meta property="og:image" content="https://raw.githubusercontent.com/sephiroth233/blog.github.io/refs/heads/main/static/avatar.jpg">
@@ -85,104 +83,106 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
 </div>
     <div id="content">
-<div class="markdown-body" id="postBody"><h2>简介</h2>
-<p><code class="notranslate">mihomo-install.sh</code> 是一个用于在 macOS 系统上自动安装和更新 Mihomo（Meta 内核）的 Shell 脚本。</p>
-<h2>功能特性</h2>
-<p>✅ 自动检测系统架构（arm64/amd64）</p>
-<p>✅ 从 GitHub 获取最新版本</p>
-<p>✅ 智能版本检测，避免重复下载</p>
-<p>✅ 支持安装、更新、查看版本</p>
-<p>✅ 友好的交互提示和错误处理</p>
-<h2>系统要求</h2>
-<p><strong>操作系统</strong>: macOS<strong>架构</strong>: arm64 (Apple Silicon) 或 amd64 (Intel)</p>
-<p><strong>权限</strong>: 需要对 <code class="notranslate">/usr/local/bin</code> 目录的写权限</p>
-<p><strong>依赖工具</strong>: curl, gunzip（系统自带）</p>
-<h2>下载和安装脚本</h2>
-<h3>推荐方法：直接下载到 /usr/local/bin（推荐）</h3>
-<p>将脚本下载到 <code class="notranslate">/usr/local/bin</code> 目录，与 mihomo 内核放在同一位置，方便管理：</p>
+<div class="markdown-body" id="postBody"><p>用于在 macOS 系统上自动安装和管理 Mihomo（Meta 内核）的 Shell 脚本。</p>
+<p>项目地址：<a href="https://github.com/sephiroth233/sys-toolkit">https://github.com/sephiroth233/sys-toolkit</a></p>
+<hr>
+<h2>📥 下载和安装方式</h2>
+<h3>方式一：直接执行（推荐）</h3>
+<div class="highlight highlight-source-shell"><pre class="notranslate">bash <span class="pl-s"><span class="pl-pds">&lt;(</span>curl -fsSL https://raw.githubusercontent.com/sephiroth233/sys-toolkit/master/mihomo-install.sh<span class="pl-pds">)</span></span> install</pre></div>
+<h3>方式二：保存后执行</h3>
 <div class="highlight highlight-source-shell"><pre class="notranslate"><span class="pl-c"><span class="pl-c">#</span> 下载脚本到 /usr/local/bin</span>
-sudo curl -L -o /usr/local/bin/mihomo-install https://raw.githubusercontent.com/sephiroth233/sys-toolkit/master/mihomo-install.sh
-
-<span class="pl-c"><span class="pl-c">#</span> 设置执行权限</span>
+sudo curl -fsSL https://raw.githubusercontent.com/sephiroth233/sys-toolkit/master/mihomo-install.sh -o /usr/local/bin/mihomo-install
 sudo chmod +x /usr/local/bin/mihomo-install
 
-<span class="pl-c"><span class="pl-c">#</span> 执行脚本（现在可以直接使用 mihomo-install 命令）</span>
+<span class="pl-c"><span class="pl-c">#</span> 执行安装</span>
 mihomo-install install</pre></div>
-<h3>方法二：下载到当前目录</h3>
-<h3>方法三：克隆仓库</h3>
-<div class="highlight highlight-source-shell"><pre class="notranslate"><span class="pl-c"><span class="pl-c">#</span> 克隆整个仓库（需要 git）</span>
-git clone https://github.com/sephiroth233/sys-toolkit.git
-<span class="pl-c1">cd</span> sys-toolkit</pre></div>
-<h3>方法四：直接从 GitHub 下载执行</h3>
-<p>直接从 GitHub 下载脚本并立即执行，无需保存到本地：</p>
-<div class="highlight highlight-source-shell"><pre class="notranslate"><span class="pl-c"><span class="pl-c">#</span> 下载并执行最新版本</span>
-bash <span class="pl-s"><span class="pl-pds">&lt;(</span>curl -sL https://raw.githubusercontent.com/sephiroth233/sys-toolkit/master/mihomo-install.sh<span class="pl-pds">)</span></span> install
+<hr>
+<h2>🎯 命令说明</h2>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code class="notranslate">install</code></td>
+<td align="left">安装 Mihomo（默认命令）</td>
+</tr>
+<tr>
+<td align="left"><code class="notranslate">update</code></td>
+<td align="left">更新到最新版本</td>
+</tr>
+<tr>
+<td align="left"><code class="notranslate">version</code></td>
+<td align="left">查看当前安装版本</td>
+</tr>
+<tr>
+<td align="left"><code class="notranslate">uninstall</code></td>
+<td align="left">卸载 Mihomo</td>
+</tr>
+<tr>
+<td align="left"><code class="notranslate">cleanup</code></td>
+<td align="left">删除安装脚本</td>
+</tr>
+<tr>
+<td align="left"><code class="notranslate">purge</code></td>
+<td align="left">完全卸载（Mihomo + 脚本）</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<hr>
+<h2>🔧 使用示例</h2>
+<div class="highlight highlight-source-shell"><pre class="notranslate"><span class="pl-c"><span class="pl-c">#</span> 安装 Mihomo</span>
+mihomo-install install
 
-<span class="pl-c"><span class="pl-c">#</span> 或者使用 wget</span>
-bash <span class="pl-s"><span class="pl-pds">&lt;(</span>wget -qO- https://raw.githubusercontent.com/sephiroth233/sys-toolkit/master/mihomo-install.sh<span class="pl-pds">)</span></span> install</pre></div>
-<p><strong>注意：</strong></p>
+<span class="pl-c"><span class="pl-c">#</span> 更新到最新版本</span>
+mihomo-install update
+
+<span class="pl-c"><span class="pl-c">#</span> 查看当前版本</span>
+mihomo-install version
+
+<span class="pl-c"><span class="pl-c">#</span> 卸载 Mihomo</span>
+mihomo-install uninstall
+
+<span class="pl-c"><span class="pl-c">#</span> 完全卸载</span>
+mihomo-install purge</pre></div>
+<hr>
+<h2>📊 文件位置</h2>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">文件</th>
+<th align="left">路径</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Mihomo 二进制文件</td>
+<td align="left"><code class="notranslate">/usr/local/bin/mihomo</code></td>
+</tr>
+<tr>
+<td align="left">安装脚本（可选）</td>
+<td align="left"><code class="notranslate">/usr/local/bin/mihomo-install</code></td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<hr>
+<h2>🎨 特色功能</h2>
 <ul>
-<li>将 <code class="notranslate">用户名</code> 替换为实际的 GitHub 用户名</li>
-<li>将 <code class="notranslate">sys-toolkit</code> 替换为实际的仓库名称</li>
-<li>此方法直接执行远程脚本，建议先检查脚本内容再执行</li>
-<li>可以添加 <code class="notranslate">version</code>、<code class="notranslate">update</code>、<code class="notranslate">uninstall</code> 等参数</li>
+<li><strong>自动架构检测</strong>：支持 arm64 (Apple Silicon) 和 amd64 (Intel)</li>
+<li><strong>智能版本管理</strong>：自动获取 GitHub 最新版本，避免重复下载</li>
+<li><strong>安全确认机制</strong>：重新安装和删除操作需用户确认</li>
+<li><strong>彩色输出</strong>：清晰的状态提示</li>
 </ul>
-<h2>使用方法</h2>
-<h3>1. 安装 Mihomo</h3>
-<p>首次安装或重新安装：<br>
-<strong>如果脚本已安装到 /usr/local/bin（推荐）：</strong></p>
-<p><strong>如果脚本在当前目录：</strong></p>
-<p><strong>或者使用绝对路径：</strong></p>
-<p><strong>执行流程：</strong><br>
-检测是否已安装如果已安装，会提示是否重新安装（需要用户确认）获取最新版本号下载并安装到 <code class="notranslate">/usr/local/bin/mihomo</code><br>
-<strong>示例输出：</strong></p>
-<h3>2. 更新 Mihomo</h3>
-<p>更新到最新版本：</p>
-<p><strong>执行流程：</strong><br>
-检查是否已安装（未安装会报错）获取当前版本和最新版本比较版本号如果已是最新版本，提示并退出如果有新版本，自动下载并更新<br>
-<strong>示例输出（已是最新版）：</strong></p>
-<p><strong>示例输出（有新版本）：</strong></p>
-<h3>3. 查看版本</h3>
-<p>查看当前安装的版本：</p>
-<p><strong>示例输出：</strong></p>
-<h3>4. 查看帮助</h3>
-<p>或者不带参数：</p>
-<h2>权限说明</h2>
-<p>脚本需要对 <code class="notranslate">/usr/local/bin</code> 目录的写权限。</p>
-<h3>推荐做法：修改目录权限</h3>
-<h3>或者使用 sudo</h3>
-<h2>安装位置</h2>
-<p>安装后的文件位置：</p>
-<p>两个文件在同一目录，方便管理。<br>
-确保 <code class="notranslate">/usr/local/bin</code> 在你的 <code class="notranslate">PATH</code> 环境变量中，这样就可以直接使用命令。<br>
-验证 PATH：</p>
-<p>如果没有，添加到 <code class="notranslate">~/.zshrc</code> 或 <code class="notranslate">~/.bash_profile</code>：</p>
-<h2>快速开始示例</h2>
-<p>完整的安装和使用流程：</p>
-<h2>使用 Mihomo</h2>
-<p>安装完成后，可以直接使用 <code class="notranslate">mihomo</code> 命令：</p>
-<h2>卸载</h2>
-<h3>卸载 Mihomo</h3>
-<p>仅卸载 Mihomo 二进制文件，保留安装脚本：</p>
-<div class="highlight highlight-source-shell"><pre class="notranslate"><span class="pl-c"><span class="pl-c">#</span> 如果脚本在 /usr/local/bin</span>
-sudo mihomo-install uninstall
-
-<span class="pl-c"><span class="pl-c">#</span> 如果脚本在当前目录</span>
-sudo ./mihomo-install.sh uninstall</pre></div>
-<h3>卸载安装脚本</h3>
-<p>仅删除安装脚本，保留 Mihomo 二进制文件：</p>
-<div class="highlight highlight-source-shell"><pre class="notranslate"><span class="pl-c"><span class="pl-c">#</span> 如果脚本在 /usr/local/bin</span>
-sudo mihomo-install cleanup
-
-<span class="pl-c"><span class="pl-c">#</span> 如果脚本在当前目录</span>
-sudo ./mihomo-install.sh cleanup</pre></div>
-<h3>完全卸载</h3>
-<p>同时卸载 Mihomo 和删除安装脚本：</p>
-<div class="highlight highlight-source-shell"><pre class="notranslate"><span class="pl-c"><span class="pl-c">#</span> 如果脚本在 /usr/local/bin</span>
-sudo mihomo-install purge
-
-<span class="pl-c"><span class="pl-c">#</span> 如果脚本在当前目录</span>
-sudo ./mihomo-install.sh purge</pre></div></div>
+<hr>
+<h2><g-emoji class="g-emoji" alias="warning">⚠️</g-emoji> 前置要求</h2>
+<ul>
+<li><strong>操作系统</strong>：macOS</li>
+<li><strong>权限</strong>：需要 <code class="notranslate">/usr/local/bin</code> 写权限（使用 sudo）</li>
+<li><strong>依赖工具</strong>：curl, gunzip（系统自带）</li>
+</ul></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
