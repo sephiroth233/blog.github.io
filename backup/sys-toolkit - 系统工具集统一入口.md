@@ -120,8 +120,8 @@ sudo ./sys-toolkit.sh help
 
 ## 🔗 相关文档
 
-- [fail2ban 管理工具文档](./fail2ban-manager.md)
-- [网络代理配置文档](./server-proxy.md)
-- [系统备份恢复文档](./sys-backup-restore.md)
+- [fail2ban 管理工具文档](https://raw.githubusercontent.com/sephiroth233/sys-toolkit/master/fail2ban-manager.md)
+- [网络代理配置文档](https://raw.githubusercontent.com/sephiroth233/sys-toolkit/master/server-proxy.md)
+- [系统备份恢复文档](https://raw.githubusercontent.com/sephiroth233/sys-toolkit/master/sys-backup-restore.md)
 
 ---
