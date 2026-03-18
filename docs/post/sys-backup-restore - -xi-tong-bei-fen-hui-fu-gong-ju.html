@@ -17,7 +17,7 @@
 <meta property="og:url" content="https://sephiroth233.github.io/blog.github.io/post/sys-backup-restore%20-%20-xi-tong-bei-fen-hui-fu-gong-ju.html">
 <meta property="og:image" content="https://raw.githubusercontent.com/sephiroth233/blog.github.io/refs/heads/main/static/avatar.jpg">
 <title>sys-backup-restore - 系统备份恢复工具</title>
-
+<link href="//unpkg.com/@wooorm/starry-night@2.1.1/style/both.css" rel="stylesheet" />
 
 
 </head>
@@ -88,11 +88,9 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <hr>
 <h2>📥 下载和安装方式</h2>
 <h3>方式一：直接执行（推荐）</h3>
-<pre lang="bash" class="notranslate"><code class="notranslate">bash &lt;(curl -fsSL https://raw.githubusercontent.com/sephiroth233/sys-toolkit/master/sys-backup-restore.sh)
-</code></pre>
+<div class="highlight highlight-source-shell"><pre class="notranslate">bash <span class="pl-s"><span class="pl-pds">&lt;(</span>curl -fsSL https://raw.githubusercontent.com/sephiroth233/sys-toolkit/master/sys-backup-restore.sh<span class="pl-pds">)</span></span></pre></div>
 <h3>方式二：保存后执行</h3>
-<pre lang="bash" class="notranslate"><code class="notranslate">curl -fsSL https://raw.githubusercontent.com/sephiroth233/sys-toolkit/master/sys-backup-restore.sh -o sys-backup-restore.sh &amp;&amp; chmod +x sys-backup-restore.sh &amp;&amp; sudo ./sys-backup-restore.sh
-</code></pre>
+<div class="highlight highlight-source-shell"><pre class="notranslate">curl -fsSL https://raw.githubusercontent.com/sephiroth233/sys-toolkit/master/sys-backup-restore.sh -o sys-backup-restore.sh <span class="pl-k">&amp;&amp;</span> chmod +x sys-backup-restore.sh <span class="pl-k">&amp;&amp;</span> sudo ./sys-backup-restore.sh</pre></div>
 <hr>
 <h2>🎯 主要功能模块</h2>
 <h3>1️⃣ <strong>rclone 管理</strong></h3>
@@ -136,30 +134,29 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <hr>
 <h2>💻 命令行使用</h2>
 <p>支持命令行参数直接执行操作：</p>
-<pre lang="bash" class="notranslate"><code class="notranslate"># 执行备份
+<div class="highlight highlight-source-shell"><pre class="notranslate"><span class="pl-c"><span class="pl-c">#</span> 执行备份</span>
 sudo ./sys-backup-restore.sh backup
 
-# 恢复备份（交互式选择）
+<span class="pl-c"><span class="pl-c">#</span> 恢复备份（交互式选择）</span>
 sudo ./sys-backup-restore.sh restore
 
-# 列出云端备份
+<span class="pl-c"><span class="pl-c">#</span> 列出云端备份</span>
 sudo ./sys-backup-restore.sh list
 
-# 安装 rclone
+<span class="pl-c"><span class="pl-c">#</span> 安装 rclone</span>
 sudo ./sys-backup-restore.sh install
 
-# 仅卸载 rclone
+<span class="pl-c"><span class="pl-c">#</span> 仅卸载 rclone</span>
 sudo ./sys-backup-restore.sh uninstall-rclone
 
-# 完全卸载
+<span class="pl-c"><span class="pl-c">#</span> 完全卸载</span>
 sudo ./sys-backup-restore.sh uninstall
 
-# 显示帮助
-./sys-backup-restore.sh help
+<span class="pl-c"><span class="pl-c">#</span> 显示帮助</span>
+./sys-backup-restore.sh <span class="pl-c1">help</span>
 
-# 进入交互式菜单
-sudo ./sys-backup-restore.sh
-</code></pre>
+<span class="pl-c"><span class="pl-c">#</span> 进入交互式菜单</span>
+sudo ./sys-backup-restore.sh</pre></div>
 <hr>
 <h2>📋 菜单选项速查表</h2>
 <h3><strong>rclone 管理</strong></h3>
@@ -219,19 +216,19 @@ sudo ./sys-backup-restore.sh
 <hr>
 <h2>🔧 配置示例</h2>
 <h3>配置文件内容 (<code class="notranslate">/etc/sys-backup/config.conf</code>)</h3>
-<pre lang="bash" class="notranslate"><code class="notranslate"># sys-backup 配置文件
+<div class="highlight highlight-source-shell"><pre class="notranslate"><span class="pl-c"><span class="pl-c">#</span> sys-backup 配置文件</span>
 
-### ✅ 灵活的定时备份
+<span class="pl-c"><span class="pl-c">#</span>## ✅ 灵活的定时备份</span>
 - 支持每天/每周/每月定时备份
 - 支持自定义 cron 表达式
 - 定时任务日志独立记录
 
-### ✅ 安全的恢复机制
+<span class="pl-c"><span class="pl-c">#</span>## ✅ 安全的恢复机制</span>
 - 恢复前确认操作
 - 支持自定义恢复路径
 - 显示恢复结果摘要
 
-### ✅ 彩色输出
+<span class="pl-c"><span class="pl-c">#</span>## ✅ 彩色输出</span>
 用不同颜色显示不同信息：
 - 🟢 绿色：成功提示
 - 🔴 红色：错误警告
@@ -240,41 +237,40 @@ sudo ./sys-backup-restore.sh
 
 ---
 
-## 🔧 工作流程示例
+<span class="pl-c"><span class="pl-c">#</span># 🔧 工作流程示例</span>
 
-### 首次使用流程：
+<span class="pl-c"><span class="pl-c">#</span>## 首次使用流程：</span>
 
-```bash
-# 1. 下载并执行脚本
-sudo bash &lt;(curl -fsSL https://raw.githubusercontent.com/sephiroth233/sys-toolkit/master/sys-backup-restore.sh)
-
-# 2. 选择菜单选项
-# ├─ 选项 1：安装 rclone
-# │  └─ 自动下载安装 rclone
-# │
-# ├─ 选项 2：配置 rclone 远程存储
-# │  ├─ 运行 rclone config 交互式配置
-# │  └─ 设置远程存储路径（如 s3:bucket-name/path）
-# │
-# ├─ 选项 10：配置管理
-# │  ├─ 设置备份源目录
-# │  ├─ 设置最大备份数量
-# │  └─ 查看当前配置
-# │
-# ├─ 选项 4：立即执行备份
-# │  ├─ 压缩备份目录
-# │  ├─ 上传到云端
-# │  └─ 自动清理旧备份
-# │
-# ├─ 选项 7：设置定时备份
-# │  ├─ 选择备份频率
-# │  └─ 设置备份时间
-# │
-# └─ 选项 6：从云端恢复备份
-#    ├─ 选择备份文件
-#    ├─ 设置恢复路径
-#    └─ 下载并解压恢复
-</code></pre>
+<span class="pl-s"><span class="pl-pds">`</span><span class="pl-pds">`</span><span class="pl-pds">`</span>bash</span>
+<span class="pl-s"><span class="pl-c"><span class="pl-c">#</span> 1. 下载并执行脚本</span></span>
+<span class="pl-s">sudo bash <span class="pl-s"><span class="pl-pds">&lt;(</span>curl -fsSL https://raw.githubusercontent.com/sephiroth233/sys-toolkit/master/sys-backup-restore.sh<span class="pl-pds">)</span></span></span>
+<span class="pl-s"></span>
+<span class="pl-s"><span class="pl-c"><span class="pl-c">#</span> 2. 选择菜单选项</span></span>
+<span class="pl-s"><span class="pl-c"><span class="pl-c">#</span> ├─ 选项 1：安装 rclone</span></span>
+<span class="pl-s"><span class="pl-c"><span class="pl-c">#</span> │  └─ 自动下载安装 rclone</span></span>
+<span class="pl-s"><span class="pl-c"><span class="pl-c">#</span> │</span></span>
+<span class="pl-s"><span class="pl-c"><span class="pl-c">#</span> ├─ 选项 2：配置 rclone 远程存储</span></span>
+<span class="pl-s"><span class="pl-c"><span class="pl-c">#</span> │  ├─ 运行 rclone config 交互式配置</span></span>
+<span class="pl-s"><span class="pl-c"><span class="pl-c">#</span> │  └─ 设置远程存储路径（如 s3:bucket-name/path）</span></span>
+<span class="pl-s"><span class="pl-c"><span class="pl-c">#</span> │</span></span>
+<span class="pl-s"><span class="pl-c"><span class="pl-c">#</span> ├─ 选项 10：配置管理</span></span>
+<span class="pl-s"><span class="pl-c"><span class="pl-c">#</span> │  ├─ 设置备份源目录</span></span>
+<span class="pl-s"><span class="pl-c"><span class="pl-c">#</span> │  ├─ 设置最大备份数量</span></span>
+<span class="pl-s"><span class="pl-c"><span class="pl-c">#</span> │  └─ 查看当前配置</span></span>
+<span class="pl-s"><span class="pl-c"><span class="pl-c">#</span> │</span></span>
+<span class="pl-s"><span class="pl-c"><span class="pl-c">#</span> ├─ 选项 4：立即执行备份</span></span>
+<span class="pl-s"><span class="pl-c"><span class="pl-c">#</span> │  ├─ 压缩备份目录</span></span>
+<span class="pl-s"><span class="pl-c"><span class="pl-c">#</span> │  ├─ 上传到云端</span></span>
+<span class="pl-s"><span class="pl-c"><span class="pl-c">#</span> │  └─ 自动清理旧备份</span></span>
+<span class="pl-s"><span class="pl-c"><span class="pl-c">#</span> │</span></span>
+<span class="pl-s"><span class="pl-c"><span class="pl-c">#</span> ├─ 选项 7：设置定时备份</span></span>
+<span class="pl-s"><span class="pl-c"><span class="pl-c">#</span> │  ├─ 选择备份频率</span></span>
+<span class="pl-s"><span class="pl-c"><span class="pl-c">#</span> │  └─ 设置备份时间</span></span>
+<span class="pl-s"><span class="pl-c"><span class="pl-c">#</span> │</span></span>
+<span class="pl-s"><span class="pl-c"><span class="pl-c">#</span> └─ 选项 6：从云端恢复备份</span></span>
+<span class="pl-s"><span class="pl-c"><span class="pl-c">#</span>    ├─ 选择备份文件</span></span>
+<span class="pl-s"><span class="pl-c"><span class="pl-c">#</span>    ├─ 设置恢复路径</span></span>
+<span class="pl-s"><span class="pl-c"><span class="pl-c">#</span>    └─ 下载并解压恢复</span></span></pre></div>
 <hr>
 <h2>🚀 使用建议</h2>
 <h3><strong>备份使用流程</strong></h3>

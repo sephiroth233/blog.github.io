@@ -19,7 +19,7 @@
 <meta property="og:url" content="https://sephiroth233.github.io/blog.github.io/post/sing-box%20%26%20Snell%20-guan-li-gong-ju.html">
 <meta property="og:image" content="https://raw.githubusercontent.com/sephiroth233/blog.github.io/refs/heads/main/static/avatar.jpg">
 <title>sing-box & Snell 管理工具</title>
-
+<link href="//unpkg.com/@wooorm/starry-night@2.1.1/style/both.css" rel="stylesheet" />
 
 
 </head>
@@ -90,11 +90,9 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <hr>
 <h2>📥 下载和安装方式</h2>
 <h3>方式一：直接执行（推荐）</h3>
-<pre lang="bash" class="notranslate"><code class="notranslate">bash &lt;(curl -fsSL https://raw.githubusercontent.com/sephiroth233/sys-toolkit/master/server-proxy.sh)
-</code></pre>
+<div class="highlight highlight-source-shell"><pre class="notranslate">bash <span class="pl-s"><span class="pl-pds">&lt;(</span>curl -fsSL https://raw.githubusercontent.com/sephiroth233/sys-toolkit/master/server-proxy.sh<span class="pl-pds">)</span></span></pre></div>
 <h3>方式二：保存后执行</h3>
-<pre lang="bash" class="notranslate"><code class="notranslate">curl -fsSL https://raw.githubusercontent.com/sephiroth233/sys-toolkit/master/server-proxy.sh -o server-proxy.sh &amp;&amp; bash server-proxy.sh
-</code></pre>
+<div class="highlight highlight-source-shell"><pre class="notranslate">curl -fsSL https://raw.githubusercontent.com/sephiroth233/sys-toolkit/master/server-proxy.sh -o server-proxy.sh <span class="pl-k">&amp;&amp;</span> bash server-proxy.sh</pre></div>
 <hr>
 <h2>🎯 主要功能模块</h2>
 <h3>1️⃣ <strong>服务安装与卸载</strong></h3>
@@ -195,48 +193,47 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <hr>
 <h2>🔧 工作流程示例</h2>
 <h3>完整使用流程：</h3>
-<pre lang="bash" class="notranslate"><code class="notranslate"># 1. 下载并执行脚本
-bash &lt;(curl -fsSL sing-box-ebon.vercel.app)
+<div class="highlight highlight-source-shell"><pre class="notranslate"><span class="pl-c"><span class="pl-c">#</span> 1. 下载并执行脚本</span>
+bash <span class="pl-s"><span class="pl-pds">&lt;(</span>curl -fsSL sing-box-ebon.vercel.app<span class="pl-pds">)</span></span>
 
-# 2. 选择菜单选项
-# ├─ 选项 1：安装 sing-box 服务
-# │  ├─ 自动下载安装
-# │  ├─ 生成随机端口和密钥
-# │  └─ 启动服务
-#
-# ├─ 选项 7：生成节点配置
-# │  ├─ 选择协议类型（可多选）
-# │  ├─ 输入或随机分配端口
-# │  └─ 更新配置文件
-#
-# ├─ 选项 8：查看节点配置
-# │  ├─ 解析 config.json
-# │  └─ 生成客户端分享链接
-#
-# ├─ 选项 10-12：中转配置管理
-# │  ├─ 添加本地端口转发
-# │  ├─ 查看活跃中转配置
-# │  └─ 删除指定中转规则
-#
-# ├─ 选项 13：安装 Snell 服务
-# │  ├─ 自动下载安装
-# │  ├─ 创建系统服务
-# │  └─ 启用服务
-#
-# ├─ 选项 18：生成 Snell 配置
-# │  ├─ 自定义或随机端口
-# │  ├─ 自动生成 PSK 密钥
-# │  └─ 启动服务
-#
-# ├─ 选项 21：BBR 加速
-# │  ├─ 检测内核版本
-# │  ├─ 启用/关闭 BBR
-# │  └─ 验证优化效果
-#
-# └─ 选项 22：配置来源信息
-#    ├─ 显示配置文件详情
-#    └─ 统计协议数量
-</code></pre>
+<span class="pl-c"><span class="pl-c">#</span> 2. 选择菜单选项</span>
+<span class="pl-c"><span class="pl-c">#</span> ├─ 选项 1：安装 sing-box 服务</span>
+<span class="pl-c"><span class="pl-c">#</span> │  ├─ 自动下载安装</span>
+<span class="pl-c"><span class="pl-c">#</span> │  ├─ 生成随机端口和密钥</span>
+<span class="pl-c"><span class="pl-c">#</span> │  └─ 启动服务</span>
+<span class="pl-c"><span class="pl-c">#</span></span>
+<span class="pl-c"><span class="pl-c">#</span> ├─ 选项 7：生成节点配置</span>
+<span class="pl-c"><span class="pl-c">#</span> │  ├─ 选择协议类型（可多选）</span>
+<span class="pl-c"><span class="pl-c">#</span> │  ├─ 输入或随机分配端口</span>
+<span class="pl-c"><span class="pl-c">#</span> │  └─ 更新配置文件</span>
+<span class="pl-c"><span class="pl-c">#</span></span>
+<span class="pl-c"><span class="pl-c">#</span> ├─ 选项 8：查看节点配置</span>
+<span class="pl-c"><span class="pl-c">#</span> │  ├─ 解析 config.json</span>
+<span class="pl-c"><span class="pl-c">#</span> │  └─ 生成客户端分享链接</span>
+<span class="pl-c"><span class="pl-c">#</span></span>
+<span class="pl-c"><span class="pl-c">#</span> ├─ 选项 10-12：中转配置管理</span>
+<span class="pl-c"><span class="pl-c">#</span> │  ├─ 添加本地端口转发</span>
+<span class="pl-c"><span class="pl-c">#</span> │  ├─ 查看活跃中转配置</span>
+<span class="pl-c"><span class="pl-c">#</span> │  └─ 删除指定中转规则</span>
+<span class="pl-c"><span class="pl-c">#</span></span>
+<span class="pl-c"><span class="pl-c">#</span> ├─ 选项 13：安装 Snell 服务</span>
+<span class="pl-c"><span class="pl-c">#</span> │  ├─ 自动下载安装</span>
+<span class="pl-c"><span class="pl-c">#</span> │  ├─ 创建系统服务</span>
+<span class="pl-c"><span class="pl-c">#</span> │  └─ 启用服务</span>
+<span class="pl-c"><span class="pl-c">#</span></span>
+<span class="pl-c"><span class="pl-c">#</span> ├─ 选项 18：生成 Snell 配置</span>
+<span class="pl-c"><span class="pl-c">#</span> │  ├─ 自定义或随机端口</span>
+<span class="pl-c"><span class="pl-c">#</span> │  ├─ 自动生成 PSK 密钥</span>
+<span class="pl-c"><span class="pl-c">#</span> │  └─ 启动服务</span>
+<span class="pl-c"><span class="pl-c">#</span></span>
+<span class="pl-c"><span class="pl-c">#</span> ├─ 选项 21：BBR 加速</span>
+<span class="pl-c"><span class="pl-c">#</span> │  ├─ 检测内核版本</span>
+<span class="pl-c"><span class="pl-c">#</span> │  ├─ 启用/关闭 BBR</span>
+<span class="pl-c"><span class="pl-c">#</span> │  └─ 验证优化效果</span>
+<span class="pl-c"><span class="pl-c">#</span></span>
+<span class="pl-c"><span class="pl-c">#</span> └─ 选项 22：配置来源信息</span>
+<span class="pl-c"><span class="pl-c">#</span>    ├─ 显示配置文件详情</span>
+<span class="pl-c"><span class="pl-c">#</span>    └─ 统计协议数量</span></pre></div>
 <hr>
 <h2>📊 配置文件说明</h2>
 <h3><strong>sing-box 配置文件</strong></h3>
