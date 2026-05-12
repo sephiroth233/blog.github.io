@@ -12,15 +12,15 @@
     </script>
 <meta name="description" content="mihomo内核辅助脚本：
 ```
-curl -O https://raw.githubusercontent.com/sephiroth233/bat-reo/main/blash.cmd
+curl -O https://raw.githubusercontent.com/sephiroth233/sys-toolkit/main/blash.cmd
 ```
 JDK环境变量配置脚本：
 ```
-curl -O https://raw.githubusercontent.com/sephiroth233/bat-reo/main/jdk.cmd
+curl -O https://raw.githubusercontent.com/sephiroth233/sys-toolkit/main/jdk.cmd
 ```
 navicat试用脚本：
-```
-curl -O https://raw.githubusercontent.com/sephiroth233/bat-reo/main/navicat-reset.cmd
+``
+curl -O https://raw.githubusercontent.com/sephiroth233/sys-toolkit/main/navicat-reset.cmd
 ```
 Windows解除本地回环限制：
 在Powershell中输入：
@@ -62,15 +62,15 @@ Write-Host 'Done.'
 <meta property="og:title" content="Windows自用脚本">
 <meta property="og:description" content="mihomo内核辅助脚本：
 ```
-curl -O https://raw.githubusercontent.com/sephiroth233/bat-reo/main/blash.cmd
+curl -O https://raw.githubusercontent.com/sephiroth233/sys-toolkit/main/blash.cmd
 ```
 JDK环境变量配置脚本：
 ```
-curl -O https://raw.githubusercontent.com/sephiroth233/bat-reo/main/jdk.cmd
+curl -O https://raw.githubusercontent.com/sephiroth233/sys-toolkit/main/jdk.cmd
 ```
 navicat试用脚本：
-```
-curl -O https://raw.githubusercontent.com/sephiroth233/bat-reo/main/navicat-reset.cmd
+``
+curl -O https://raw.githubusercontent.com/sephiroth233/sys-toolkit/main/navicat-reset.cmd
 ```
 Windows解除本地回环限制：
 在Powershell中输入：
@@ -180,48 +180,49 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
     <div id="content">
 <div class="markdown-body" id="postBody"><p>mihomo内核辅助脚本：</p>
-<pre class="notranslate"><code class="notranslate">curl -O https://raw.githubusercontent.com/sephiroth233/bat-reo/main/blash.cmd
+<pre class="notranslate"><code class="notranslate">curl -O https://raw.githubusercontent.com/sephiroth233/sys-toolkit/main/blash.cmd
 </code></pre>
 <p>JDK环境变量配置脚本：</p>
-<pre class="notranslate"><code class="notranslate">curl -O https://raw.githubusercontent.com/sephiroth233/bat-reo/main/jdk.cmd
+<pre class="notranslate"><code class="notranslate">curl -O https://raw.githubusercontent.com/sephiroth233/sys-toolkit/main/jdk.cmd
 </code></pre>
-<p>navicat试用脚本：</p>
-<pre class="notranslate"><code class="notranslate">curl -O https://raw.githubusercontent.com/sephiroth233/bat-reo/main/navicat-reset.cmd
+<p>navicat试用脚本：<br>
+``<br>
+curl -O <a href="https://raw.githubusercontent.com/sephiroth233/sys-toolkit/main/navicat-reset.cmd" rel="nofollow">https://raw.githubusercontent.com/sephiroth233/sys-toolkit/main/navicat-reset.cmd</a></p>
+<pre class="notranslate"><code class="notranslate">Windows解除本地回环限制：
+在Powershell中输入：
 </code></pre>
-<p>Windows解除本地回环限制：<br>
-在Powershell中输入：</p>
-<pre class="notranslate"><code class="notranslate"> Get-ChildItem -Path Registry::"HKCU\Software\Classes\Local Settings\Software\Microsoft\Windows\CurrentVersion\AppContainer\Mappings\" -name | ForEach-Object {CheckNetIsolation.exe LoopbackExempt -a -p="$_"} 
+<p>Get-ChildItem -Path Registry::"HKCU\Software\Classes\Local Settings\Software\Microsoft\Windows\CurrentVersion\AppContainer\Mappings" -name | ForEach-Object {CheckNetIsolation.exe LoopbackExempt -a -p="$_"}</p>
+<pre class="notranslate"><code class="notranslate">Winget安装指令：
 </code></pre>
-<p>Winget安装指令：</p>
-<pre class="notranslate"><code class="notranslate">$progressPreference = 'silentlyContinue'
-Write-Host "Installing WinGet PowerShell module from PSGallery..."
-Install-PackageProvider -Name NuGet -Force | Out-Null
-Install-Module -Name Microsoft.WinGet.Client -Force -Repository PSGallery | Out-Null
-Write-Host "Using Repair-WinGetPackageManager cmdlet to bootstrap WinGet..."
-Repair-WinGetPackageManager
-Write-Host "Done."
+<p>$progressPreference = 'silentlyContinue'<br>
+Write-Host "Installing WinGet PowerShell module from PSGallery..."<br>
+Install-PackageProvider -Name NuGet -Force | Out-Null<br>
+Install-Module -Name Microsoft.WinGet.Client -Force -Repository PSGallery | Out-Null<br>
+Write-Host "Using Repair-WinGetPackageManager cmdlet to bootstrap WinGet..."<br>
+Repair-WinGetPackageManager<br>
+Write-Host "Done."</p>
+<pre class="notranslate"><code class="notranslate">软件安装：
 </code></pre>
-<p>软件安装：</p>
-<pre class="notranslate"><code class="notranslate"> winget install --id Yuanli.uTools
- winget install --id Tencent.WeChat.Universal
- winget install --id Tencent.WeType
- winget install --id 7zip.7zip
- winget install --id Git.Git
- winget install --id Google.Chrome
- winget install --id Termius.Termius
- winget install --id Obsidian.Obsidian
- winget install --id Kopia.KopiaUI
- winget install Notepad--
- winget install --id appmakes.Typora
- winget install --id voidtools.Everything
- winget install --id JetBrains.Toolbox
- winget install --id Telegram.TelegramDesktop
- winget install emby 
- winget install --id kangfenmao.CherryStudio
- winget install --id Notion.Notion
- winget install --id Microsoft.VisualStudioCode
- winget install --id GeekUninstaller.GeekUninstaller
-</code></pre></div>
+<p>winget install --id Yuanli.uTools<br>
+winget install --id Tencent.WeChat.Universal<br>
+winget install --id Tencent.WeType<br>
+winget install --id 7zip.7zip<br>
+winget install --id Git.Git<br>
+winget install --id Google.Chrome<br>
+winget install --id Termius.Termius<br>
+winget install --id Obsidian.Obsidian<br>
+winget install --id Kopia.KopiaUI<br>
+winget install Notepad--<br>
+winget install --id appmakes.Typora<br>
+winget install --id voidtools.Everything<br>
+winget install --id JetBrains.Toolbox<br>
+winget install --id Telegram.TelegramDesktop<br>
+winget install emby<br>
+winget install --id kangfenmao.CherryStudio<br>
+winget install --id Notion.Notion<br>
+winget install --id Microsoft.VisualStudioCode<br>
+winget install --id GeekUninstaller.GeekUninstaller</p>
+<pre class="notranslate"><code class="notranslate"></code></pre></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
