@@ -2,19 +2,24 @@ mihomo内核辅助脚本：
 ```
 curl -O https://raw.githubusercontent.com/sephiroth233/sys-toolkit/main/blash.cmd
 ```
+
 JDK环境变量配置脚本：
+
 ```
 curl -O https://raw.githubusercontent.com/sephiroth233/sys-toolkit/main/jdk.cmd
 ```
 navicat试用脚本：
-``
+
+```
 curl -O https://raw.githubusercontent.com/sephiroth233/sys-toolkit/main/navicat-reset.cmd
 ```
+
 Windows解除本地回环限制：
 在Powershell中输入：
 ```
  Get-ChildItem -Path Registry::"HKCU\Software\Classes\Local Settings\Software\Microsoft\Windows\CurrentVersion\AppContainer\Mappings\" -name | ForEach-Object {CheckNetIsolation.exe LoopbackExempt -a -p="$_"} 
 ```
+
 Winget安装指令：
 ```
 $progressPreference = 'silentlyContinue'
@@ -26,6 +31,7 @@ Repair-WinGetPackageManager
 Write-Host "Done."
 ```
 软件安装：
+
 ```
  winget install --id Yuanli.uTools
  winget install --id Tencent.WeChat.Universal
