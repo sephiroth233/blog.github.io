@@ -1,3 +1,10 @@
+### docker环境一键安装
+```bash
+ curl -fsSL https://raw.githubusercontent.com/sephiroth233/sys-toolkit/master/docker-install.sh -o docker-install.sh 
+ sudo chmod +x docker-install.sh                                                                                                                                                                             
+ sudo bash docker-install.sh   
+```
+
 ### 测速脚本（融合怪）
 
 [项目地址](https://github.com/spiritLHLS/ecs "https://github.com/spiritLHLS/ecs")
