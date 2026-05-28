@@ -1,13 +1,3 @@
-mihomo内核辅助脚本：
-```
-curl -O https://raw.githubusercontent.com/sephiroth233/sys-toolkit/main/blash.cmd
-```
-
-JDK环境变量配置脚本：
-
-```
-curl -O https://raw.githubusercontent.com/sephiroth233/sys-toolkit/main/jdk.cmd
-```
 navicat试用脚本：
 
 ```
