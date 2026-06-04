@@ -19,7 +19,7 @@ wsl --install
 #### **2. 安装 Docker Compose 并配置**
 进入wsl，然后执行下面指令：
 ```sh
-bash <(curl -sSL https://raw.githubusercontent.com/sephiroth233/bat-reo/main/wsl-docker-setup.sh)
+bash <(curl -sSL https://raw.githubusercontent.com/sephiroth233/sys-toolkit/master/wsl-docker-setup.sh)
 ```
 上面脚本会安装docker、docker-compose，配置免密码sudo、配置docker用户组和权限、配置docker自启动
 
