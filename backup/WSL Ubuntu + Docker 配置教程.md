@@ -19,7 +19,7 @@ wsl --install
 
 进入wsl，然后执行下面指令：
 
-```sh
+```shell
 bash <(curl -sSL https://raw.githubusercontent.com/sephiroth233/sys-toolkit/master/wsl-docker-setup.sh)
 ```
 
@@ -33,7 +33,6 @@ bash <(curl -sSL https://raw.githubusercontent.com/sephiroth233/sys-toolkit/mast
 
 ![Image](https://github.com/user-attachments/assets/ab2774f9-57e3-41ce-951f-e87ecbf6f75a)
 
-
 网络属性：[官方文档](https://learn.microsoft.com/zh-cn/windows/wsl/networking)
 
 ![Image](https://github.com/user-attachments/assets/da0d219f-3333-4448-b140-ddd747f100c8)
@@ -42,13 +41,13 @@ bash <(curl -sSL https://raw.githubusercontent.com/sephiroth233/sys-toolkit/mast
 
 #### 4.wsl中开启ssh
 
-```
+```shell
 sudo apt install openssh-server && sudo service ssh start
 ```
 
 关闭wsl，然后管理员在powserShell执行：
 
-```
+```powershell
 # 放行ssh端口
 New-NetFirewallRule -Name "WSL SSH" -DisplayName "WSL SSH" -Direction Inbound -Protocol TCP -LocalPort 22 -Action Allow
 

@@ -131,18 +131,16 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/da0d219f-3333-4448-b140-ddd747f100c8"><img src="https://github.com/user-attachments/assets/da0d219f-3333-4448-b140-ddd747f100c8" alt="Image" style="max-width: 100%;"></a></p>
 <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/7189ae01-a2e1-4363-b715-a5ed137383e3"><img src="https://github.com/user-attachments/assets/7189ae01-a2e1-4363-b715-a5ed137383e3" alt="Image" style="max-width: 100%;"></a></p>
 <h4>4.wsl中开启ssh</h4>
-<pre class="notranslate"><code class="notranslate">sudo apt install openssh-server &amp;&amp; sudo service ssh start
-</code></pre>
+<div class="highlight highlight-source-shell"><pre class="notranslate">sudo apt install openssh-server <span class="pl-k">&amp;&amp;</span> sudo service ssh start</pre></div>
 <p>关闭wsl，然后管理员在powserShell执行：</p>
-<pre class="notranslate"><code class="notranslate"># 放行ssh端口
-New-NetFirewallRule -Name "WSL SSH" -DisplayName "WSL SSH" -Direction Inbound -Protocol TCP -LocalPort 22 -Action Allow
+<div class="highlight highlight-source-powershell"><pre class="notranslate"><span class="pl-c"><span class="pl-c">#</span> 放行ssh端口</span>
+<span class="pl-c1">New-NetFirewallRule</span> <span class="pl-k">-</span>Name <span class="pl-s"><span class="pl-pds">"</span>WSL SSH<span class="pl-pds">"</span></span> <span class="pl-k">-</span>DisplayName <span class="pl-s"><span class="pl-pds">"</span>WSL SSH<span class="pl-pds">"</span></span> <span class="pl-k">-</span>Direction Inbound <span class="pl-k">-</span>Protocol TCP <span class="pl-k">-</span>LocalPort <span class="pl-c1">22</span> <span class="pl-k">-</span>Action Allow
 
-# 允许 ping（ICMP），方便调试
-New-NetFirewallRule -Name "Allow ICMP" -DisplayName "Allow ICMP" -Direction Inbound -Protocol ICMPv4 -Action Allow
+<span class="pl-c"><span class="pl-c">#</span> 允许 ping（ICMP），方便调试</span>
+<span class="pl-c1">New-NetFirewallRule</span> <span class="pl-k">-</span>Name <span class="pl-s"><span class="pl-pds">"</span>Allow ICMP<span class="pl-pds">"</span></span> <span class="pl-k">-</span>DisplayName <span class="pl-s"><span class="pl-pds">"</span>Allow ICMP<span class="pl-pds">"</span></span> <span class="pl-k">-</span>Direction Inbound <span class="pl-k">-</span>Protocol ICMPv4 <span class="pl-k">-</span>Action Allow
 
-# 确认 SSH 规则面向的端口、协议正确（之前已加过，检查一下即可）
-Get-NetFirewallRule -Name "WSL SSH" | Get-NetFirewallPortFilter
-</code></pre></div>
+<span class="pl-c"><span class="pl-c">#</span> 确认 SSH 规则面向的端口、协议正确（之前已加过，检查一下即可）</span>
+<span class="pl-c1">Get-NetFirewallRule</span> <span class="pl-k">-</span>Name <span class="pl-s"><span class="pl-pds">"</span>WSL SSH<span class="pl-pds">"</span></span> <span class="pl-k">|</span> <span class="pl-c1">Get-NetFirewallPortFilter</span></pre></div></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
