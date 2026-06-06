@@ -115,13 +115,3 @@ sudo ./sys-toolkit.sh help
 | `server-proxy.sh` | 网络代理配置脚本 |
 | `sys-backup-restore.sh` | 系统备份恢复脚本 |
 | `/tmp/sys-toolkit/` | 脚本缓存目录 |
-
----
-
-## 🔗 相关文档
-
-- [fail2ban 管理工具文档](https://raw.githubusercontent.com/sephiroth233/sys-toolkit/master/fail2ban-manager.md)
-- [网络代理配置文档](https://raw.githubusercontent.com/sephiroth233/sys-toolkit/master/server-proxy.md)
-- [系统备份恢复文档](https://raw.githubusercontent.com/sephiroth233/sys-toolkit/master/sys-backup-restore.md)
-
----
