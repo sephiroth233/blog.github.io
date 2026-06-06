@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>lang</title><link>https://sephiroth233.github.io/blog.github.io</link><description>随便写写~</description><copyright>lang</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://raw.githubusercontent.com/sephiroth233/blog.github.io/refs/heads/main/static/avatar.jpg</url><title>avatar</title><link>https://sephiroth233.github.io/blog.github.io</link></image><lastBuildDate>Sat, 06 Jun 2026 01:50:43 +0000</lastBuildDate><managingEditor>lang</managingEditor><ttl>60</ttl><webMaster>lang</webMaster><item><title>OpenAI Codex 高级配置指南</title><link>https://sephiroth233.github.io/blog.github.io/post/OpenAI%20Codex%20-gao-ji-pei-zhi-zhi-nan.html</link><description># OpenAI Codex 高级配置指南
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>lang</title><link>https://sephiroth233.github.io/blog.github.io</link><description>随便写写~</description><copyright>lang</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://raw.githubusercontent.com/sephiroth233/blog.github.io/refs/heads/main/static/avatar.jpg</url><title>avatar</title><link>https://sephiroth233.github.io/blog.github.io</link></image><lastBuildDate>Sat, 06 Jun 2026 01:59:45 +0000</lastBuildDate><managingEditor>lang</managingEditor><ttl>60</ttl><webMaster>lang</webMaster><item><title>OpenAI Codex 高级配置指南</title><link>https://sephiroth233.github.io/blog.github.io/post/OpenAI%20Codex%20-gao-ji-pei-zhi-zhi-nan.html</link><description># OpenAI Codex 高级配置指南
 
 &gt; 来源：https://developers.openai.com/codex/config-advanced
 
@@ -176,10 +176,10 @@ echo root:password|sudo chpasswd root&#13;
 ```&#13;
 &#13;
 ![image.png](https://s2.loli.net/2024/06/03/aBHbFomGSMsxT8Z.png)&#13;
-。</description><guid isPermaLink="true">https://sephiroth233.github.io/blog.github.io/post/yi-jian-dd-chun-jing-xi-tong-%28leitbogioro%29.html</guid><pubDate>Fri, 19 Jul 2024 02:18:10 +0000</pubDate></item><item><title>微软输入法设置小鹤双拼</title><link>https://sephiroth233.github.io/blog.github.io/post/wei-ruan-shu-ru-fa-she-zhi-xiao-he-shuang-pin.html</link><description>打开PowerShell，输入：&#13;
-```shell&#13;
-reg add HKCU\Software\Microsoft\InputMethod\Settings\CHS /v UserDefinedDoublePinyinScheme0 /t REG_SZ /d '小鹤双拼*2*^*iuvdjhcwfg^xmlnpbksqszxkrltvyovt' /f&#13;
-```&#13;
+。</description><guid isPermaLink="true">https://sephiroth233.github.io/blog.github.io/post/yi-jian-dd-chun-jing-xi-tong-%28leitbogioro%29.html</guid><pubDate>Fri, 19 Jul 2024 02:18:10 +0000</pubDate></item><item><title>微软输入法设置小鹤双拼</title><link>https://sephiroth233.github.io/blog.github.io/post/wei-ruan-shu-ru-fa-she-zhi-xiao-he-shuang-pin.html</link><description>打开PowerShell，输入：
+```shell
+reg add HKCU\Software\Microsoft\InputMethod\Settings\CHS /v UserDefinedDoublePinyinScheme0 /t REG_SZ /d '小鹤双拼*2*^*iuvdjhcwfg^xmlnpbksqszxkrltvyovt' /f
+```
 然后回车。</description><guid isPermaLink="true">https://sephiroth233.github.io/blog.github.io/post/wei-ruan-shu-ru-fa-she-zhi-xiao-he-shuang-pin.html</guid><pubDate>Fri, 19 Jul 2024 02:17:24 +0000</pubDate></item><item><title>windows数字激活</title><link>https://sephiroth233.github.io/blog.github.io/post/windows-shu-zi-ji-huo.html</link><description>[Microsoft Activation Scripts](https://github.com/massgravel/Microsoft-Activation-Scripts 'Microsoft Activation Scripts')（简称MAS），具备HWID/KMS38/在线KMS激活Microsoft，这款批处理版KMS激活脚本最大特色是代码开源，小巧不误报。</description><guid isPermaLink="true">https://sephiroth233.github.io/blog.github.io/post/windows-shu-zi-ji-huo.html</guid><pubDate>Fri, 19 Jul 2024 02:16:30 +0000</pubDate></item><item><title>vps脚本</title><link>https://sephiroth233.github.io/blog.github.io/post/vps-jiao-ben.html</link><description>### docker环境一键安装
 ```bash
  curl -fsSL https://raw.githubusercontent.com/sephiroth233/sys-toolkit/master/docker-install.sh -o docker-install.sh 
