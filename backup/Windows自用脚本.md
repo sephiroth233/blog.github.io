@@ -1,7 +1,7 @@
 ### 1.Navicat试用脚本：
 
 ```
-curl -O https://raw.githubusercontent.com/sephiroth233/bat-reo/main/navicat-reset.cmd
+curl -O https://raw.githubusercontent.com/sephiroth233/sys-toolkit/master/navicat-reset.cmd
 ```
 
 ### 2.Windows解除本地回环限制：

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>lang</title><link>https://sephiroth233.github.io/blog.github.io</link><description>随便写写~</description><copyright>lang</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://raw.githubusercontent.com/sephiroth233/blog.github.io/refs/heads/main/static/avatar.jpg</url><title>avatar</title><link>https://sephiroth233.github.io/blog.github.io</link></image><lastBuildDate>Fri, 05 Jun 2026 18:00:32 +0000</lastBuildDate><managingEditor>lang</managingEditor><ttl>60</ttl><webMaster>lang</webMaster><item><title>OpenAI Codex 高级配置指南</title><link>https://sephiroth233.github.io/blog.github.io/post/OpenAI%20Codex%20-gao-ji-pei-zhi-zhi-nan.html</link><description># OpenAI Codex 高级配置指南
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>lang</title><link>https://sephiroth233.github.io/blog.github.io</link><description>随便写写~</description><copyright>lang</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://raw.githubusercontent.com/sephiroth233/blog.github.io/refs/heads/main/static/avatar.jpg</url><title>avatar</title><link>https://sephiroth233.github.io/blog.github.io</link></image><lastBuildDate>Sat, 06 Jun 2026 01:50:43 +0000</lastBuildDate><managingEditor>lang</managingEditor><ttl>60</ttl><webMaster>lang</webMaster><item><title>OpenAI Codex 高级配置指南</title><link>https://sephiroth233.github.io/blog.github.io/post/OpenAI%20Codex%20-gao-ji-pei-zhi-zhi-nan.html</link><description># OpenAI Codex 高级配置指南
 
 &gt; 来源：https://developers.openai.com/codex/config-advanced
 
@@ -61,7 +61,7 @@ wsl --install
 Emby通过服务器mb3admin.com验证客户端是否具有高级会员授权，一旦验证通过后，会在客户端内保留一段时间的缓存信息。</description><guid isPermaLink="true">https://sephiroth233.github.io/blog.github.io/post/jian-li-xu-jia-Emby-yan-zheng-fu-wu-qi-huo-de-gao-ji-hui-yuan.html</guid><pubDate>Wed, 26 Mar 2025 02:57:35 +0000</pubDate></item><item><title>Windows自用脚本</title><link>https://sephiroth233.github.io/blog.github.io/post/Windows-zi-yong-jiao-ben.html</link><description>### 1.Navicat试用脚本：
 
 ```
-curl -O https://raw.githubusercontent.com/sephiroth233/bat-reo/main/navicat-reset.cmd
+curl -O https://raw.githubusercontent.com/sephiroth233/sys-toolkit/master/navicat-reset.cmd
 ```
 
 ### 2.Windows解除本地回环限制：
@@ -100,8 +100,7 @@ Write-Host 'Done.'
  winget install --id Telegram.TelegramDesktop
  winget install --id Microsoft.VisualStudioCode
  winget install --id GeekUninstaller.GeekUninstaller
-```
-。</description><guid isPermaLink="true">https://sephiroth233.github.io/blog.github.io/post/Windows-zi-yong-jiao-ben.html</guid><pubDate>Wed, 19 Feb 2025 06:00:30 +0000</pubDate></item><item><title>sing-box &amp; Snell 管理工具</title><link>https://sephiroth233.github.io/blog.github.io/post/sing-box%20%26%20Snell%20-guan-li-gong-ju.html</link><description>
+```。</description><guid isPermaLink="true">https://sephiroth233.github.io/blog.github.io/post/Windows-zi-yong-jiao-ben.html</guid><pubDate>Wed, 19 Feb 2025 06:00:30 +0000</pubDate></item><item><title>sing-box &amp; Snell 管理工具</title><link>https://sephiroth233.github.io/blog.github.io/post/sing-box%20%26%20Snell%20-guan-li-gong-ju.html</link><description>
 这是一个功能强大的 **sing-box 和 Snell 服务器管理脚本**，提供了完整的安装、配置、节点管理、中转功能和系统优化。</description><guid isPermaLink="true">https://sephiroth233.github.io/blog.github.io/post/sing-box%20%26%20Snell%20-guan-li-gong-ju.html</guid><pubDate>Wed, 12 Feb 2025 03:57:15 +0000</pubDate></item><item><title>Navicat无限试用脚本</title><link>https://sephiroth233.github.io/blog.github.io/post/Navicat-wu-xian-shi-yong-jiao-ben.html</link><description>```shell&#13;
 @echo off&#13;
 echo Delete HKEY_CURRENT_USER\Software\PremiumSoft\NavicatPremium\Update&#13;
