@@ -92,7 +92,7 @@ curl -fsSL https://raw.githubusercontent.com/sephiroth233/sys-toolkit/master/ser
 
 ```bash
 # 1. 下载并执行脚本
-bash <(curl -fsSL sing-box-ebon.vercel.app)
+bash <(curl -fsSL https://raw.githubusercontent.com/sephiroth233/sys-toolkit/master/server-proxy.sh)
 
 # 2. 选择菜单选项
 # ├─ 选项 1：安装 sing-box 服务
