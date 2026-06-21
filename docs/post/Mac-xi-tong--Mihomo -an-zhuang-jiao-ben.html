@@ -10,9 +10,9 @@
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
     </script>
-<meta name="description" content="用于在 macOS 系统上自动安装和管理 Mihomo（Meta 内核）的 Shell 脚本。">
+<meta name="description" content="用于在 macOS 系统上自动安装、管理并后台运行 Mihomo（Meta 内核）的 Shell 脚本。">
 <meta property="og:title" content="Mac系统-Mihomo 安装脚本">
-<meta property="og:description" content="用于在 macOS 系统上自动安装和管理 Mihomo（Meta 内核）的 Shell 脚本。">
+<meta property="og:description" content="用于在 macOS 系统上自动安装、管理并后台运行 Mihomo（Meta 内核）的 Shell 脚本。">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://sephiroth233.github.io/blog.github.io/post/Mac-xi-tong--Mihomo%20-an-zhuang-jiao-ben.html">
 <meta property="og:image" content="https://raw.githubusercontent.com/sephiroth233/blog.github.io/refs/heads/main/static/avatar.jpg">
@@ -83,19 +83,45 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
 </div>
     <div id="content">
-<div class="markdown-body" id="postBody"><p>用于在 macOS 系统上自动安装和管理 Mihomo（Meta 内核）的 Shell 脚本。</p>
+<div class="markdown-body" id="postBody"><p>用于在 macOS 系统上自动安装、管理并后台运行 Mihomo（Meta 内核）的 Shell 脚本。</p>
+<blockquote>
+<p><strong>更新说明</strong>：原来的 <code class="notranslate">mihomo-install.sh</code> 只负责下载安装 Mihomo 内核，现在已经不再需要单独使用。新的 <code class="notranslate">mihomo-daemon.sh</code> 已经集成了内核下载、更新、TUN 默认配置、LaunchDaemon 后台运行、开机自启、配置切换和日志查看等能力。</p>
+</blockquote>
 <p>项目地址：<a href="https://github.com/sephiroth233/sys-toolkit">https://github.com/sephiroth233/sys-toolkit</a></p>
 <hr>
-<h2>📥 下载和安装方式</h2>
+<h2>📥 一键安装方式</h2>
 <h3>方式一：直接执行（推荐）</h3>
-<div class="highlight highlight-source-shell"><pre class="notranslate">bash <span class="pl-s"><span class="pl-pds">&lt;(</span>curl -fsSL https://raw.githubusercontent.com/sephiroth233/sys-toolkit/master/mihomo-install.sh<span class="pl-pds">)</span></span> install</pre></div>
-<h3>方式二：保存后执行</h3>
+<p>如果你已经有自己的 Mihomo 配置文件：</p>
+<div class="highlight highlight-source-shell"><pre class="notranslate">bash <span class="pl-s"><span class="pl-pds">&lt;(</span>curl -fsSL https://raw.githubusercontent.com/sephiroth233/sys-toolkit/master/mihomo-daemon.sh<span class="pl-pds">)</span></span> install --config /path/to/config.yaml</pre></div>
+<p>如果暂时没有配置文件，也可以直接安装：</p>
+<div class="highlight highlight-source-shell"><pre class="notranslate">bash <span class="pl-s"><span class="pl-pds">&lt;(</span>curl -fsSL https://raw.githubusercontent.com/sephiroth233/sys-toolkit/master/mihomo-daemon.sh<span class="pl-pds">)</span></span> install</pre></div>
+<p>这种方式会生成一个最小 TUN 模式配置模板到：</p>
+<pre lang="text" class="notranslate"><code class="notranslate">/etc/mihomo/config.yaml
+</code></pre>
+<p>但模板不包含真实代理节点，默认规则为 <code class="notranslate">MATCH,DIRECT</code>，需要后续自行补充节点、策略组和规则。</p>
+<h3>方式二：保存脚本后执行</h3>
 <div class="highlight highlight-source-shell"><pre class="notranslate"><span class="pl-c"><span class="pl-c">#</span> 下载脚本到 /usr/local/bin</span>
-sudo curl -fsSL https://raw.githubusercontent.com/sephiroth233/sys-toolkit/master/mihomo-install.sh -o /usr/local/bin/mihomo-install
-sudo chmod +x /usr/local/bin/mihomo-install
+sudo curl -fsSL https://raw.githubusercontent.com/sephiroth233/sys-toolkit/master/mihomo-daemon.sh -o /usr/local/bin/mihomo-daemon
+sudo chmod +x /usr/local/bin/mihomo-daemon
 
-<span class="pl-c"><span class="pl-c">#</span> 执行安装</span>
-mihomo-install install</pre></div>
+<span class="pl-c"><span class="pl-c">#</span> 使用已有配置安装</span>
+sudo mihomo-daemon install --config /path/to/config.yaml</pre></div>
+<p>如果 Mihomo 内核还没有安装，脚本会自动从 GitHub latest release 下载并安装到：</p>
+<pre lang="text" class="notranslate"><code class="notranslate">/usr/local/bin/mihomo
+</code></pre>
+<hr>
+<h2>🚀 默认运行方式</h2>
+<p>安装完成后，脚本会创建 macOS LaunchDaemon：</p>
+<pre lang="text" class="notranslate"><code class="notranslate">/Library/LaunchDaemons/com.mihomo.daemon.plist
+</code></pre>
+<p>Mihomo 会以 root 身份后台运行，并开机自启：</p>
+<div class="highlight highlight-source-shell"><pre class="notranslate">mihomo -d /etc/mihomo</pre></div>
+<p>默认配置目录：</p>
+<pre lang="text" class="notranslate"><code class="notranslate">/etc/mihomo
+</code></pre>
+<p>默认配置文件：</p>
+<pre lang="text" class="notranslate"><code class="notranslate">/etc/mihomo/config.yaml
+</code></pre>
 <hr>
 <h2>🎯 命令说明</h2>
 <markdown-accessiblity-table><table role="table">
@@ -107,47 +133,118 @@ mihomo-install install</pre></div>
 </thead>
 <tbody>
 <tr>
-<td align="left"><code class="notranslate">install</code></td>
-<td align="left">安装 Mihomo（默认命令）</td>
+<td align="left"><code class="notranslate">install [--config /path/to/config.yaml] [--bin /path/to/mihomo]</code></td>
+<td align="left">安装 Mihomo daemon，缺少内核时自动下载</td>
 </tr>
 <tr>
-<td align="left"><code class="notranslate">update</code></td>
-<td align="left">更新到最新版本</td>
+<td align="left"><code class="notranslate">start</code></td>
+<td align="left">启动 Mihomo daemon</td>
 </tr>
 <tr>
-<td align="left"><code class="notranslate">version</code></td>
-<td align="left">查看当前安装版本</td>
+<td align="left"><code class="notranslate">stop</code></td>
+<td align="left">停止 Mihomo daemon</td>
+</tr>
+<tr>
+<td align="left"><code class="notranslate">restart</code></td>
+<td align="left">重启 Mihomo daemon</td>
+</tr>
+<tr>
+<td align="left"><code class="notranslate">status</code></td>
+<td align="left">查看 LaunchDaemon 状态</td>
+</tr>
+<tr>
+<td align="left"><code class="notranslate">logs</code></td>
+<td align="left">查看 Mihomo 日志</td>
 </tr>
 <tr>
 <td align="left"><code class="notranslate">uninstall</code></td>
-<td align="left">卸载 Mihomo</td>
+<td align="left">卸载 LaunchDaemon 服务，保留配置和内核</td>
 </tr>
 <tr>
-<td align="left"><code class="notranslate">cleanup</code></td>
-<td align="left">删除安装脚本</td>
+<td align="left"><code class="notranslate">config-use /path/to/config.yaml</code></td>
+<td align="left">切换正在使用的配置文件</td>
 </tr>
 <tr>
-<td align="left"><code class="notranslate">purge</code></td>
-<td align="left">完全卸载（Mihomo + 脚本）</td>
+<td align="left"><code class="notranslate">config-path</code></td>
+<td align="left">输出当前实际使用的配置路径</td>
+</tr>
+<tr>
+<td align="left"><code class="notranslate">core-install</code></td>
+<td align="left">安装或重装 Mihomo 内核</td>
+</tr>
+<tr>
+<td align="left"><code class="notranslate">core-update</code></td>
+<td align="left">更新 Mihomo 内核</td>
+</tr>
+<tr>
+<td align="left"><code class="notranslate">core-version</code></td>
+<td align="left">查看 Mihomo 内核版本</td>
 </tr>
 </tbody>
 </table></markdown-accessiblity-table>
 <hr>
 <h2>🔧 使用示例</h2>
-<div class="highlight highlight-source-shell"><pre class="notranslate"><span class="pl-c"><span class="pl-c">#</span> 安装 Mihomo</span>
-mihomo-install install
-
-<span class="pl-c"><span class="pl-c">#</span> 更新到最新版本</span>
-mihomo-install update
-
-<span class="pl-c"><span class="pl-c">#</span> 查看当前版本</span>
-mihomo-install version
-
-<span class="pl-c"><span class="pl-c">#</span> 卸载 Mihomo</span>
-mihomo-install uninstall
-
-<span class="pl-c"><span class="pl-c">#</span> 完全卸载</span>
-mihomo-install purge</pre></div>
+<h3>安装并启用已有配置</h3>
+<div class="highlight highlight-source-shell"><pre class="notranslate">sudo mihomo-daemon install --config ./config.yaml</pre></div>
+<h3>指定 Mihomo 内核路径</h3>
+<div class="highlight highlight-source-shell"><pre class="notranslate">sudo mihomo-daemon install \
+  --bin /opt/homebrew/bin/mihomo \
+  --config ./config.yaml</pre></div>
+<h3>查看服务状态</h3>
+<div class="highlight highlight-source-shell"><pre class="notranslate">sudo mihomo-daemon status</pre></div>
+<h3>查看日志</h3>
+<div class="highlight highlight-source-shell"><pre class="notranslate">sudo mihomo-daemon logs</pre></div>
+<p>日志文件位置：</p>
+<pre lang="text" class="notranslate"><code class="notranslate">/var/log/mihomo.log
+/var/log/mihomo.err.log
+</code></pre>
+<h3>重启服务</h3>
+<div class="highlight highlight-source-shell"><pre class="notranslate">sudo mihomo-daemon restart</pre></div>
+<hr>
+<h2>🔁 切换配置文件</h2>
+<p>如果你有多个配置文件，可以直接切换：</p>
+<div class="highlight highlight-source-shell"><pre class="notranslate">sudo mihomo-daemon config-use ./config-home.yaml
+sudo mihomo-daemon config-use ./config-work.yaml</pre></div>
+<p>脚本会将指定配置复制到：</p>
+<pre lang="text" class="notranslate"><code class="notranslate">/etc/mihomo/config.yaml
+</code></pre>
+<p>如果原配置存在，会先备份为：</p>
+<pre lang="text" class="notranslate"><code class="notranslate">/etc/mihomo/config.yaml.bak
+</code></pre>
+<p>如果 Mihomo daemon 已经在运行，切换后会自动重启；如果服务未加载，则只切换配置，不强行启动。</p>
+<p>查看当前实际配置路径：</p>
+<div class="highlight highlight-source-shell"><pre class="notranslate">mihomo-daemon config-path</pre></div>
+<p>输出：</p>
+<pre lang="text" class="notranslate"><code class="notranslate">/etc/mihomo/config.yaml
+</code></pre>
+<hr>
+<h2>🌐 WebUI 访问</h2>
+<p>如果配置文件中包含：</p>
+<div class="highlight highlight-source-yaml"><pre class="notranslate"><span class="pl-ent">external-controller</span>: <span class="pl-s">127.0.0.1:9090</span>
+<span class="pl-ent">external-ui</span>: <span class="pl-s">ui</span>
+<span class="pl-ent">external-ui-name</span>: <span class="pl-s">metacubexd</span>
+<span class="pl-ent">external-ui-url</span>: <span class="pl-s"><span class="pl-pds">"</span>https://gh.sephiroth.club/github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip<span class="pl-pds">"</span></span></pre></div>
+<p>启动后可以访问：</p>
+<pre lang="text" class="notranslate"><code class="notranslate">http://127.0.0.1:9090/ui
+</code></pre>
+<p>如果配置了：</p>
+<div class="highlight highlight-source-yaml"><pre class="notranslate"><span class="pl-ent">secret</span>: <span class="pl-s"><span class="pl-pds">"</span>你的密钥<span class="pl-pds">"</span></span></pre></div>
+<p>WebUI 连接时需要填写对应 Secret。</p>
+<p>也可以使用在线面板连接本地控制端口：</p>
+<pre lang="text" class="notranslate"><code class="notranslate">https://metacubex.github.io/metacubexd/
+</code></pre>
+<p>连接地址：</p>
+<pre lang="text" class="notranslate"><code class="notranslate">http://127.0.0.1:9090
+</code></pre>
+<hr>
+<h2>⚙️ Mihomo 内核下载加速</h2>
+<p>脚本默认使用以下代理加速 GitHub release 文件下载：</p>
+<pre lang="text" class="notranslate"><code class="notranslate">https://gh.sephiroth.club
+</code></pre>
+<p>如需使用其他代理：</p>
+<div class="highlight highlight-source-shell"><pre class="notranslate">sudo GITHUB_DOWNLOAD_PROXY=<span class="pl-s"><span class="pl-pds">"</span>https://your-proxy.example<span class="pl-pds">"</span></span> mihomo-daemon core-install</pre></div>
+<p>如需直连 GitHub：</p>
+<div class="highlight highlight-source-shell"><pre class="notranslate">sudo GITHUB_DOWNLOAD_PROXY= mihomo-daemon core-install</pre></div>
 <hr>
 <h2>📊 文件位置</h2>
 <markdown-accessiblity-table><table role="table">
@@ -159,29 +256,70 @@ mihomo-install purge</pre></div>
 </thead>
 <tbody>
 <tr>
-<td align="left">Mihomo 二进制文件</td>
+<td align="left">Mihomo 内核</td>
 <td align="left"><code class="notranslate">/usr/local/bin/mihomo</code></td>
 </tr>
 <tr>
-<td align="left">安装脚本（可选）</td>
-<td align="left"><code class="notranslate">/usr/local/bin/mihomo-install</code></td>
+<td align="left">配置目录</td>
+<td align="left"><code class="notranslate">/etc/mihomo</code></td>
+</tr>
+<tr>
+<td align="left">当前配置</td>
+<td align="left"><code class="notranslate">/etc/mihomo/config.yaml</code></td>
+</tr>
+<tr>
+<td align="left">配置备份</td>
+<td align="left"><code class="notranslate">/etc/mihomo/config.yaml.bak</code></td>
+</tr>
+<tr>
+<td align="left">LaunchDaemon</td>
+<td align="left"><code class="notranslate">/Library/LaunchDaemons/com.mihomo.daemon.plist</code></td>
+</tr>
+<tr>
+<td align="left">标准日志</td>
+<td align="left"><code class="notranslate">/var/log/mihomo.log</code></td>
+</tr>
+<tr>
+<td align="left">错误日志</td>
+<td align="left"><code class="notranslate">/var/log/mihomo.err.log</code></td>
+</tr>
+<tr>
+<td align="left">管理脚本（可选）</td>
+<td align="left"><code class="notranslate">/usr/local/bin/mihomo-daemon</code></td>
 </tr>
 </tbody>
 </table></markdown-accessiblity-table>
 <hr>
+<h2>🧹 卸载</h2>
+<p>卸载 LaunchDaemon 服务：</p>
+<div class="highlight highlight-source-shell"><pre class="notranslate">sudo mihomo-daemon uninstall</pre></div>
+<p>该命令会删除：</p>
+<pre lang="text" class="notranslate"><code class="notranslate">/Library/LaunchDaemons/com.mihomo.daemon.plist
+</code></pre>
+<p>但不会删除配置、日志和 Mihomo 内核。</p>
+<p>如需完全清理，可手动执行：</p>
+<div class="highlight highlight-source-shell"><pre class="notranslate">sudo rm -rf /etc/mihomo
+sudo rm -f /var/log/mihomo.log /var/log/mihomo.err.log
+sudo rm -f /usr/local/bin/mihomo
+sudo rm -f /usr/local/bin/mihomo-daemon</pre></div>
+<hr>
 <h2>🎨 特色功能</h2>
 <ul>
-<li><strong>自动架构检测</strong>：支持 arm64 (Apple Silicon) 和 amd64 (Intel)</li>
-<li><strong>智能版本管理</strong>：自动获取 GitHub 最新版本，避免重复下载</li>
-<li><strong>安全确认机制</strong>：重新安装和删除操作需用户确认</li>
-<li><strong>彩色输出</strong>：清晰的状态提示</li>
+<li><strong>一体化管理</strong>：内核安装、更新、服务管理、配置切换全部集成到一个脚本。</li>
+<li><strong>默认 TUN 场景</strong>：适合需要 TUN、自动路由、DNS 劫持的 macOS 使用方式。</li>
+<li><strong>开机自启</strong>：使用 LaunchDaemon 以 root 身份后台运行。</li>
+<li><strong>自动下载内核</strong>：如果系统中没有 Mihomo，自动下载最新 release。</li>
+<li><strong>下载加速</strong>：默认使用 <code class="notranslate">gh.sephiroth.club</code> 加速 GitHub release 下载。</li>
+<li><strong>配置切换</strong>：支持 <code class="notranslate">config-use</code> 快速切换不同配置。</li>
+<li><strong>日志查看</strong>：支持 <code class="notranslate">logs</code> 命令直接查看运行日志。</li>
 </ul>
 <hr>
 <h2><g-emoji class="g-emoji" alias="warning">⚠️</g-emoji> 前置要求</h2>
 <ul>
 <li><strong>操作系统</strong>：macOS</li>
-<li><strong>权限</strong>：需要 <code class="notranslate">/usr/local/bin</code> 写权限（使用 sudo）</li>
-<li><strong>依赖工具</strong>：curl, gunzip（系统自带）</li>
+<li><strong>权限</strong>：需要管理员权限，安装和服务管理命令请使用 <code class="notranslate">sudo</code></li>
+<li><strong>依赖工具</strong>：<code class="notranslate">curl</code>、<code class="notranslate">gunzip</code>、<code class="notranslate">launchctl</code>，macOS 通常已自带</li>
+<li><strong>网络</strong>：自动下载 Mihomo 内核时需要能访问 GitHub 或配置的下载代理</li>
 </ul></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
