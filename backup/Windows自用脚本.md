@@ -25,19 +25,56 @@ Write-Host "Done."
 
 ### 4.常用软件安装：
 
+日常软件：
+
 ```
- winget install --id Yuanli.uTools
- winget install --id Tencent.WeChat.Universal
- winget install --id Tencent.WeType
- winget install --id 7zip.7zip
- winget install --id Git.Git
- winget install --id Google.Chrome
- winget install --id Termius.Termius
- winget install Notepad--
- winget install --id appmakes.Typora
- winget install --id voidtools.Everything
- winget install --id JetBrains.Toolbox
- winget install --id Telegram.TelegramDesktop
- winget install --id Microsoft.VisualStudioCode
- winget install --id GeekUninstaller.GeekUninstaller
+winget install --id Yuanli.uTools -e
+winget install --id Tencent.WeChat.Universal -e
+winget install --id Tencent.WeType -e
+winget install --id 7zip.7zip -e
+winget install --id Git.Git -e
+winget install --id Google.Chrome -e
+winget install --id Termius.Termius -e
+winget install Notepad--
+winget install --id appmakes.Typora -e
+winget install --id voidtools.Everything -e
+winget install --id JetBrains.Toolbox -e
+winget install --id Telegram.TelegramDesktop -e
+winget install --id Microsoft.VisualStudioCode -e
+winget install --id GeekUninstaller.GeekUninstaller -e
+```
+
+Windows 开发 / AI 时代工具链：
+
+```
+# 终端、Shell、启动器
+winget install --id Microsoft.WindowsTerminal -e
+winget install --id Microsoft.PowerShell -e
+winget install --id Microsoft.PowerToys -e
+
+# Linux-like 命令行体验
+winget install --id Microsoft.WSL -e
+winget install --id Microsoft.Coreutils -e
+winget install --id Microsoft.Edit -e
+
+# AI / Agent / 本地模型相关
+winget install --id Microsoft.AIShell -e
+winget install --id Microsoft.FoundryLocal -e
+winget install --id Microsoft.IntelligentTerminal -e
+
+# 开发常用补充
+winget install --id GitHub.cli -e
+winget install --id Microsoft.Sysinternals -e
+winget install --id Docker.DockerDesktop -e
+winget install --id OpenJS.NodeJS.LTS -e
+winget install --id Python.Python.3.13 -e
+winget install --id Microsoft.VisualStudio.2022.Community -e
+```
+
+WSL 初始化：
+
+```
+wsl --install
+wsl --update
+wsl --set-default-version 2
 ```
