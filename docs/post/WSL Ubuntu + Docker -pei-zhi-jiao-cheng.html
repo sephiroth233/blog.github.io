@@ -119,20 +119,41 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <li>安装后设置用户名/密码。</li>
 </ul>
 <hr>
-<h4><strong>2. 安装 Docker Compose 并配置</strong></h4>
-<p>进入wsl，然后执行下面指令：</p>
-<div class="highlight highlight-source-shell"><pre class="notranslate">bash <span class="pl-s"><span class="pl-pds">&lt;(</span>curl -sSL https://raw.githubusercontent.com/sephiroth233/sys-toolkit/master/wsl-docker-setup.sh<span class="pl-pds">)</span></span></pre></div>
-<p>上面脚本会安装docker、docker-compose，配置免密码sudo、配置docker用户组和权限、配置docker自启动</p>
+<h4><strong>2. 安装 Docker 与 Docker Compose</strong></h4>
+<p>进入 WSL，执行以下命令下载并运行安装脚本：</p>
+<div class="highlight highlight-source-shell"><pre class="notranslate">wget -O docker-install.sh https://raw.githubusercontent.com/sephiroth233/sys-toolkit/master/docker-install.sh
+chmod +x docker-install.sh
+sudo ./docker-install.sh</pre></div>
+<p>脚本启动后会显示交互菜单：</p>
+<pre class="notranslate"><code class="notranslate">  1) 正常环境安装（使用 Docker 官方源）
+  2) 国内环境安装（使用国内镜像源 + 加速器）
+  3) 卸载 Docker（完全移除）
+  4) 退出
+</code></pre>
+<ul>
+<li>网络条件好 → 选 <strong>1</strong>（Docker 官方源）</li>
+<li>国内网络 → 选 <strong>2</strong>，再选择阿里云或清华 TUNA 镜像源，脚本会自动配置镜像加速器（<code class="notranslate">docker.1ms.run</code> / <code class="notranslate">atomhub.openatom.cn</code> / <code class="notranslate">docker.xuanyuan.me</code>）</li>
+</ul>
+<p>脚本会自动完成：</p>
+<ul>
+<li>卸载旧版本 Docker</li>
+<li>根据系统（Ubuntu/Debian/CentOS/RHEL/Rocky/Alma）选择 APT/YUM 安装方式</li>
+<li>安装最新版 Docker Engine + CLI + containerd + Buildx + Compose 插件</li>
+<li>启动 Docker 并设置开机自启</li>
+<li>将当前用户加入 docker 组</li>
+<li>拉取 hello-world 验证安装</li>
+</ul>
+<p>支持系统：Ubuntu、Debian、CentOS、RHEL、Rocky、AlmaLinux、Fedora。</p>
 <hr>
-<h4><strong>3.WSL Settings</strong></h4>
-<p>点击wisnows窗口图标，根据需要设置wsl内存、网络、内存回收相关属性。</p>
+<h4><strong>3. WSL Settings</strong></h4>
+<p>点击 Windows 窗口图标，根据需要设置 WSL 内存、网络、内存回收相关属性。</p>
 <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/ab2774f9-57e3-41ce-951f-e87ecbf6f75a"><img src="https://github.com/user-attachments/assets/ab2774f9-57e3-41ce-951f-e87ecbf6f75a" alt="Image" style="max-width: 100%;"></a></p>
 <p>网络属性：<a href="https://learn.microsoft.com/zh-cn/windows/wsl/networking" rel="nofollow">官方文档</a></p>
 <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/da0d219f-3333-4448-b140-ddd747f100c8"><img src="https://github.com/user-attachments/assets/da0d219f-3333-4448-b140-ddd747f100c8" alt="Image" style="max-width: 100%;"></a></p>
 <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/7189ae01-a2e1-4363-b715-a5ed137383e3"><img src="https://github.com/user-attachments/assets/7189ae01-a2e1-4363-b715-a5ed137383e3" alt="Image" style="max-width: 100%;"></a></p>
-<h4>4.wsl中开启ssh</h4>
+<h4>4. WSL 中开启 SSH</h4>
 <div class="highlight highlight-source-shell"><pre class="notranslate">sudo apt install openssh-server <span class="pl-k">&amp;&amp;</span> sudo service ssh start</pre></div>
-<p>关闭wsl，然后管理员在powserShell执行：</p>
+<p>关闭 WSL，然后管理员在 PowerShell 执行：</p>
 <div class="highlight highlight-source-powershell"><pre class="notranslate"><span class="pl-c"><span class="pl-c">#</span> 放行ssh端口</span>
 <span class="pl-c1">New-NetFirewallRule</span> <span class="pl-k">-</span>Name <span class="pl-s"><span class="pl-pds">"</span>WSL SSH<span class="pl-pds">"</span></span> <span class="pl-k">-</span>DisplayName <span class="pl-s"><span class="pl-pds">"</span>WSL SSH<span class="pl-pds">"</span></span> <span class="pl-k">-</span>Direction Inbound <span class="pl-k">-</span>Protocol TCP <span class="pl-k">-</span>LocalPort <span class="pl-c1">22</span> <span class="pl-k">-</span>Action Allow
 
