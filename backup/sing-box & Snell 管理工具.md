@@ -1,5 +1,4 @@
-
-这是一个功能强大的 **sing-box 和 Snell 服务器管理脚本**，提供了完整的安装、配置、节点管理、中转功能和系统优化。
+这是一个功能强大的 **sing-box 管理脚本**，提供完整的安装、配置、节点管理、中转功能和系统优化。
 
 项目地址：https://github.com/sephiroth233/sys-toolkit
 
@@ -22,37 +21,38 @@ curl -fsSL https://raw.githubusercontent.com/sephiroth233/sys-toolkit/master/ser
 ## 🎯 主要功能模块
 
 ### 1️⃣ **服务安装与卸载**
-- **安装 sing-box**：自动下载并安装 sing-box 服务
-    - 自动生成随机端口（避免冲突）
-    - 自动生成密钥对（Reality、UUID等）
-    - 自动生成自签名证书
-    - 自动获取服务器 IP 和所在国家
-- **安装 Snell**：自动下载并安装 Snell 代理服务
-    - 支持多系统架构（amd64/aarch64）
-    - 自动创建 systemd 服务
-    - 创建专用用户和配置目录
-- **卸载服务**：完全删除服务和配置文件（支持 sing-box 和 Snell）
+- **安装 sing-box**：自动下载并安装 sing-box 服务，安装时可选择版本：
+  - 最新正式版（推荐）
+  - 最新 Beta 版（包含 Snell 协议，需 1.14.0+）
+  - 指定版本号
+- 自动生成随机端口（避免冲突）
+- 自动生成密钥对（Reality、UUID 等）
+- 自动生成自签名证书
+- 自动获取服务器 IP 和所在国家
+- **卸载服务**：完全删除服务和配置文件
 
 ### 2️⃣ **服务管理**
 - **sing-box 服务**：启动/停止/重启、查看状态、实时日志
-- **Snell 服务**：启动/停止/重启、查看状态、实时日志
-- 智能状态显示：实时显示服务安装和运行状态
+- 智能状态显示：实时显示服务安装和运行状态、当前版本、Snell 支持状态、BBR 状态
 
 ### 3️⃣ **节点配置生成** ⭐
 支持生成多种协议的入站配置：
 
 | 协议 | 特点 |
 |------|------|
-| **Hysteria2** | 高性能，基于 UDP |
-| **Shadowsocks + ShadowTLS** | 流量伪装能力强 |
+| **Snell** | 自 sing-box 1.14.0 起支持，可选择版本 5/6（默认 5） |
+| **Shadowsocks 2022** | 2022-blake3-aes-256-gcm，支持多路复用 |
 | **VLESS + Vision + Reality** | 防审查，TLS 指纹识别 |
+| **Hysteria2** | 高性能，基于 UDP |
 | **AnyTLS** | 通用 TLS 代理 |
+| **SOCKS5** | 本地代理 |
+| **HTTP** | 本地代理 |
 
 **功能特性：**
 - 支持单独或批量生成协议（可多选）
 - 自动检测端口可用性
 - 支持用户自定义端口或使用随机端口
-- 自动生成完整的分享链接（URI 格式）
+- 自动生成完整的分享链接（URI 格式）和 Surge/Clash 配置格式
 - 配置验证和错误恢复机制
 
 ### 4️⃣ **客户端配置查看**
@@ -67,22 +67,14 @@ curl -fsSL https://raw.githubusercontent.com/sephiroth233/sys-toolkit/master/ser
 - **删除中转**：支持选择性删除或全部删除
 - 自动重启服务应用配置变更
 
-### 6️⃣ **Snell 配置管理** 🔧
-- **生成 Snell 配置**：自定义端口或使用随机端口
-- **查看 Snell 配置**：显示完整的客户端配置信息
-- **删除 Snell 配置**：停止服务并删除配置文件
-- 自动生成 Surge 兼容的配置格式
-
-### 7️⃣ **BBR 加速**
+### 6️⃣ **BBR 加速**
 - 启用 BBR：自动检测内核版本，启用 TCP BBR 拥塞控制
 - 关闭 BBR：恢复默认配置
 - 自动检测 BBR 启用状态
 
-### 8️⃣ **配置来源信息查看** 📊
-- 显示 sing-box 和 Snell 配置文件的详细信息
+### 7️⃣ **配置来源信息查看** 📊
+- 显示 sing-box 配置文件的详细信息
 - 实时统计配置文件大小和协议数量
-- 解析并显示 Snell 配置参数（端口、PSK等）
-- 显示服务器 IP 和国家信息
 
 ---
 
@@ -96,12 +88,13 @@ bash <(curl -fsSL https://raw.githubusercontent.com/sephiroth233/sys-toolkit/mas
 
 # 2. 选择菜单选项
 # ├─ 选项 1：安装 sing-box 服务
+# │  ├─ 选择版本（正式版/Beta/指定）
 # │  ├─ 自动下载安装
 # │  ├─ 生成随机端口和密钥
 # │  └─ 启动服务
 #
 # ├─ 选项 7：生成节点配置
-# │  ├─ 选择协议类型（可多选）
+# │  ├─ 选择协议类型（可多选，含 Snell）
 # │  ├─ 输入或随机分配端口
 # │  └─ 更新配置文件
 #
@@ -114,24 +107,9 @@ bash <(curl -fsSL https://raw.githubusercontent.com/sephiroth233/sys-toolkit/mas
 # │  ├─ 查看活跃中转配置
 # │  └─ 删除指定中转规则
 #
-# ├─ 选项 13：安装 Snell 服务
-# │  ├─ 自动下载安装
-# │  ├─ 创建系统服务
-# │  └─ 启用服务
-#
-# ├─ 选项 18：生成 Snell 配置
-# │  ├─ 自定义或随机端口
-# │  ├─ 自动生成 PSK 密钥
-# │  └─ 启动服务
-#
-# ├─ 选项 21：BBR 加速
-# │  ├─ 检测内核版本
-# │  ├─ 启用/关闭 BBR
-# │  └─ 验证优化效果
-#
-# └─ 选项 22：配置来源信息
-#    ├─ 显示配置文件详情
-#    └─ 统计协议数量
+# └─ 选项 13-14：系统优化
+#    ├─ 启用/关闭 BBR
+#    └─ 查看配置来源信息
 ```
 
 ---
@@ -145,14 +123,6 @@ bash <(curl -fsSL https://raw.githubusercontent.com/sephiroth233/sys-toolkit/mas
 | `/etc/sing-box/cert.pem` | TLS 证书（用于 Hysteria2、AnyTLS 等协议） |
 | `/etc/sing-box/private.key` | TLS 私钥 |
 | `/etc/sing-box/direct_configs.conf` | 中转配置备份文件 |
-
-### **Snell 配置文件**
-| 文件位置 | 作用 |
-|:----------|:------|
-| `/etc/snell/snell-server.conf` | Snell 服务器主配置文件 |
-| `/etc/snell/config.txt` | 客户端配置信息（Surge 兼容格式） |
-| `/usr/local/bin/snell-server` | Snell 可执行文件 |
-| `/etc/systemd/system/snell.service` | Snell systemd 服务文件 |
 
 ---
 
@@ -174,11 +144,9 @@ bash <(curl -fsSL https://raw.githubusercontent.com/sephiroth233/sys-toolkit/mas
 - 失败后自动回滚
 - JSON 格式验证
 
-### ✅ 多服务集成
-- **sing-box 和 Snell 统一管理**：一个脚本管理两种代理服务
-- **智能状态显示**：实时显示服务安装和运行状态
-- **架构兼容**：支持 amd64 和 aarch64 系统架构
-- **系统优化**：集成 BBR 加速和配置信息查看
+### ✅ 声明式协议注册表
+- 协议列表集中定义（PROTOCOL_LIST），新增协议只需扩展注册表
+- 菜单、生成、验证、删除、URI 输出全部自动联动
 
 ### ✅ 彩色输出
 用不同颜色显示不同信息：
@@ -211,26 +179,14 @@ bash <(curl -fsSL https://raw.githubusercontent.com/sephiroth233/sys-toolkit/mas
 12. 删除中转配置
 ```
 
-### **Snell 代理管理**
-```
-13. 安装 Snell 服务
-14. 卸载 Snell 服务
-15. 启动/停止 Snell 服务
-16. 重启 Snell 服务
-17. 查看 Snell 状态
-18. 生成 Snell 配置
-19. 查看 Snell 配置
-20. 删除 Snell 配置
-```
-
 ### **BBR 优化管理**
 ```
-21. 启用/关闭 BBR 加速
+13. 启用/关闭 BBR 加速
 ```
 
 ### **配置管理**
 ```
-22. 查看配置来源信息
+14. 查看配置来源信息
 ```
 
 ### **通用操作**
@@ -244,20 +200,15 @@ bash <(curl -fsSL https://raw.githubusercontent.com/sephiroth233/sys-toolkit/mas
 
 ### **sing-box 使用流程**
 - **首次使用**：执行脚本 → 选项 1 安装 → 选项 7 生成配置
+- **使用 Snell**：安装时选择 Beta 版（≥1.14.0）→ 选项 7 选 Snell（默认版本 5）
 - **配置多个协议**：选项 7 时选择"全部"或多个协议编号
-- **获取分享链接**：选项 8 查看已生成的 URI 链接
+- **获取分享链接**：选项 8 查看已生成的 URI/Surge/Clash 链接
 - **管理配置**：选项 9 删除不需要的节点配置
 - **中转功能**：选项 10-12 管理端口转发
 
-### **Snell 代理使用**
-- **安装 Snell**：选项 13 安装 Snell 服务
-- **配置 Snell**：选项 18 生成 Snell 配置
-- **查看配置**：选项 19 获取 Snell 客户端配置
-- **服务管理**：选项 15-17 启动/停止/重启 Snell
-
 ### **系统优化**
-- **性能优化**：选项 21 启用 BBR 加速
-- **配置查看**：选项 22 查看配置来源信息
+- **性能优化**：选项 13 启用 BBR 加速
+- **配置查看**：选项 14 查看配置来源信息
 
 
 ---
@@ -271,4 +222,12 @@ bash <(curl -fsSL https://raw.githubusercontent.com/sephiroth233/sys-toolkit/mas
 
 ---
 
-这个脚本是一个**完整的 sing-box 和 Snell 管理解决方案**，特别适合需要快速部署多协议代理服务和系统优化的用户！ 🎯
+## 🚨 使用提醒
+
+- **Snell 节点**需要 sing-box ≥ 1.14.0（当前最新正式版 v1.13.19 不支持，安装时请选择 Beta 版或指定 1.14.0+ 版本）
+- **防火墙**：安装后请确保代理端口已在 UFW 等防火墙中放行（默认策略 deny incoming 会拦截所有非白名单端口）
+- **SSH 提示**：与旧版不同，本脚本已移除独立的 Snell 服务（snell-server），Snell 节点现在完全由 sing-box 提供
+
+---
+
+这个脚本是一个**完整的 sing-box 管理解决方案**，特别适合需要快速部署多协议代理服务和系统优化的用户！ 🎯
