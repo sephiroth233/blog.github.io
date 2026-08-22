@@ -1,24 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>lang</title><link>https://sephiroth233.github.io/blog.github.io</link><description>随便写写~</description><copyright>lang</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://raw.githubusercontent.com/sephiroth233/blog.github.io/refs/heads/main/static/avatar.jpg</url><title>avatar</title><link>https://sephiroth233.github.io/blog.github.io</link></image><lastBuildDate>Sat, 22 Aug 2026 08:07:54 +0000</lastBuildDate><managingEditor>lang</managingEditor><ttl>60</ttl><webMaster>lang</webMaster><item><title>reinstall一键 VPS 重装脚本</title><link>https://sephiroth233.github.io/blog.github.io/post/reinstall-yi-jian-%20VPS%20-zhong-zhuang-jiao-ben.html</link><description># reinstall一键 VPS 重装脚本
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>lang</title><link>https://sephiroth233.github.io/blog.github.io</link><description>随便写写~</description><copyright>lang</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://raw.githubusercontent.com/sephiroth233/blog.github.io/refs/heads/main/static/avatar.jpg</url><title>avatar</title><link>https://sephiroth233.github.io/blog.github.io</link></image><lastBuildDate>Sat, 22 Aug 2026 08:38:29 +0000</lastBuildDate><managingEditor>lang</managingEditor><ttl>60</ttl><webMaster>lang</webMaster><item><title>reinstall一键 VPS 重装脚本</title><link>https://sephiroth233.github.io/blog.github.io/post/reinstall-yi-jian-%20VPS%20-zhong-zhuang-jiao-ben.html</link><description># reinstall一键 VPS 重装脚本
 
 项目地址：https://github.com/bin456789/reinstall
 
 ## 简介
 
-`reinstall` 是一键 DD/重装系统脚本，支持在 VPS / 独服上重装到主流 Linux 发行版和 Windows，全程自动识别硬盘、自动配置网络。</description><guid isPermaLink="true">https://sephiroth233.github.io/blog.github.io/post/reinstall-yi-jian-%20VPS%20-zhong-zhuang-jiao-ben.html</guid><pubDate>Sat, 06 Jun 2026 02:13:17 +0000</pubDate></item><item><title>sys-toolkit - 系统工具集统一入口</title><link>https://sephiroth233.github.io/blog.github.io/post/sys-toolkit%20-%20-xi-tong-gong-ju-ji-tong-yi-ru-kou.html</link><description>这是一个**系统管理工具集的统一入口脚本**，用于快速调用和管理 fail2ban、网络代理、系统备份等工具。</description><guid isPermaLink="true">https://sephiroth233.github.io/blog.github.io/post/sys-toolkit%20-%20-xi-tong-gong-ju-ji-tong-yi-ru-kou.html</guid><pubDate>Wed, 07 Jan 2026 07:38:26 +0000</pubDate></item><item><title>sys-backup-restore - 系统备份恢复工具</title><link>https://sephiroth233.github.io/blog.github.io/post/sys-backup-restore%20-%20-xi-tong-bei-fen-hui-fu-gong-ju.html</link><description>这是一个功能强大的 **基于 rclone 的系统备份恢复脚本**，提供了完整的备份、恢复、定时任务管理和云存储集成功能。</description><guid isPermaLink="true">https://sephiroth233.github.io/blog.github.io/post/sys-backup-restore%20-%20-xi-tong-bei-fen-hui-fu-gong-ju.html</guid><pubDate>Wed, 07 Jan 2026 04:38:42 +0000</pubDate></item><item><title>WSL Ubuntu + Docker 配置教程</title><link>https://sephiroth233.github.io/blog.github.io/post/WSL%20Ubuntu%20%2B%20Docker%20-pei-zhi-jiao-cheng.html</link><description>### WSL Ubuntu + Docker 配置教程
-
----
-
-#### **1. 安装 WSL Ubuntu**
-
-管理员身份打开 PowerShell
-
-```powershell
-wsl --install
-```
-
-- 官方文档：[Microsoft WSL 安装指南](https://docs.microsoft.com/zh-cn/windows/wsl/install)
-- 安装后设置用户名/密码。</description><guid isPermaLink="true">https://sephiroth233.github.io/blog.github.io/post/WSL%20Ubuntu%20%2B%20Docker%20-pei-zhi-jiao-cheng.html</guid><pubDate>Thu, 27 Mar 2025 13:42:53 +0000</pubDate></item><item><title>Windows自用脚本</title><link>https://sephiroth233.github.io/blog.github.io/post/Windows-zi-yong-jiao-ben.html</link><description>### 1.Windows解除本地回环限制：
+`reinstall` 是一键 DD/重装系统脚本，支持在 VPS / 独服上重装到主流 Linux 发行版和 Windows，全程自动识别硬盘、自动配置网络。</description><guid isPermaLink="true">https://sephiroth233.github.io/blog.github.io/post/reinstall-yi-jian-%20VPS%20-zhong-zhuang-jiao-ben.html</guid><pubDate>Sat, 06 Jun 2026 02:13:17 +0000</pubDate></item><item><title>Windows自用脚本</title><link>https://sephiroth233.github.io/blog.github.io/post/Windows-zi-yong-jiao-ben.html</link><description>### 1.Windows解除本地回环限制：
 在Powershell中输入：
 
 ```
@@ -78,31 +65,7 @@ wsl --install
 wsl --update
 wsl --set-default-version 2
 ```
-。</description><guid isPermaLink="true">https://sephiroth233.github.io/blog.github.io/post/Windows-zi-yong-jiao-ben.html</guid><pubDate>Wed, 19 Feb 2025 06:00:30 +0000</pubDate></item><item><title>sing-box &amp; Snell 管理工具</title><link>https://sephiroth233.github.io/blog.github.io/post/sing-box%20%26%20Snell%20-guan-li-gong-ju.html</link><description>这是一个功能强大的 **sing-box 管理脚本**，提供完整的安装、配置、节点管理、中转功能和系统优化。</description><guid isPermaLink="true">https://sephiroth233.github.io/blog.github.io/post/sing-box%20%26%20Snell%20-guan-li-gong-ju.html</guid><pubDate>Wed, 12 Feb 2025 03:57:15 +0000</pubDate></item><item><title>Navicat无限试用脚本</title><link>https://sephiroth233.github.io/blog.github.io/post/Navicat-wu-xian-shi-yong-jiao-ben.html</link><description>```shell&#13;
-@echo off&#13;
-echo Delete HKEY_CURRENT_USER\Software\PremiumSoft\NavicatPremium\Update&#13;
-reg delete HKEY_CURRENT_USER\Software\PremiumSoft\NavicatPremium\Update /f&#13;
-echo Delete HKEY_CURRENT_USER\Software\PremiumSoft\NavicatPremium\Registration[version and language]&#13;
-for /f %%i in (''REG QUERY 'HKEY_CURRENT_USER\Software\PremiumSoft\NavicatPremium' /s | findstr /L Registration'') do (&#13;
-    reg delete %%i /va /f&#13;
-)&#13;
-&#13;
-echo Delete Info and ShellFolder under HKEY_CURRENT_USER\Software\Classes\CLSID&#13;
-for /f 'tokens=*' %%a in ('reg query 'HKEY_CURRENT_USER\Software\Classes\CLSID'') do (&#13;
-  for /f 'tokens=*' %%l in ('reg query '%%a' /f 'Info' /s /e ^| findstr /i 'Info'') do (&#13;
-    echo Delete: %%a&#13;
-    reg delete %%a /f&#13;
-  )&#13;
-  for /f 'tokens=*' %%l in ('reg query '%%a' /f 'ShellFolder' /s /e ^| findstr /i 'ShellFolder'') do (&#13;
-    echo Delete: %%a&#13;
-    reg delete %%a /f&#13;
-  )&#13;
-)&#13;
-```&#13;
-&#13;
-新建一个txt文件，名字随意，以reset.txt为例：&#13;
-&#13;
-复制上面的脚本代码，将代码粘贴到reset.txt文件中。</description><guid isPermaLink="true">https://sephiroth233.github.io/blog.github.io/post/Navicat-wu-xian-shi-yong-jiao-ben.html</guid><pubDate>Fri, 19 Jul 2024 02:27:50 +0000</pubDate></item><item><title>微软输入法设置小鹤双拼</title><link>https://sephiroth233.github.io/blog.github.io/post/wei-ruan-shu-ru-fa-she-zhi-xiao-he-shuang-pin.html</link><description>打开PowerShell，输入：
+。</description><guid isPermaLink="true">https://sephiroth233.github.io/blog.github.io/post/Windows-zi-yong-jiao-ben.html</guid><pubDate>Wed, 19 Feb 2025 06:00:30 +0000</pubDate></item><item><title>sing-box &amp; Snell 管理工具</title><link>https://sephiroth233.github.io/blog.github.io/post/sing-box%20%26%20Snell%20-guan-li-gong-ju.html</link><description>这是一个功能强大的 **sing-box 管理脚本**，提供完整的安装、配置、节点管理、中转功能和系统优化。</description><guid isPermaLink="true">https://sephiroth233.github.io/blog.github.io/post/sing-box%20%26%20Snell%20-guan-li-gong-ju.html</guid><pubDate>Wed, 12 Feb 2025 03:57:15 +0000</pubDate></item><item><title>微软输入法设置小鹤双拼</title><link>https://sephiroth233.github.io/blog.github.io/post/wei-ruan-shu-ru-fa-she-zhi-xiao-he-shuang-pin.html</link><description>打开PowerShell，输入：
 ```shell
 reg add HKCU\Software\Microsoft\InputMethod\Settings\CHS /v UserDefinedDoublePinyinScheme0 /t REG_SZ /d '小鹤双拼*2*^*iuvdjhcwfg^xmlnpbksqszxkrltvyovt' /f
 ```
