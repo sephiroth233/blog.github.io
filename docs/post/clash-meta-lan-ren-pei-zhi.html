@@ -84,107 +84,184 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
     <div id="content">
 <div class="markdown-body" id="postBody"><p>在clash系列软件中新建一个本地配置，然后将下面的内容复制、粘贴。<br>
-最后将配置中的 <strong>节点订阅</strong> 替换为你自己的节点订阅链接即可</p>
+最后将配置中的 <strong>节点订阅链接</strong> 替换为你自己的节点订阅链接即可</p>
 <div class="highlight highlight-source-yaml"><pre class="notranslate"><span class="pl-ent">mode</span>: <span class="pl-s">rule</span>
-<span class="pl-ent">ipv6</span>: <span class="pl-c1">true</span>
-<span class="pl-ent">log-level</span>: <span class="pl-s">info</span>
-<span class="pl-ent">allow-lan</span>: <span class="pl-c1">true</span>
+<span class="pl-ent">allow-lan</span>: <span class="pl-c1">false</span>
+<span class="pl-ent">bind-address</span>: <span class="pl-s"><span class="pl-pds">'</span>*<span class="pl-pds">'</span></span>
+<span class="pl-ent">port</span>: <span class="pl-c1">7899</span>
+<span class="pl-ent">socks-port</span>: <span class="pl-c1">7891</span>
 <span class="pl-ent">mixed-port</span>: <span class="pl-c1">7890</span>
+<span class="pl-ent">ipv6</span>: <span class="pl-c1">false</span>
 <span class="pl-ent">external-controller</span>: <span class="pl-s">127.0.0.1:9090</span>
 
-<span class="pl-ent">geodata-mode</span>: <span class="pl-c1">true</span>
+<span class="pl-ent">unified-delay</span>: <span class="pl-c1">true</span>
+<span class="pl-ent">tcp-concurrent</span>: <span class="pl-c1">true</span>
+
+<span class="pl-ent">profile</span>:
+  <span class="pl-ent">store-selected</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">store-fake-ip</span>: <span class="pl-c1">true</span>
+
 <span class="pl-ent">geox-url</span>:
-  <span class="pl-ent">geoip</span>: <span class="pl-s">https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat</span>
-  <span class="pl-ent">geosite</span>: <span class="pl-s">https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat</span>
-  <span class="pl-ent">mmdb</span>: <span class="pl-s">https://raw.githubusercontent.com/Loyalsoldier/geoip/release/Country.mmdb</span>
+  <span class="pl-ent">geoip</span>: <span class="pl-s">https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat</span>
+  <span class="pl-ent">geosite</span>: <span class="pl-s">https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat</span>
+  <span class="pl-ent">mmdb</span>: <span class="pl-s">https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/country.mmdb</span>
+  <span class="pl-ent">asn</span>: <span class="pl-s">https://github.com/xishang0128/geoip/releases/download/latest/GeoLite2-ASN.mmdb</span>
+
+<span class="pl-ent">sniffer</span>:
+  <span class="pl-ent">enable</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">sniff</span>:
+    <span class="pl-ent">HTTP</span>:
+      <span class="pl-ent">ports</span>: <span class="pl-s">[ 80, 8080-8880 ]</span>
+      <span class="pl-ent">override-destination</span>: <span class="pl-c1">true</span>
+    <span class="pl-ent">TLS</span>:
+      <span class="pl-ent">ports</span>: <span class="pl-s">[ 443, 8443 ]</span>
+    <span class="pl-ent">QUIC</span>:
+      <span class="pl-ent">ports</span>: <span class="pl-s">[ 443, 8443 ]</span>
+  <span class="pl-ent">skip-domain</span>:
+  - <span class="pl-s"><span class="pl-pds">'</span>+.push.apple.com<span class="pl-pds">'</span></span>
+
+<span class="pl-ent">tun</span>:
+  <span class="pl-ent">enable</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">stack</span>: <span class="pl-s">mixed</span>
+  <span class="pl-ent">dns-hijack</span>:
+  - <span class="pl-s"><span class="pl-pds">"</span>any:53<span class="pl-pds">"</span></span>
+  - <span class="pl-s"><span class="pl-pds">"</span>tcp://any:53<span class="pl-pds">"</span></span>
+  <span class="pl-ent">auto-route</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">auto-redirect</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">auto-detect-interface</span>: <span class="pl-c1">true</span>
+  <span class="pl-ent">strict-route</span>: <span class="pl-c1">true</span>
 
 <span class="pl-ent">dns</span>:
   <span class="pl-ent">enable</span>: <span class="pl-c1">true</span>
-  <span class="pl-ent">ipv6</span>: <span class="pl-c1">true</span>
-  <span class="pl-ent">listen</span>: <span class="pl-s">0.0.0.0:53</span>
-  <span class="pl-ent">default-nameserver</span>:
-    - <span class="pl-s">223.5.5.5 </span>
-    - <span class="pl-s">119.29.29.29</span>
+  <span class="pl-ent">ipv6</span>: <span class="pl-c1">false</span>
   <span class="pl-ent">enhanced-mode</span>: <span class="pl-s">fake-ip</span>
   <span class="pl-ent">fake-ip-range</span>: <span class="pl-s">198.18.0.1/16</span>
+  <span class="pl-ent">fake-ip-filter-mode</span>: <span class="pl-s">blacklist</span>
   <span class="pl-ent">fake-ip-filter</span>:
-    - <span class="pl-s"><span class="pl-pds">'</span>*.lan<span class="pl-pds">'</span></span>
-    - <span class="pl-s">localhost.ptlogin2.qq.com</span>
-    - <span class="pl-s"><span class="pl-pds">'</span>+.srv.nintendo.net<span class="pl-pds">'</span></span>
-    - <span class="pl-s"><span class="pl-pds">'</span>+.stun.playstation.net<span class="pl-pds">'</span></span>
-    - <span class="pl-s"><span class="pl-pds">'</span>+.msftconnecttest.com<span class="pl-pds">'</span></span>
-    - <span class="pl-s"><span class="pl-pds">'</span>+.msftncsi.com<span class="pl-pds">'</span></span>
-    - <span class="pl-s"><span class="pl-pds">'</span>+.xboxlive.com<span class="pl-pds">'</span></span>
-    - <span class="pl-s"><span class="pl-pds">'</span>msftconnecttest.com<span class="pl-pds">'</span></span>
-    - <span class="pl-s"><span class="pl-pds">'</span>xbox.*.microsoft.com<span class="pl-pds">'</span></span>
-    - <span class="pl-s"><span class="pl-pds">'</span>*.battlenet.com.cn<span class="pl-pds">'</span></span>
-    - <span class="pl-s"><span class="pl-pds">'</span>*.battlenet.com<span class="pl-pds">'</span></span>
-    - <span class="pl-s"><span class="pl-pds">'</span>*.blzstatic.cn<span class="pl-pds">'</span></span>
-    - <span class="pl-s"><span class="pl-pds">'</span>*.battle.net<span class="pl-pds">'</span></span>
+  - <span class="pl-s"><span class="pl-pds">"</span>*.lan<span class="pl-pds">"</span></span>
+  - <span class="pl-s"><span class="pl-pds">"</span>+.local<span class="pl-pds">"</span></span>
+  - <span class="pl-s"><span class="pl-pds">"</span>+.localdomain<span class="pl-pds">"</span></span>
+  - <span class="pl-s"><span class="pl-pds">"</span>+.home.arpa<span class="pl-pds">"</span></span>
+  - <span class="pl-s"><span class="pl-pds">"</span>localhost<span class="pl-pds">"</span></span>
+  - <span class="pl-s"><span class="pl-pds">"</span>localhost.*<span class="pl-pds">"</span></span>
+  - <span class="pl-s"><span class="pl-pds">"</span>+.msftconnecttest.com<span class="pl-pds">"</span></span>
+  - <span class="pl-s"><span class="pl-pds">"</span>+.msftncsi.com<span class="pl-pds">"</span></span>
+  - <span class="pl-s"><span class="pl-pds">"</span>time.*.com<span class="pl-pds">"</span></span>
+  - <span class="pl-s"><span class="pl-pds">"</span>time.*.gov<span class="pl-pds">"</span></span>
+  - <span class="pl-s"><span class="pl-pds">"</span>time.*.edu.cn<span class="pl-pds">"</span></span>
+  - <span class="pl-s"><span class="pl-pds">"</span>time.*.apple.com<span class="pl-pds">"</span></span>
+  - <span class="pl-s"><span class="pl-pds">"</span>time-ios.apple.com<span class="pl-pds">"</span></span>
+  - <span class="pl-s"><span class="pl-pds">"</span>+.pool.ntp.org<span class="pl-pds">"</span></span>
+  - <span class="pl-s"><span class="pl-pds">"</span>ntp.*.com<span class="pl-pds">"</span></span>
+  - <span class="pl-s"><span class="pl-pds">"</span>ntp.*.com.cn<span class="pl-pds">"</span></span>
+  - <span class="pl-s"><span class="pl-pds">"</span>ntp.*.org<span class="pl-pds">"</span></span>
+  - <span class="pl-s"><span class="pl-pds">"</span>ntp.*.org.cn<span class="pl-pds">"</span></span>
+  - <span class="pl-s"><span class="pl-pds">"</span>+.push.apple.com<span class="pl-pds">"</span></span>
+
+  <span class="pl-ent">default-nameserver</span>:
+  - <span class="pl-s">223.5.5.5</span>
+  - <span class="pl-s">119.29.29.29</span>
   <span class="pl-ent">nameserver</span>:
-    - <span class="pl-s">https://doh.pub/dns-query</span>
-    - <span class="pl-s">https://dns.alidns.com/dns-query</span>
-
-
-
+  - <span class="pl-s">https://doh.pub/dns-query</span>
+  - <span class="pl-s">https://dns.alidns.com/dns-query</span>
 
 <span class="pl-c"><span class="pl-c">#</span>######## 锚点 start #######</span>
 <span class="pl-c"><span class="pl-c">#</span> proxy策略相关</span>
-<span class="pl-ent">pr</span>: <span class="pl-s">&amp;ap1 { type: select, proxies: [ 香港节点,台湾节点,日本节点,美国节点,韩国节点,新加坡节点,手动选择,自动选择,DIRECT ] }</span>
+<span class="pl-ent">pg</span>: <span class="pl-s">&amp;pg { type: select, proxies: [ 美国节点, 香港节点, 台湾节点, 日本节点, 韩国节点, 新加坡节点, 手动选择, 自动选择, DIRECT ] }</span>
 <span class="pl-c"><span class="pl-c">#</span>订阅更新相关</span>
-<span class="pl-ent">p</span>: <span class="pl-s">&amp;ap2 { type: http, interval: 3600, health-check: { enable: true, url: https://www.apple.com/library/test/success.html, interval: 300 } }</span>
+<span class="pl-ent">pu</span>: <span class="pl-s">&amp;pu { type: http, interval: 86400, health-check: { enable: true, url: "https://www.apple.com/library/test/success.html", interval: 300, timeout: 5000 } }</span>
 <span class="pl-c"><span class="pl-c">#</span>延迟测试相关</span>
-<span class="pl-ent">auto</span>: <span class="pl-s">&amp;ap3 { type: url-test, lazy: true,  url: https://www.apple.com/library/test/success.html, interval: 900, use: [ Subscribe ] }</span>
+<span class="pl-ent">url-test</span>: <span class="pl-s">&amp;url-test { type: url-test, url: "https://www.apple.com/library/test/success.html", interval: 300, lazy: true, tolerance: 50, timeout: 1000, max-failed-times: 3, hidden: true, include-all: true }</span>
+<span class="pl-ent">fall-back</span>: <span class="pl-s">&amp;fall-back { type: fallback, url: "https://www.apple.com/library/test/success.html", interval: 300, lazy: true, tolerance: 50, timeout: 1000, max-failed-times: 3, hidden: true, include-all: true }</span>
 <span class="pl-c"><span class="pl-c">#</span>节点选择</span>
-<span class="pl-ent">use</span>: <span class="pl-s">&amp;ap4 { type: select,   use: [ Subscribe ] }</span>
-<span class="pl-ent">d</span>: <span class="pl-s">&amp;ap5 { type: http,  format   behavior: domain,    interval: 86400 }</span>
-
+<span class="pl-ent">select</span>: <span class="pl-s">&amp;select { type: select, proxies: [ DIRECT ], use: [ Subscribe ] }</span>
+<span class="pl-ent">bc</span>: <span class="pl-s">&amp;bc { type: http, format: text, behavior: classical, interval: 86400 }</span>
 
 <span class="pl-ent">proxy-providers</span>:
   <span class="pl-ent">Subscribe</span>:
-    <span class="pl-ent">url</span>: <span class="pl-s"><span class="pl-pds">"</span>节点订阅<span class="pl-pds">"</span></span>
-    <span class="pl-ent">&lt;&lt;</span>: <span class="pl-s">*ap2</span>
-<span class="pl-ent">proxies</span>: <span class="pl-c1">null</span>
-<span class="pl-ent">proxy-groups</span>:
-
-  <span class="pl-c"><span class="pl-c">#</span>策略组</span>
-  - <span class="pl-s">{ name: 手动选择, &lt;&lt;: *ap4 ,icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Rocket.png}</span>
-  - <span class="pl-s">{ name: Global,   &lt;&lt;: *ap1 ,icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Global.png}</span>
-  - <span class="pl-s">{ name: Github,  &lt;&lt;: *ap1 ,icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/GitHub.png}</span>
-  - <span class="pl-s">{ name: Spotify, &lt;&lt;: *ap1 ,icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Spotify.png}</span>
-  - <span class="pl-s">{ name: Openai,  &lt;&lt;: *ap1 ,icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Bot.png}</span>
-  - <span class="pl-s">{ name: YouTube, &lt;&lt;: *ap1 ,icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png}</span>
-  - <span class="pl-s">{ name: Emby, &lt;&lt;: *ap1 ,icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Emby.png}</span>
-  - <span class="pl-s">{ name: Microsoft, &lt;&lt;: *ap1 ,icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png}</span>
-  - <span class="pl-s">{ name: StreamCN, &lt;&lt;: *ap1 ,icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Steam.png}</span>
-
-
-  <span class="pl-c"><span class="pl-c">#</span>节点筛选</span>
-  - <span class="pl-s">{ name: 自动选择, &lt;&lt;: *ap3 ,icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png}</span>
-  - <span class="pl-s">{ name: 香港节点, &lt;&lt;: *ap3, filter: "(?i)🇭🇰|香港|(\b(HK|Hong)\b)" ,icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png}</span>
-  - <span class="pl-s">{ name: 台湾节点, &lt;&lt;: *ap3, filter: "(?i)🇹🇼|台湾|(\b(TW|Tai|Taiwan)\b)" ,icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png}</span>
-  - <span class="pl-s">{ name: 日本节点, &lt;&lt;: *ap3, filter: "(?i)🇯🇵|日本|川日|东京|大阪|泉日|埼玉|(\b(JP|Japan)\b)" ,icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png}</span>
-  - <span class="pl-s">{ name: 美国节点, &lt;&lt;: *ap3, filter: "(?i)🇺🇸|美国|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|(\b(US|United States)\b)" ,icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png}</span>
-  - <span class="pl-s">{ name: 韩国节点, &lt;&lt;: *ap3, filter: "(?i)🇰🇷|韩国|韓|首尔|(\b(KR|Korea)\b)" ,icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Korea.png}</span>
-  - <span class="pl-s">{ name: 新加坡节点, &lt;&lt;: *ap3, filter: "(?i)🇸🇬|新加坡|狮|(\b(SG|Singapore)\b)" ,icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png}</span>
+    <span class="pl-ent">url</span>:  <span class="pl-s">节点订阅链接</span>
+    <span class="pl-ent">&lt;&lt;</span>: <span class="pl-s">*pu</span>
 
 <span class="pl-ent">rule-providers</span>:
-  <span class="pl-ent">ad-rules</span>: <span class="pl-s">{ type: http, format: text ,behavior: domain, interval: 86400, url: https://raw.githubusercontent.com/Cats-Team/AdRules/main/adrules_domainset.txt, path: ./ruleset/ad-rules.yaml }</span>
-  <span class="pl-ent">emby</span>: <span class="pl-s">{ type: http, format: text ,behavior: classical, interval: 86400, url: https://raw.githubusercontent.com/Repcz/Tool/X/Clash/Rules/Emby.list, path: ./ruleset/emby.yaml }</span>
-  <span class="pl-ent">streamCN</span>: <span class="pl-s">{ type: http, format: text ,behavior: classical, interval: 86400, url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/SteamCN/SteamCN.yaml, path: ./ruleset/streamCN.yaml }</span>
+  <span class="pl-ent">AI</span>:
+    <span class="pl-ent">&lt;&lt;</span>: <span class="pl-s">*bc</span>
+    <span class="pl-ent">url</span>: <span class="pl-s">https://gh.sephiroth.club/raw.githubusercontent.com/sephiroth233/Tool/master/mihomo/Rules/AI.list</span>
+    <span class="pl-ent">path</span>: <span class="pl-s">./ruleset/Tool/AI.yaml</span>
+  <span class="pl-ent">Emby</span>:
+    <span class="pl-ent">&lt;&lt;</span>: <span class="pl-s">*bc</span>
+    <span class="pl-ent">url</span>: <span class="pl-s">https://gh.sephiroth.club/raw.githubusercontent.com/sephiroth233/Tool/master/mihomo/Rules/Emby.list</span>
+    <span class="pl-ent">path</span>: <span class="pl-s">./ruleset/Tool/Emby.yaml</span>
+  <span class="pl-ent">Apple</span>:
+    <span class="pl-ent">&lt;&lt;</span>: <span class="pl-s">*bc</span>
+    <span class="pl-ent">url</span>: <span class="pl-s">https://gh.sephiroth.club/raw.githubusercontent.com/sephiroth233/Tool/master/mihomo/Rules/Apple.list</span>
+    <span class="pl-ent">path</span>: <span class="pl-s">./ruleset/Tool/Apple.yaml</span>
+  <span class="pl-ent">Telegram</span>:
+    <span class="pl-ent">&lt;&lt;</span>: <span class="pl-s">*bc</span>
+    <span class="pl-ent">url</span>: <span class="pl-s">https://gh.sephiroth.club/raw.githubusercontent.com/sephiroth233/Tool/master/mihomo/Rules/Telegram.list</span>
+    <span class="pl-ent">path</span>: <span class="pl-s">./ruleset/Tool/Telegram.yaml</span>
+  <span class="pl-ent">YouTube</span>:
+    <span class="pl-ent">&lt;&lt;</span>: <span class="pl-s">*bc</span>
+    <span class="pl-ent">url</span>: <span class="pl-s">https://gh.sephiroth.club/raw.githubusercontent.com/sephiroth233/Tool/master/mihomo/Rules/YouTube.list</span>
+    <span class="pl-ent">path</span>: <span class="pl-s">./ruleset/Tool/YouTube.yaml</span>
+  <span class="pl-ent">Microsoft</span>:
+    <span class="pl-ent">&lt;&lt;</span>: <span class="pl-s">*bc</span>
+    <span class="pl-ent">url</span>: <span class="pl-s">https://gh.sephiroth.club/raw.githubusercontent.com/sephiroth233/Tool/master/mihomo/Rules/Microsoft.list</span>
+    <span class="pl-ent">path</span>: <span class="pl-s">./ruleset/Tool/Microsoft.yaml</span>
+  <span class="pl-ent">Github</span>:
+    <span class="pl-ent">&lt;&lt;</span>: <span class="pl-s">*bc</span>
+    <span class="pl-ent">url</span>: <span class="pl-s">https://gh.sephiroth.club/raw.githubusercontent.com/sephiroth233/Tool/master/mihomo/Rules/Github.list</span>
+    <span class="pl-ent">path</span>: <span class="pl-s">./ruleset/Tool/Github.yaml</span>
+  <span class="pl-ent">Lan</span>:
+    <span class="pl-ent">&lt;&lt;</span>: <span class="pl-s">*bc</span>
+    <span class="pl-ent">url</span>: <span class="pl-s">https://gh.sephiroth.club/raw.githubusercontent.com/sephiroth233/Tool/master/mihomo/Rules/Lan.list</span>
+    <span class="pl-ent">path</span>: <span class="pl-s">./ruleset/Tool/Lan.yaml</span>
+  <span class="pl-ent">ChinaDomain</span>:
+    <span class="pl-ent">&lt;&lt;</span>: <span class="pl-s">*bc</span>
+    <span class="pl-ent">url</span>: <span class="pl-s">https://gh.sephiroth.club/raw.githubusercontent.com/sephiroth233/Tool/master/mihomo/Rules/ChinaDomain.list</span>
+    <span class="pl-ent">path</span>: <span class="pl-s">./ruleset/Tool/ChinaDomain.yaml</span>
+  <span class="pl-ent">ChinaIP</span>:
+    <span class="pl-ent">&lt;&lt;</span>: <span class="pl-s">*bc</span>
+    <span class="pl-ent">url</span>: <span class="pl-s">https://gh.sephiroth.club/raw.githubusercontent.com/sephiroth233/Tool/master/mihomo/Rules/ChinaIP.list</span>
+    <span class="pl-ent">path</span>: <span class="pl-s">./ruleset/Tool/ChinaIP.yaml</span>
+
+<span class="pl-ent">proxies</span>: <span class="pl-s">[]</span>
+
+<span class="pl-ent">proxy-groups</span>:
+
+<span class="pl-c"><span class="pl-c">#</span>策略组</span>
+- <span class="pl-s">{ name: 手动选择, &lt;&lt;: *select, icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Rocket.png" }</span>
+- <span class="pl-s">{ name: Final, &lt;&lt;: *pg, icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Final.png" }</span>
+- <span class="pl-s">{ name: Ai, &lt;&lt;: *pg, icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/ChatGPT.png" }</span>
+- <span class="pl-s">{ name: Telegram, &lt;&lt;: *pg, icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png" }</span>
+- <span class="pl-s">{ name: YouTube, &lt;&lt;: *pg, icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png" }</span>
+- <span class="pl-s">{ name: Github, &lt;&lt;: *pg, icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/GitHub.png" }</span>
+- <span class="pl-s">{ name: Microsoft, &lt;&lt;: *pg, icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png" }</span>
+- <span class="pl-s">{ name: Emby, &lt;&lt;: *pg, icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Emby.png" }</span>
+- <span class="pl-s">{ name: Apple, &lt;&lt;: *pg, icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple.png" }</span>
+
+<span class="pl-c"><span class="pl-c">#</span>节点筛选</span>
+- <span class="pl-s">{ name: 自动选择, hidden: false, &lt;&lt;: *fall-back, icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png" }</span>
+- <span class="pl-s">{ name: 美国节点, hidden: false, &lt;&lt;: *fall-back, filter: "(?i)🇺🇸|美|美国|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States", icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png" }</span>
+- <span class="pl-s">{ name: 香港节点, hidden: false, &lt;&lt;: *fall-back, filter: "(?i)🇭🇰|港|香港|HK|HongKong|Hong Kong", icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png" }</span>
+- <span class="pl-s">{ name: 台湾节点, hidden: false, &lt;&lt;: *fall-back, filter: "(?i)🇹🇼|台|台湾|TW|Tai|Taiwan", icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png" }</span>
+- <span class="pl-s">{ name: 日本节点, hidden: false, &lt;&lt;: *fall-back, filter: "(?i)🇯🇵|日|日本|川日|东京|大阪|泉日|埼玉|JP|Japan|Osaka|Tokyo", icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png" }</span>
+- <span class="pl-s">{ name: 韩国节点, hidden: false, &lt;&lt;: *fall-back, filter: "(?i)🇰🇷|韩|韩国|韓|首尔|KR|Korea", icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Korea.png" }</span>
+- <span class="pl-s">{ name: 新加坡节点, hidden: false, &lt;&lt;: *fall-back, filter: "(?i)🇸🇬|新加坡|狮|SG|Singapore", icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png" }</span>
+
 <span class="pl-ent">rules</span>:
-  - <span class="pl-s">RULE-SET,ad-rules,REJECT</span>
-  - <span class="pl-s">RULE-SET,streamCN,StreamCN</span>
-  - <span class="pl-s">RULE-SET,emby,Emby</span>
-  - <span class="pl-s">GEOSITE,github,Github</span>
-  - <span class="pl-s">GEOSITE,openai,Openai</span>
-  - <span class="pl-s">GEOSITE,spotify,Spotify</span>
-  - <span class="pl-s">GEOSITE,youtube,YouTube</span>
-  - <span class="pl-s">GEOSITE,microsoft,Microsoft</span>
-  - <span class="pl-s">GEOSITE,private,DIRECT</span>
-  - <span class="pl-s">GEOSITE,cn,DIRECT</span>
-  - <span class="pl-s">GEOIP,CN,DIRECT</span>
-  - <span class="pl-s">MATCH,Global</span></pre></div></div>
+
+- <span class="pl-s">RULE-SET,AI,Ai</span>
+- <span class="pl-s">RULE-SET,Emby,Emby</span>
+- <span class="pl-s">RULE-SET,Apple,Apple</span>
+- <span class="pl-s">RULE-SET,Telegram,Telegram</span>
+- <span class="pl-s">RULE-SET,YouTube,YouTube</span>
+- <span class="pl-s">RULE-SET,Microsoft,Microsoft</span>
+- <span class="pl-s">RULE-SET,Github,Github</span>
+- <span class="pl-s">RULE-SET,ChinaDomain,DIRECT</span>
+- <span class="pl-s">RULE-SET,ChinaIP,DIRECT</span>
+- <span class="pl-s">RULE-SET,Lan,DIRECT</span>
+- <span class="pl-s">MATCH,Final</span>
+</pre></div></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
