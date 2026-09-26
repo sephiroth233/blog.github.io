@@ -101,43 +101,43 @@ proxy-providers:
 rule-providers:
   AI:
     <<: *bc
-    url: https://gh.sephiroth.club/raw.githubusercontent.com/sephiroth233/Tool/master/mihomo/Rules/AI.list
+    url: https://gh.mlang.cc/raw.githubusercontent.com/sephiroth233/Tool/master/mihomo/Rules/AI.list
     path: ./ruleset/Tool/AI.yaml
   Emby:
     <<: *bc
-    url: https://gh.sephiroth.club/raw.githubusercontent.com/sephiroth233/Tool/master/mihomo/Rules/Emby.list
+    url: https://gh.mlang.cc/raw.githubusercontent.com/sephiroth233/Tool/master/mihomo/Rules/Emby.list
     path: ./ruleset/Tool/Emby.yaml
   Apple:
     <<: *bc
-    url: https://gh.sephiroth.club/raw.githubusercontent.com/sephiroth233/Tool/master/mihomo/Rules/Apple.list
+    url: https://gh.mlang.cc/raw.githubusercontent.com/sephiroth233/Tool/master/mihomo/Rules/Apple.list
     path: ./ruleset/Tool/Apple.yaml
   Telegram:
     <<: *bc
-    url: https://gh.sephiroth.club/raw.githubusercontent.com/sephiroth233/Tool/master/mihomo/Rules/Telegram.list
+    url: https://gh.mlang.cc/raw.githubusercontent.com/sephiroth233/Tool/master/mihomo/Rules/Telegram.list
     path: ./ruleset/Tool/Telegram.yaml
   YouTube:
     <<: *bc
-    url: https://gh.sephiroth.club/raw.githubusercontent.com/sephiroth233/Tool/master/mihomo/Rules/YouTube.list
+    url: https://gh.mlang.cc/raw.githubusercontent.com/sephiroth233/Tool/master/mihomo/Rules/YouTube.list
     path: ./ruleset/Tool/YouTube.yaml
   Microsoft:
     <<: *bc
-    url: https://gh.sephiroth.club/raw.githubusercontent.com/sephiroth233/Tool/master/mihomo/Rules/Microsoft.list
+    url: https://gh.mlang.cc/raw.githubusercontent.com/sephiroth233/Tool/master/mihomo/Rules/Microsoft.list
     path: ./ruleset/Tool/Microsoft.yaml
   Github:
     <<: *bc
-    url: https://gh.sephiroth.club/raw.githubusercontent.com/sephiroth233/Tool/master/mihomo/Rules/Github.list
+    url: https://gh.mlang.cc/raw.githubusercontent.com/sephiroth233/Tool/master/mihomo/Rules/Github.list
     path: ./ruleset/Tool/Github.yaml
   Lan:
     <<: *bc
-    url: https://gh.sephiroth.club/raw.githubusercontent.com/sephiroth233/Tool/master/mihomo/Rules/Lan.list
+    url: https://gh.mlang.cc/raw.githubusercontent.com/sephiroth233/Tool/master/mihomo/Rules/Lan.list
     path: ./ruleset/Tool/Lan.yaml
   ChinaDomain:
     <<: *bc
-    url: https://gh.sephiroth.club/raw.githubusercontent.com/sephiroth233/Tool/master/mihomo/Rules/ChinaDomain.list
+    url: https://gh.mlang.cc/raw.githubusercontent.com/sephiroth233/Tool/master/mihomo/Rules/ChinaDomain.list
     path: ./ruleset/Tool/ChinaDomain.yaml
   ChinaIP:
     <<: *bc
-    url: https://gh.sephiroth.club/raw.githubusercontent.com/sephiroth233/Tool/master/mihomo/Rules/ChinaIP.list
+    url: https://gh.mlang.cc/raw.githubusercontent.com/sephiroth233/Tool/master/mihomo/Rules/ChinaIP.list
     path: ./ruleset/Tool/ChinaIP.yaml
 
 proxies: []
