@@ -1,6 +1,7 @@
 {
-    "title":"lang",
-    "subTitle":"随便写写~",
-    "avatarUrl":"https://raw.githubusercontent.com/sephiroth233/blog.github.io/refs/heads/main/static/avatar.jpg",
-    "GMEEK_VERSION":"last"
+    "title": "lang",
+    "subTitle": "随便写写~",
+    "avatarUrl": "https://raw.githubusercontent.com/sephiroth233/blog.github.io/refs/heads/main/static/avatar.jpg",
+    "GMEEK_VERSION": "last",
+    "homeUrl": "https://blog.mlang.cc"
 }
